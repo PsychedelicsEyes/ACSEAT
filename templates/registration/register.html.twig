@@ -3,15 +3,19 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
+<div class="container">
+    <div class="reg_form">
     <h1>Register</h1>
-
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
+    </div>
+        <div class="reg-email">{{ form_row(registrationForm.email) }}</div>
+        <div class="reg-psw">{{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
+        </div>
+        <div class="reg-agt">{{ form_row(registrationForm.agreeTerms) }}
+        </div>
         <button type="submit" class="btn">Register</button>
     {{ form_end(registrationForm) }}
+</div>
 {% endblock %}
