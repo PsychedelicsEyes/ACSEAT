@@ -16,6 +16,8 @@
         <div class="reg-agt">{{ form_row(registrationForm.agreeTerms) }}
         </div>
         <button type="submit" class="btn">Register</button>
+
+        <p>You have a account?<a href="{{ path('app_login') }}">Connect to your account here</a></p>
     {{ form_end(registrationForm) }}
 </div>
 {% endblock %}
