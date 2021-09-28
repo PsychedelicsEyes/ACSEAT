@@ -30,7 +30,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="json")
      */
-    private $roles = ["USER_ROLE"];
+    private $roles = ["ROLE_USER"];
 
     /**
      * @var string The hashed password
@@ -113,18 +113,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCreated(): string
+
+    public function getCreated(): \DateTime
     {
         return $this->created;
     }
 
-    /**
-     * @param mixed $created
-     */
-    public function setCreated($created): void
+
+    public function setCreated(\DateTime $created): void
     {
         $this->created = $created;
     }

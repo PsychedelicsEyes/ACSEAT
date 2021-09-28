@@ -3,18 +3,13 @@
 {% block title %}Account{% endblock %}
 
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+
+    <h1>Ici les infortmations du compte</h1>
 
     {% if app.user %}
         <div class="mb-3">
-           Tu es connecté sur {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            Tu es connecté sur {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
         </div>
     {% endif %}
 
-
-
-</form>
 {% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menu{% endblock %}
+
+{% block body %}
+
+
+
+    <h1>Liste des produits</h1>
+
+
+
+    {% for product in products %}
+       <p>Nom: {{ product.title }}</p>
+       <p>Description: {{  product.description  }} </p>
+       <p>Prix: {{  product.price  }}€ </p>
+
+    {% endfor %}
+
+    
+
+
+{% endblock %}
