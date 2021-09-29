@@ -12,9 +12,9 @@ return [
     Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle::class => ['all' => true],
     Symfony\Bundle\SecurityBundle\SecurityBundle::class => ['all' => true],
     Twig\Extra\TwigExtraBundle\TwigExtraBundle::class => ['all' => true],
-<<<<<<< HEAD
+
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
-=======
+
     SymfonyCasts\Bundle\ResetPassword\SymfonyCastsResetPasswordBundle::class => ['all' => true],
->>>>>>> 5c503a844903c34b2cb42050a3da857438eba06a
+
 ];

@@ -1,12 +1,26 @@
+
+@import "modules/variable";
+@import "modules/heritage";
+@import "modules/form";
+
 @import "mod/variable";
 @import "mod/heritage";
-@import "mod/_register.scss";
+@import "mod/register";
+
 
 
 *{
     padding: 0;
     margin: 0;
 }
+
 body {
-    background-color: #0292AB;
+    background-color: #FB020E;
+    width: 100%;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
