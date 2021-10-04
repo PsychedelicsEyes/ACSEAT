@@ -6,74 +6,39 @@
     position: relative;
     left: 50%;
   }
+/* vector cercle */
 
-%c {
+%cercle {
     position: absolute;
-    top: 0;
-    left: -12em;
     color: white;
     opacity: 10%;
     border-radius: 50%;
     border: 6px solid;
 }
-%c1 {
-    position: relative;
-    top: 4px;
-    left: 8px;
-    color: white;
-    opacity: 100%;
-    border-radius: 50%;
-    border: 6px solid;
-}
-%c2 {
-    position: relative;
-    top: 4px;
-    left: 6px;
-    color: white;
-    opacity: 100%;
-    border-radius: 50%;
-    border: 6px solid;
-}
-%c3 {
-    position: relative;
-    top: 6px;
-    left: 7px;
-    color: white;
-    opacity: 100%;
-    border-radius: 50%;
-    border: 6px solid;
-}
-%c4 {
-    position: relative;
-    top: 4px;
-    left: 5px;
-    color: white;
-    opacity: 100%;
-    border-radius: 50%;
-    border: 6px solid;
-}
-%c5 {
-    position: relative;
-    top: 8px;
-    left: 6px;
-    color: white;
-    opacity: 100%;
-    border-radius: 50%;
-    border: 6px solid;
-}
 
-%post-form {
-    background-color: white;
-    width: 30em;
-    height: 20em;
-    position: relative;
-    top: 10em;
-    left: -6em;
-    float: right;
-    border-radius: 3%;
+%cercle2 {
+    position: absolute;
+    color: white;
+    opacity: 100%;
+    border-radius: 50%;
+    border: 6px solid;
 }
-%titre-h3 {
+%post-form {
+    background-color: $secondaryColor;
+    width: 37em;
+    height: 24em;
+    position: relative;
+    border-radius: 3%;
+    border: 5px solid darkslateblue;
+}
+%titre-h1 {
     text-align: center;
     padding-top: 2em;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
+    font-family: Block Berthold, serif;
+    font-size: 207%;
+}
+%reseau {
+    width: 2em;
+    height: 2em;
 }

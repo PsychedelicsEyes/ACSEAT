@@ -6,13 +6,13 @@
   width: 100%;
   display: block;
   top: 0 ;
-
+z-index: 2;
 }
-.container {
+.container-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  max-width: 940px;
 }
 
 .test {
@@ -42,33 +42,14 @@
   outline: none;
   border-radius: 5px;
   border: none;
-  background-size: 120% auto;
-  background-image: linear-gradient(315deg, #bdc3c7 0%, #FB020E 75%);
+  background-size: 160% auto;
+  background-image: linear-gradient(315deg, #bdc3c7 15%, #FB020E 75%);
+
 }
 .css-button-gradient--2:hover {
   background-position: right center;
 }
-.css-button-gradient--2:active {
-  top: 2px;
-}
-.css-button-rounded--black {
-  min-width: 130px;
-  height: 40px;
-  color: #fff;
-  padding: 5px 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-block;
-  outline: none;
-  border-radius: 5px;
-  border: 2px solid #212529;
-  background: #212529;
-}
-.css-button-rounded--black:hover {
-  background: #fff;
-  color: #212529
-}
+
 img.logo {
   display: block;
   width: 7%;
@@ -78,41 +59,395 @@ img.logo {
   display: flex;
   justify-content: center;
   background: $mainColor;
-  padding-top: 1em;
+  padding-top: 4em;
 }
+
+/*vector cercle */
+
 .vector-cercle {
+  @extend %cercle;
   width: 304px;
   height: 302px;
-@extend %c
+  top: 0;
+  left: -12em;
 }
 .vector-cercle1 {
+  @extend %cercle2;
   width: 277px;
   height: 280px;
-  @extend %c1
+  top: 4px;
+  left: 8px;
 }
 .vector-cercle2 {
+  @extend %cercle2;
   width: 254px;
   height: 258px;
-  @extend %c2
+  top: 4px;
+  left: 6px;
 }
 .vector-cercle3 {
+  @extend %cercle2;
   width: 230px;
   height: 234px;
-  @extend %c3
+  top: 6px;
+  left: 7px;
 }
 .vector-cercle4 {
+  @extend %cercle2;
   width: 207px;
   height: 211px;
-  @extend %c4
+  top: 4px;
+  left: 5px;
 }
 .vector-cercle5 {
+  @extend %cercle2;
   width: 184px;
   height: 183px;
-  @extend %c5
+  top: 8px;
+  left: 6px;
 }
+/* vector cercle 2 */
+
+.vector-cercle6 {
+  @extend %cercle;
+  width: 304px;
+  height: 302px;
+  top: -11em;
+  left: 28em;
+}
+.vector-cercle7 {
+  @extend %cercle2;
+  width: 277px;
+  height: 280px;
+  top: 4px;
+  left: 8px;
+}
+.vector-cercle8 {
+  @extend %cercle2;
+  width: 254px;
+  height: 258px;
+  top: 4px;
+  left: 6px;
+}
+.vector-cercle9 {
+  @extend %cercle2;
+  width: 230px;
+  height: 234px;
+  top: 6px;
+  left: 7px;
+}
+.vector-cercle10 {
+  @extend %cercle2;
+  width: 207px;
+  height: 211px;
+  top: 4px;
+  left: 5px;
+}
+.vector-cercle11 {
+  @extend %cercle2;
+  width: 184px;
+  height: 183px;
+  top: 8px;
+  left: 6px;
+}
+/* vector cercle 3 */
+
+.vector-cercle12 {
+  @extend %cercle;
+  width: 304px;
+  height: 302px;
+  top: 4em;
+  left: 65em;
+}
+.vector-cercle13 {
+  @extend %cercle2;
+  width: 277px;
+  height: 280px;
+  top: 4px;
+  left: 8px;
+}
+.vector-cercle14 {
+  @extend %cercle2;
+  width: 254px;
+  height: 258px;
+  top: 4px;
+  left: 6px;
+}
+.vector-cercle15 {
+  @extend %cercle2;
+  width: 230px;
+  height: 234px;
+  top: 6px;
+  left: 7px;
+}
+.vector-cercle16 {
+  @extend %cercle2;
+  width: 207px;
+  height: 211px;
+  top: 4px;
+  left: 5px;
+}
+.vector-cercle17 {
+  @extend %cercle2;
+  width: 184px;
+  height: 183px;
+  top: 8px;
+  left: 6px;
+}
+
+/* vector cercle 4 */
+
+.vector-cercle-4 {
+  position: absolute;
+  top: 0;
+  left: 96em;
+}
+/* vector cercle footer 1 */
+
+.vector-cercle-f1 {
+  @extend %cercle;
+  width: 304px;
+  height: 302px;
+  position: absolute;
+  top: 61em;
+  left: -11em;
+}
+.vector-cercle-f2 {
+  @extend %cercle2;
+  width: 277px;
+  height: 280px;
+  top: 4px;
+  left: 8px;
+}
+.vector-cercle-f3 {
+  @extend %cercle2;
+  width: 254px;
+  height: 258px;
+  top: 4px;
+  left: 6px;
+}
+.vector-cercle-f4 {
+  @extend %cercle2;
+  width: 230px;
+  height: 234px;
+  top: 6px;
+  left: 7px;
+}
+.vector-cercle-f5 {
+  @extend %cercle2;
+  width: 207px;
+  height: 211px;
+  top: 4px;
+  left: 5px;
+}
+.vector-cercle-f6 {
+  @extend %cercle2;
+  width: 184px;
+  height: 183px;
+  top: 8px;
+  left: 6px;
+}
+/* vector cercle footer 2*/
+.img-vector2 {
+  position: absolute;
+  top: 72em;
+  left: 17em;
+  opacity: 50%;
+}
+/*vector cercle footer 3*/
+
+.vector-cercle-f7 {
+  @extend %cercle;
+  width: 304px;
+  height: 302px;
+  top: 60em;
+  left: 61em;
+}
+.vector-cercle-f8 {
+  @extend %cercle2;
+  width: 277px;
+  height: 280px;
+  top: 4px;
+  left: 8px;
+}
+.vector-cercle-f9 {
+  @extend %cercle2;
+  width: 254px;
+  height: 258px;
+  top: 4px;
+  left: 6px;
+}
+.vector-cercle-f10 {
+  @extend %cercle2;
+  width: 230px;
+  height: 234px;
+  top: 6px;
+  left: 7px;
+}
+.vector-cercle-f11 {
+  @extend %cercle2;
+  width: 207px;
+  height: 211px;
+  top: 4px;
+  left: 5px;
+}
+.vector-cercle-f12 {
+  @extend %cercle2;
+  width: 184px;
+  height: 183px;
+  top: 8px;
+  left: 6px;
+}
+/*vector footer 4 */
+
+.cercle-footer-4 {
+position: absolute;
+top: 71em;
+left:95.5em;
+}
+
+/* fin vector cercle*/
+
+/* formulaire login */
+
 .post-container {
-  @extend %post-form
+  @extend %post-form;
+  margin-right: 6em;
+  margin-top: 23em;
+  bottom: 5em;
 }
-.h3 {
- @extend %titre-h3
+.img-connexion {
+  display: flex;
+  position: absolute;
+  left: -50em;
+  top: -6em;
+  width: 38em;
+  border-radius: 2%;
 }
+.h1 {
+ @extend %titre-h1;
+}
+
+.form-control {
+  font-size: 115%;
+  margin-left: 0.5em;
+
+}
+.email {
+  margin-left: 6em;
+  margin-bottom: 2em;
+  margin-top: 1em;
+  font-weight: 600;
+  font-size: 120%;
+}
+.mot-de-passe {
+  margin-left: 3em;
+  font-weight: 600;
+  font-size: 120%;
+}
+.texte-compte {
+  margin-top: 1.5em;
+  margin-left: 4em;
+  font-weight: 600;
+  font-size: 120%;
+}
+.btn-compte {
+  display: flex;
+  margin-top: 1em;
+ justify-content: center;
+
+}
+.css-button-gradient--3 {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  background-size: 160% auto;
+  background-image: linear-gradient(315deg, #bdc3c7 15%, #FB020E 75%);
+  border: 3px solid darkslateblue;
+}
+
+
+.relative{
+  background-color: #D41112;
+  z-index: 1;
+  display: flex;
+  justify-content: right;
+  bottom: 0;
+  position: relative;
+  padding-bottom: 10em;
+}
+/* fin formulaire login */
+
+/* footer */
+
+.block-footer {
+  width: 100%;
+  background-color: #121212;
+  color: white;
+  padding:10px 0px 15px 0px;
+  display: flex;
+  align-items: end;
+}
+.sociaux {
+  display: flex;
+  width: 20%;
+  justify-content: space-evenly;
+  margin-left: 41em;
+}
+.application {
+  display: flex;
+  justify-content: center;
+  padding-left: 18em;
+  padding-top: 4em;
+}
+.appli-apple {
+  width: 8em;
+}
+.store {
+  font-size: 100%;
+  width: 7em;
+  height: 3em;
+}
+.play {
+  font-size:100%;
+  width: 7em;
+  height: 3em;
+}
+.facebook {
+  @extend %reseau
+}
+.twitter {
+  @extend %reseau
+}
+.instagram {
+  @extend %reseau
+}
+
+/* Responsive */
+
+@keyframes fun {
+   0% {
+     transform: scale(1.1) rotate(10deg);
+   }
+   100% {
+     transform: scale(1.1) rotate(10deg)
+   }
+}
+@media screen and (max-width: 1100px) {
+  .container-nav {
+    margin: 1em 2em;
+  }
+}
+
+
+
+
+

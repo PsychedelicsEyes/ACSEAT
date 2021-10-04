@@ -2,9 +2,12 @@
 <html lang="fr" xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="UTF-8">
+
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <title>{% block title %}Eat D@q FooD {% endblock %}</title>
+
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -19,7 +22,7 @@
         <img src="img/logo.png" class="logo" alt="logo d'un bus de Londres">
     </div>
     <nav class="nav-navbar">
-        <div class="container">
+        <div class="container-nav">
             <div class="test">
                 <div class="navbar">
                     <button class="css-button css-button-gradient css-button-gradient--2">
@@ -50,6 +53,7 @@
             </div>
         </div>
     </nav>
+
     <div class="vector-cercle">
         <div class="vector-cercle1">
             <div class="vector-cercle2">
@@ -61,6 +65,115 @@
             </div>
         </div>
     </div>
-        {% block body %}{% endblock %}
+    <div class="vector-cercle6">
+        <div class="vector-cercle7">
+            <div class="vector-cercle8">
+                <div class="vector-cercle9">
+                    <div class="vector-cercle10">
+                        <div class="vector-cercle11"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vector-cercle12">
+        <div class="vector-cercle13">
+            <div class="vector-cercle14">
+                <div class="vector-cercle15">
+                    <div class="vector-cercle16">
+                        <div class="vector-cercle17"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="{{ asset('img/vector-cercle-4.png') }}" class="vector-cercle-4" alt="vector-cercle-4">
+
+
+
+
+
+
+
+    {% block body %}
+
+
+        {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <footer class="block-footer">
+            <div class="sociaux">
+                <a href="" target="_blank"><img src="{{ asset('img/facebook_logo_icon.png') }}"  class="facebook"  alt="facebook"></a>
+                <a href="" target="_blank"><img src="{{ asset('img/twitter-icon.png') }}" class="twitter" alt="twitter"></a>
+                <a href="" target="_blank"><img src="{{ asset('img/instagram-icon.png') }}" class="instagram" alt="instagram"></a>
+                <link href="https://fontsgeek.com/fonts/Block-Berthold-Condensed-Regular" rel="stylesheet">
+            </div>
+
+            <div class="application">
+                <div class="appli-apple">
+                    <a href="https://itunes.apple.com/fr" target="_blank">
+                        <img class="store" src="{{ asset('img/apple.png') }}" alt="play store">
+                    </a>
+                </div>
+                <div class="appli-google">
+                    <a href="https://play.google.com/store" target="_blank">
+                    <img class="play" src="{{ asset('img/play_store.png') }}" alt="google play">
+                    </a>
+                </div>
+            </div>
+            <div class="vector-cercle-f1">
+            <div class="vector-cercle-f2">
+                <div class="vector-cercle-f3">
+                    <div class="vector-cercle-f4">
+                        <div class="vector-cercle-f5">
+                            <div class="vector-cercle-f6"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <div class="img-vector2">
+        <img src="{{ asset('img/cercle2footer.png') }}" alt="image cercle"></div>
+        <div class="vector-cercle-f7">
+            <div class="vector-cercle-f8">
+                <div class="vector-cercle-f9">
+                    <div class="vector-cercle-f10">
+                        <div class="vector-cercle-f11">
+                            <div class="vector-cercle-f12"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+           <img src="{{ asset('img/cercle-footer-4.png') }}" class="cercle-footer-4" alt="">
+
+        </footer>
     </body>
 </html>

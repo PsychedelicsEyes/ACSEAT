@@ -1,27 +1,38 @@
 {% extends 'base.html.twig' %}
-{% block title %}Se connecter{% endblock %}
+{% block title %}Eat D@Q FooD connexion{% endblock %}
 {% block body %}
-    <div class="post-container">
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+    <div class="relative">
+        <div class="post-container">
+            <form method="post">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
 
-    <h1 class="h3">Inscription</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                <img src="{{ asset('img/connexion.jpg') }}" class="img-connexion" alt="image hamburger">
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+                <h1 class="h1">Connexion</h1>
 
-    <p>You don't have a account?<a href="{{ path('app_register') }}">Create a account here</a></p>
+                <div class="email">
+                    <label for="inputEmail">Email</label>
+                         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required>
+                </div>
+                <div class="mot-de-passe">
+                     <label for="inputPassword">Mot de passe</label>
+                          <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                </div>
+                         <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}">
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
+                <div class="texte-compte">
+                         <p>Vous n'avez pas de compte ?<a href="{{ path('app_register') }}"> Créez un compte içi</a></p>
+                </div>
+                <div class="btn-compte">
+                        <button class="css-button css-button-gradient css-button-gradient--3">Envoyer
+                        </button>
+                    </div>
+
+
+            </form>
+        </div>
     </div>
 {% endblock %}
