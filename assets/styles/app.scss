@@ -2,6 +2,7 @@
 @import "modules/variable";
 @import "modules/heritage";
 @import "modules/form";
+@import "modules/footer";
 
 
 
@@ -15,6 +16,7 @@ body {
    background-color: #D41112;
   max-width: 100%;
   font-family: Block Berthold, serif;
+  overflow-x: hidden;
 }
 
 a {
