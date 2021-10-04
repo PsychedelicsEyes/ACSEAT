@@ -15,7 +15,7 @@ z-index: 2;
 
 }
 
-.test {
+.block1 {
   width: 30%;
   display: flex;
   justify-content: space-evenly;
@@ -23,7 +23,7 @@ z-index: 2;
 
 }
 
-.test2{
+.block2{
   width: 30%;
   display: flex;
   justify-content: space-evenly;
@@ -210,18 +210,20 @@ img.logo {
 
 .post-container {
   @extend %post-form;
-  margin-right: 6em;
-  margin-top: 23em;
-  bottom: 5em;
 }
-.img-connexion {
+
+.imgConnexion{
   display: flex;
-  position: absolute;
-  left: -50em;
-  top: -6em;
-  width: 38em;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-connexion {
+
+ height: 400px;
   border-radius: 2%;
 }
+
 .h1 {
  @extend %titre-h1;
 }
@@ -232,7 +234,7 @@ img.logo {
 
 }
 .email {
-  margin-left: 6em;
+  margin-left: 3em;
   margin-bottom: 2em;
   margin-top: 1em;
   font-weight: 600;
@@ -277,10 +279,10 @@ img.logo {
   background-color: #D41112;
   z-index: 1;
   display: flex;
-  justify-content: right;
-  bottom: 0;
+  justify-content: space-around;
   position: relative;
   padding-bottom: 10em;
+  padding-top: 10em;
 }
 /* fin formulaire login */
 

@@ -25,15 +25,15 @@
 }
 %post-form {
     background-color: $secondaryColor;
-    width: 37em;
-    height: 24em;
+    width: 35%;
     position: relative;
     border-radius: 3%;
     border: 5px solid darkslateblue;
+    padding-bottom: 2em;
+    padding-top: 2em;
 }
 %titre-h1 {
     text-align: center;
-    padding-top: 2em;
     padding-bottom: 0.5em;
     font-family: Block Berthold, serif;
     font-size: 207%;

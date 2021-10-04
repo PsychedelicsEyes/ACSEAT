@@ -2,13 +2,16 @@
 {% block title %}Eat D@Q FooD connexion{% endblock %}
 {% block body %}
     <div class="relative">
+        <div class="imgConnexion">
+            <img src="{{ asset('img/connexion.jpg') }}" class="img-connexion" alt="image hamburger">
+        </div>
         <div class="post-container">
             <form method="post">
                 {% if error %}
                     <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                 {% endif %}
 
-                <img src="{{ asset('img/connexion.jpg') }}" class="img-connexion" alt="image hamburger">
+
 
                 <h1 class="h1">Connexion</h1>
 
@@ -29,9 +32,7 @@
                 <div class="btn-compte">
                         <button class="css-button css-button-gradient css-button-gradient--3">Envoyer
                         </button>
-                    </div>
-
-
+                </div>
             </form>
         </div>
     </div>
