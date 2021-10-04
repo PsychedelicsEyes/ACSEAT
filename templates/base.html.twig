@@ -2,7 +2,7 @@
 <html lang="fr" xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Eat D@q FooD {% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -17,7 +17,7 @@
         <img src="img/logo.png" class="logo" alt="logo d'un bus de Londres">
     </div>
     <nav class="nav-navbar">
-        <div class="container">
+        <div class="container-nav">
             <div class="test">
                 <div class="navbar">
                     <button class="css-button css-button-gradient css-button-gradient--2">
@@ -128,14 +128,19 @@
                 <a href="" target="_blank"><img src="{{ asset('img/facebook_logo_icon.png') }}"  class="facebook"  alt="facebook"></a>
                 <a href="" target="_blank"><img src="{{ asset('img/twitter-icon.png') }}" class="twitter" alt="twitter"></a>
                 <a href="" target="_blank"><img src="{{ asset('img/instagram-icon.png') }}" class="instagram" alt="instagram"></a>
+                <link href="https://fontsgeek.com/fonts/Block-Berthold-Condensed-Regular" rel="stylesheet">
             </div>
 
             <div class="application">
                 <div class="appli-apple">
-                    <button class="store">App Store</button>
+                    <a href="https://itunes.apple.com/fr" target="_blank">
+                        <img class="store" src="{{ asset('img/apple.png') }}" alt="play store">
+                    </a>
                 </div>
                 <div class="appli-google">
-                    <button class="play">Google Play</button>
+                    <a href="https://play.google.com/store" target="_blank">
+                    <img class="play" src="{{ asset('img/play_store.png') }}" alt="google play">
+                    </a>
                 </div>
             </div>
             <div class="vector-cercle-f1">

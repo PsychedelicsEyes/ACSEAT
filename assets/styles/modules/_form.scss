@@ -8,11 +8,11 @@
   top: 0 ;
 z-index: 2;
 }
-.container {
+.container-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  max-width: 940px;
 }
 
 .test {
@@ -303,7 +303,7 @@ img.logo {
 .cercle-footer-4 {
 position: absolute;
 top: 71em;
-left:96em;
+left:95.5em;
 }
 
 /* fin vector cercle*/
@@ -316,30 +316,46 @@ left:96em;
   margin-top: 23em;
   bottom: 5em;
 }
+.img-connexion {
+  display: flex;
+  position: absolute;
+  left: -50em;
+  top: -6em;
+  width: 38em;
+  border-radius: 2%;
+}
 .h1 {
- @extend %titre-h1
+ @extend %titre-h1;
 }
 
 .form-control {
   font-size: 115%;
   margin-left: 0.5em;
+
 }
 .email {
-  margin-left: 9em;
+  margin-left: 6em;
   margin-bottom: 2em;
   margin-top: 1em;
+  font-weight: 600;
+  font-size: 120%;
 }
 .mot-de-passe {
-  margin-left: 6em;
+  margin-left: 3em;
+  font-weight: 600;
+  font-size: 120%;
 }
 .texte-compte {
   margin-top: 1.5em;
-  margin-left: 6em;
+  margin-left: 4em;
+  font-weight: 600;
+  font-size: 120%;
 }
 .btn-compte {
   display: flex;
   margin-top: 1em;
  justify-content: center;
+
 }
 .css-button-gradient--3 {
   min-width: 130px;
@@ -355,13 +371,13 @@ left:96em;
   border-radius: 5px;
   background-size: 160% auto;
   background-image: linear-gradient(315deg, #bdc3c7 15%, #FB020E 75%);
-  border: 5px solid darkslateblue;
+  border: 3px solid darkslateblue;
 }
 
 
 .relative{
-  background-color: #E71819;
-  z-index: 2;
+  background-color: #D41112;
+  z-index: 1;
   display: flex;
   justify-content: right;
   bottom: 0;
@@ -414,3 +430,24 @@ left:96em;
 .instagram {
   @extend %reseau
 }
+
+/* Responsive */
+
+@keyframes fun {
+   0% {
+     transform: scale(1.1) rotate(10deg);
+   }
+   100% {
+     transform: scale(1.1) rotate(10deg)
+   }
+}
+@media screen and (max-width: 1100px) {
+  .container-nav {
+    margin: 1em 2em;
+  }
+}
+
+
+
+
+

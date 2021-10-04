@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %}Se connecter{% endblock %}
+{% block title %}Eat D@Q FooD connexion{% endblock %}
 {% block body %}
     <div class="relative">
         <div class="post-container">
@@ -8,7 +8,10 @@
                     <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                 {% endif %}
 
+                <img src="{{ asset('img/connexion.jpg') }}" class="img-connexion" alt="image hamburger">
+
                 <h1 class="h1">Connexion</h1>
+
                 <div class="email">
                     <label for="inputEmail">Email</label>
                          <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required>
@@ -24,7 +27,7 @@
                          <p>Vous n'avez pas de compte ?<a href="{{ path('app_register') }}"> Créez un compte içi</a></p>
                 </div>
                 <div class="btn-compte">
-                        <button class="css-button css-button-gradient css-button-gradient--2">Envoyer
+                        <button class="css-button css-button-gradient css-button-gradient--3">Envoyer
                         </button>
                     </div>
 
