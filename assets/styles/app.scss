@@ -4,6 +4,7 @@
 @import "modules/form";
 @import "modules/footer";
 @import "modules/register";
+@import "modules/navbar";
 
 *{
     padding: 0;
@@ -20,4 +21,7 @@ body {
 a {
     color: inherit;
     text-decoration: none;
+}
+@media screen and (max-width: 768px){
+
 }

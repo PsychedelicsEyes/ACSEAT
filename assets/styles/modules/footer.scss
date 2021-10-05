@@ -1,4 +1,4 @@
-/* footer */
+/* Début du footer */
 
 .block-footer {
   width: 100%;
@@ -8,12 +8,11 @@
   display: flex;
   align-items: end;
 }
-.sociaux {
-  display: flex;
-  width: 20%;
-  justify-content: space-evenly;
-  margin-left: 41em;
-}
+
+/* Fin du footer */
+
+/* Début des applications */
+
 .application {
   display: flex;
   justify-content: center;
@@ -33,6 +32,18 @@
   width: 7em;
   height: 3em;
 }
+
+/* Fin des applications */
+
+/* Début réseaux sociaux */
+
+.sociaux {
+  display: flex;
+  width: 13%;
+  justify-content: space-evenly;
+  margin-left: 41em;
+}
+
 .facebook {
   @extend %reseau
 }
@@ -43,6 +54,7 @@
   @extend %reseau
 }
 
+/* Fin réseaux sociaux */
 
 // ici commence les vecteurs
 
@@ -158,9 +170,70 @@
   align-items: end;
 }
 
+/* Fin des vecteurs */
+
 @media screen and (max-width: 768px)  {
+
+  /* Début du footer */
+
+  /* Début des vecteurs */
 
   .footerVector{
     display: none;
   }
+
+  /* Fin des vecteurs */
+
+  .block-footer {
+
+    display: inherit;
+  }
+
+  /* Fin du footer */
+
+  /* Début des applications */
+
+
+
+  .appli-apple {
+    position: relative;
+    left: -5em;
+  }
+  .store {
+    font-size: 50%;
+    width: 4em;
+    height: 2em;
+  }
+  .appli-google {
+    position: relative;
+    left: -12.5em;
+  }
+  .play {
+    font-size:50%;
+    width: 4em;
+    height: 2em;
+  }
+
+  /* Fin des applications */
+
+  /* Début des réseaux sociaux */
+
+  .sociaux {
+    display: flex;
+    width: 100%;
+    margin-left: 0em;
+    margin-top: 1em;
+
+  }
+
+  .facebook {
+    @extend %reseau;
+  }
+  .twitter {
+    @extend %reseau;
+  }
+  .instagram {
+    @extend %reseau;
+  }
+/* Fin des réseaux sociaux */
 }

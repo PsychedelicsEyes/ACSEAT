@@ -1,212 +1,4 @@
-.nav-navbar {
-  background-color: $mainColor;
-  color: $secondaryColor;
-  position: sticky;
-  padding: 0 0 1em 0;
-  width: 100%;
-  display: block;
-  top: 0 ;
-z-index: 2;
-}
-.container-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-}
-
-.block1 {
-  width: 30%;
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 2rem;
-
-}
-
-.block2{
-  width: 30%;
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 2rem;
-}
-.css-button-gradient--2 {
-  min-width: 130px;
-  height: 40px;
-  color: #fff;
-  padding: 5px 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  border-radius: 5px;
-  border: none;
-  background-size: 160% auto;
-  background-image: linear-gradient(315deg, #bdc3c7 15%, #FB020E 75%);
-
-}
-.css-button-gradient--2:hover {
-  background-position: right center;
-}
-
-img.logo {
-  display: block;
-  width: 7%;
-}
-
-.bus {
-  display: flex;
-  justify-content: center;
-  background: $mainColor;
-  padding-top: 4em;
-}
-
-/*vector cercle */
-
-.vector-cercle {
-  @extend %cercle;
-  width: 304px;
-  height: 302px;
-  top: 0;
-  left: -12em;
-}
-.vector-cercle1 {
-  @extend %cercle2;
-  width: 277px;
-  height: 280px;
-  top: 4px;
-  left: 8px;
-}
-.vector-cercle2 {
-  @extend %cercle2;
-  width: 254px;
-  height: 258px;
-  top: 4px;
-  left: 6px;
-}
-.vector-cercle3 {
-  @extend %cercle2;
-  width: 230px;
-  height: 234px;
-  top: 6px;
-  left: 7px;
-}
-.vector-cercle4 {
-  @extend %cercle2;
-  width: 207px;
-  height: 211px;
-  top: 4px;
-  left: 5px;
-}
-.vector-cercle5 {
-  @extend %cercle2;
-  width: 184px;
-  height: 183px;
-  top: 8px;
-  left: 6px;
-}
-/* vector cercle 2 */
-
-.vector-cercle6 {
-  @extend %cercle;
-  width: 304px;
-  height: 302px;
-  top: -11em;
-  left: 28em;
-}
-.vector-cercle7 {
-  @extend %cercle2;
-  width: 277px;
-  height: 280px;
-  top: 4px;
-  left: 8px;
-}
-.vector-cercle8 {
-  @extend %cercle2;
-  width: 254px;
-  height: 258px;
-  top: 4px;
-  left: 6px;
-}
-.vector-cercle9 {
-  @extend %cercle2;
-  width: 230px;
-  height: 234px;
-  top: 6px;
-  left: 7px;
-}
-.vector-cercle10 {
-  @extend %cercle2;
-  width: 207px;
-  height: 211px;
-  top: 4px;
-  left: 5px;
-}
-.vector-cercle11 {
-  @extend %cercle2;
-  width: 184px;
-  height: 183px;
-  top: 8px;
-  left: 6px;
-}
-/* vector cercle 3 */
-
-.vector-cercle12 {
-  @extend %cercle;
-  width: 304px;
-  height: 302px;
-  top: 4em;
-  left: 65em;
-}
-.vector-cercle13 {
-  @extend %cercle2;
-  width: 277px;
-  height: 280px;
-  top: 4px;
-  left: 8px;
-}
-.vector-cercle14 {
-  @extend %cercle2;
-  width: 254px;
-  height: 258px;
-  top: 4px;
-  left: 6px;
-}
-.vector-cercle15 {
-  @extend %cercle2;
-  width: 230px;
-  height: 234px;
-  top: 6px;
-  left: 7px;
-}
-.vector-cercle16 {
-  @extend %cercle2;
-  width: 207px;
-  height: 211px;
-  top: 4px;
-  left: 5px;
-}
-.vector-cercle17 {
-  @extend %cercle2;
-  width: 184px;
-  height: 183px;
-  top: 8px;
-  left: 6px;
-}
-
-/* vector cercle 4 */
-
-.vector-cercle-4 {
-  position: absolute;
-  top: 0;
-  left: 96em;
-}
-
-
-/* fin vector cercle*/
-
-/* formulaire login */
+/* Début du formulaire login */
 
 .post-container {
   @extend %post-form;
@@ -220,7 +12,7 @@ img.logo {
 
 .img-connexion {
 
- height: 400px;
+ height: 516px;
   border-radius: 2%;
 }
 
@@ -276,7 +68,7 @@ img.logo {
 
 
 .relative{
-  background-color: #D41112;
+  background-color: #C44749;
   z-index: 1;
   display: flex;
   justify-content: space-around;
@@ -287,7 +79,7 @@ img.logo {
 /* fin formulaire login */
 
 
-/* Responsive */
+/* Début du Responsive */
 
 @keyframes fun {
    0% {
@@ -297,9 +89,27 @@ img.logo {
      transform: scale(1.1) rotate(10deg)
    }
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 768px) {
   .container-nav {
-    margin: 1em 2em;
+    margin: 0 0;
+  }
+  .relative {
+    flex-direction: column;
+    padding: 2em 0;
+  }
+  .imgConnexion {
+    margin-bottom: 2em;
+  }
+
+  .img-connexion {
+  height: 250px;
+  }
+
+  .post-container {
+    font-size: 75%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
