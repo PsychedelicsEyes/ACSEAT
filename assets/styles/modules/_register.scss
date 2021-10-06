@@ -10,18 +10,21 @@ input {
 ::placeholder {
   background-color: black;
 }
-.content {
-  position: absolute;
-  margin: 200px;
-  width: auto;
-  height:auto;
-  top: 2em;
-  right: 2em;
-  border-radius: 4px;
-  border: 5px solid #F87F28;
-  background-attachment: scroll;
+.corps {
+
   display: flex;
+  justify-content: space-around;
+  width: 100%;
+  border-radius: 30%;
+
+
 }
+.content_imag{
+  border: 5px solid #F87F28;
+  border-radius: 20px;
+
+}
+
 .container1 {
   width: 30em;
   height: 28em;
@@ -69,30 +72,36 @@ label.required {
 }
 
 
-/*
-  .form .button{
 
-    width: 40%;
+@media only screen and ( max-width : 768px) {
+  .corps{
+    flex-direction: column;
+  }
+  .container1{
+    display: block;
+    font-size: 75%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content_img{
+    margin-top: 5%;
+  }
+  .imag_inscription{
+    width: 33%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .block-footer{
+    width: 100%;
+    box-sizing: border-box;
+    bottom: 0;
+    position: absolute;
+    min-height: 100px;
+  }
+  .relative {
+    flex-direction: column;
   }
 
-  .form .input{
-
-    width: 50%
-  }
-
-  .form textarea{
-    width: 80%;
-  }
-
-  .success{
-    width: 50%
-  }
-
-  .err{
-
-    width: 50%;
-  }*/
-
-
-
-@import "responsive";
+}
