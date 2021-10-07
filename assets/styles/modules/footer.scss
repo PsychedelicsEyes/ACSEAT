@@ -185,8 +185,8 @@
   /* Fin des vecteurs */
 
   .block-footer {
-
     display: inherit;
+    position: relative;
   }
 
   /* Fin du footer */
@@ -219,7 +219,6 @@
   /* Début des réseaux sociaux */
 
   .sociaux {
-    display: flex;
     width: 100%;
     margin-left: 0em;
     margin-top: 1em;

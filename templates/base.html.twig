@@ -11,13 +11,27 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
-        {% block javascripts %}
-           {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
     </head>
     <body>
 
+
     <div class="bus">
+        <div class="menu-btn">
+            <div class="menu-btn_burger">
+<!--
+      <nav>
+                   <ul>
+                    <li><a href="#">Accueil</a></li>
+                      <li><a href="#">Menu</a></li>
+                     <li> <a href="#">Horaires</a></li>
+                      <li><a href="#">Contact</a></li>
+                      <li><a href="#">Se connecter</a></li>
+                    </ul>
+                </nav>
+                -->
+            </div>
+        </div>
+
         <img src="img/logo.png" class="logo" alt="logo d'un bus de Londres">
     </div>
     <nav class="nav-navbar">
@@ -46,7 +60,7 @@
                 </div>
                 <div class="navbar">
                     <a href="{{ path('app_login') }}">
-                        <button  class="css-button css-button-gradient css-button-gradient--2"> Login </button>
+                        <button  class="css-button css-button-gradient css-button-gradient--2">Se connecter </button>
                     </a>
                 </div>
             </div>
@@ -147,5 +161,9 @@
                 </div>
             </div>
         </footer>
+    {% block javascripts %}
+      {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
     </body>
 </html>
