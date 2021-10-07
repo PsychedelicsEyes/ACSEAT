@@ -16,8 +16,8 @@
 .application {
   display: flex;
   justify-content: center;
-  padding-left: 18em;
-  padding-top: 4em;
+  padding-left: 20%;
+  padding-top: 4%;
 }
 .appli-apple {
   width: 8em;
@@ -41,7 +41,7 @@
   display: flex;
   width: 13%;
   justify-content: space-evenly;
-  margin-left: 41em;
+  margin-left: 44%;
 }
 
 .facebook {
@@ -65,7 +65,7 @@
   position: relative;
   width: 304px;
   height: 302px;
-  left: -11em;
+  transform: translateX(-50%);
 }
 .vector-cercle-f2 {
   @extend %cercle2;
@@ -197,7 +197,7 @@
 
   .appli-apple {
     position: relative;
-    left: -5em;
+    left: -10%;
   }
   .store {
     font-size: 50%;
@@ -206,7 +206,7 @@
   }
   .appli-google {
     position: relative;
-    left: -12.5em;
+    right: 13%;
   }
   .play {
     font-size:50%;

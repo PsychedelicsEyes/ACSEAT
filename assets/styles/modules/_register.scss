@@ -1,8 +1,8 @@
 input {
   background-color: #cabed5;
   display: block;
-  margin-top: 10px;
-  padding: 2% 0%;
+  margin: 2%;
+  padding: 2% 4%;
   width: 83%;
   border: none;
 
@@ -19,7 +19,7 @@ input {
 
 
 }
-.content_imag{
+.imag_inscription{
   border: 5px solid #F87F28;
   border-radius: 20px;
 
@@ -65,11 +65,8 @@ input {
 label.required {
 
   margin : 1%;
-  padding: 1%;
 }
-.reg-agt {
-  text-align: left;
-}
+
 
 
 
@@ -79,22 +76,26 @@ label.required {
   }
   .container1{
     display: block;
-    font-size: 75%;
+    font-size: 77%;
     width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0;
+    padding: 4%;
   }
   .content_img{
-    margin-top: 5%;
+    margin-top: 7%;
   }
   .imag_inscription{
-    width: 33%;
+    width: 63%;
     margin-left: auto;
     margin-right: auto;
     display: block;
   }
+
   .relative {
     flex-direction: column;
   }
+input {
+  padding: 2% 6%;
+}
 
 }
