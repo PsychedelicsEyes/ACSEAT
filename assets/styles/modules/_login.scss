@@ -67,7 +67,13 @@
 }
 
 .relative{
-  @extend %div_relative
+  background-color: #C44749;
+  z-index: 1;
+  position: relative;
+  padding-bottom: 10em;
+  padding-top: 10em;
+  display: flex;
+  justify-content: space-around;
 }
 
 /* fin formulaire login */
