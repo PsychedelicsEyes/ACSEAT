@@ -22,15 +22,16 @@ input {
 .imag_inscription{
   border: 5px solid #F87F28;
   border-radius: 20px;
+  margin-left: -15%;
 
 }
 
 .container1 {
   width: 30em;
   height: 28em;
-  padding-left: 3%;
   margin-top: 5em;
-  margin-left: 11em;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #ffffff;
   border-radius: 20px;
   display: block;
@@ -42,6 +43,10 @@ input {
   padding-top: 2em;
   margin-top: 1em;
   padding-bottom: 1em;
+}
+.reg-email {
+  margin-left: 4%;
+
 }
 
 
@@ -60,12 +65,14 @@ input {
   background-size: 120% auto;
   background-image: linear-gradient(315deg, #bdc3c7 0%, #FB020E 75%);
   border: 2px solid #F87F28;
+  margin-left: 33%;
 
 }
 label.required {
 
   margin : 1%;
 }
+
 
 
 
@@ -94,8 +101,5 @@ label.required {
   .relative {
     flex-direction: column;
   }
-input {
-  padding: 2% 6%;
 }
 
-}
