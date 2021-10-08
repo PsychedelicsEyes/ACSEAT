@@ -1,18 +1,18 @@
 
 
 /* Début du bouton */
-
 /*
+
 .menu-btn {
   position: relative;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 80px;
   height: 80px;
   cursor: pointer;
   transition: all .5s ease-in-out;
-  border: 3px solid white;
+
 }
 
 .menu-btn_burger {
@@ -42,11 +42,11 @@
 }
 .menu-btn_burger::after {
   transform: translateY(16px);
-}*/
+}
 
 /* animation */
-
 /*
+
 .menu-btn.open .menu-btn_burger {
   transform: translateX(-50px);
   background: transparent;
@@ -62,8 +62,6 @@
 }
 */
   /* Fin du bouton */
-
-
 
 
 
@@ -126,18 +124,42 @@
   background-position: right center;
 }
 
-img.logo {
-  width: 7%;
+
+
+/* Debut de l'animation bus */
+
+.logo_bus {
   position: relative;
-  right: 21em;
+  overflow: hidden;
+  max-width: 315px;
+  height: 161px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
+
+.logo_bus img {
+  height: 70%;
+  position: relative;
+  right: 0;
+  -webkit-transition: all 2s ease-out;
+  transition: all 1s ease-out;
+}
+
+.logo_bus:hover img,
+.logo_bus.hover img {
+
+  -webkit-transform: translateX(1000px);
+  transform: translateX(-1000px);
+}
+
+/* fin de l'animation bus */
+
+
 
 .bus {
   display: flex;
   justify-content: space-evenly;
   background: $mainColor;
-  padding-top: 4em;
-  width: 100%;
+  padding-top: 1em;
 }
 
 
@@ -152,6 +174,7 @@ img.logo {
   top: 0;
   left: -12em;
 }
+
 .vector-cercle1 {
   @extend %cercle2;
   width: 277px;
@@ -159,6 +182,7 @@ img.logo {
   top: 4px;
   left: 8px;
 }
+
 .vector-cercle2 {
   @extend %cercle2;
   width: 254px;
@@ -166,6 +190,7 @@ img.logo {
   top: 4px;
   left: 6px;
 }
+
 .vector-cercle3 {
   @extend %cercle2;
   width: 230px;
@@ -173,6 +198,7 @@ img.logo {
   top: 6px;
   left: 7px;
 }
+
 .vector-cercle4 {
   @extend %cercle2;
   width: 207px;
@@ -180,6 +206,7 @@ img.logo {
   top: 4px;
   left: 5px;
 }
+
 .vector-cercle5 {
   @extend %cercle2;
   width: 184px;
@@ -187,6 +214,7 @@ img.logo {
   top: 8px;
   left: 6px;
 }
+
 /* vector cercle 2 */
 
 .vector-cercle6 {
@@ -196,6 +224,7 @@ img.logo {
   top: -11em;
   left: 28em;
 }
+
 .vector-cercle7 {
   @extend %cercle2;
   width: 277px;
@@ -203,6 +232,7 @@ img.logo {
   top: 4px;
   left: 8px;
 }
+
 .vector-cercle8 {
   @extend %cercle2;
   width: 254px;
@@ -210,6 +240,7 @@ img.logo {
   top: 4px;
   left: 6px;
 }
+
 .vector-cercle9 {
   @extend %cercle2;
   width: 230px;
@@ -217,6 +248,7 @@ img.logo {
   top: 6px;
   left: 7px;
 }
+
 .vector-cercle10 {
   @extend %cercle2;
   width: 207px;
@@ -224,6 +256,7 @@ img.logo {
   top: 4px;
   left: 5px;
 }
+
 .vector-cercle11 {
   @extend %cercle2;
   width: 184px;
@@ -240,6 +273,7 @@ img.logo {
   top: 4em;
   left: 65em;
 }
+
 .vector-cercle13 {
   @extend %cercle2;
   width: 277px;
@@ -247,6 +281,7 @@ img.logo {
   top: 4px;
   left: 8px;
 }
+
 .vector-cercle14 {
   @extend %cercle2;
   width: 254px;
@@ -254,6 +289,7 @@ img.logo {
   top: 4px;
   left: 6px;
 }
+
 .vector-cercle15 {
   @extend %cercle2;
   width: 230px;
@@ -261,6 +297,7 @@ img.logo {
   top: 6px;
   left: 7px;
 }
+
 .vector-cercle16 {
   @extend %cercle2;
   width: 207px;
@@ -268,6 +305,7 @@ img.logo {
   top: 4px;
   left: 5px;
 }
+
 .vector-cercle17 {
   @extend %cercle2;
   width: 184px;
@@ -290,27 +328,23 @@ img.logo {
 /* Début du résponsive */
 
 @media screen and (max-width: 768px)  {
+
   .footerVector1{
     display: none;
   }
+
   .nav-navbar {
     display: none;
   }
 
-  img.logo {
-    width: 23%;
-    display: flex;
-    justify-content: right;
-    right: -4px;
+  .logo_bus {
+    height: 100px;
   }
 
   .bus {
     justify-content: right;
     padding: 1em;
-    box-sizing: border-box;
   }
-
-
 
 
 
@@ -333,10 +367,9 @@ img.logo {
   .menu-btn_burger {
     width: 50px;
     height: 6px;
-    background: #C44749;;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255,101,47,.2);
     transition: all .5s ease-in-out;
+    background: #C44749;;
   }
 
   .menu-btn::before,
@@ -354,16 +387,20 @@ img.logo {
   #burger_menu_responsive{
     display: none;
   }
+
   .menu-btn::before {
     transform: translateY(-16px);
   }
+
   .menu-btn::after {
     transform: translateY(16px);
   }
 
+
   /* animation */
+
   .menu-btn.open .menu-btn_burger {
-    transform: translateY(50px);
+    transform: translateY(79px);
     background: transparent;
     box-shadow: none;
   }
@@ -375,22 +412,30 @@ img.logo {
   .menu-btn.open::after {
     transform: rotate(-45deg) ;
   }
+
   .menu_btn_burger_text {
     color: black;
-    font-size: 110%;
-    line-height: 35px;
-    padding-left: 8px;
+    font-size: 170%;
+    line-height: 65px;
+    text-align: center;
   }
 
   .menu_btn_burger_block {
-    width: 95px;
-    height: 175px;
+    width: 145px;
+    height: 357px;
     border: 3px solid darkslateblue;
     background-color: white;
-
-
+    border-radius: 3%;
+    opacity: 70%;
   }
 
+.burger_line {
+  border-bottom: 2px solid darkslateblue;
+  width: 100%;
+  padding-bottom: 5px;
+  display: block;
+  font-weight: bold;
+}
 
   /* Fin du bouton */
 

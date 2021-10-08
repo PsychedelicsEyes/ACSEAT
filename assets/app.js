@@ -11,3 +11,4 @@ import './styles/app.scss';
 // start the Stimulus application
 import './bootstrap';
 import * as btn from './styles/modules/btn.js'
+import * as nav_bus from './styles/modules/nav_bus.js'
