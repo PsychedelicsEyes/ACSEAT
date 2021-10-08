@@ -41,3 +41,14 @@
 %reseau {
     width: 30px;
 }
+
+%div_relative {
+    background-color: #C44749;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    padding-bottom: 10em;
+    padding-top: 10em;
+
+}
