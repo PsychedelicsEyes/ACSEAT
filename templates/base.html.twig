@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{% block title %}Eat D@q FooD {% endblock %}</title>
+        <title>{% block title %}Eat D@q FooD{% endblock %}</title>
 
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -14,7 +14,7 @@
     </head>
     <body>
 
-
+                            <!-- ****************** Début Navbar Responsive *********************-->
         <div class="bus">
 
             <div class="menu-btn">
@@ -33,6 +33,10 @@
                 </div>
             </div>
 
+                            <!--*************** Fin Navbar Responsive *********************-->
+
+                                <!--******************** Début Navbar ********************-->
+
             <figure class="logo_bus"><a href="#"><img src="img/logo.png"  alt="logo d'un bus de Londres"></a></figure>
 
     </div>
@@ -40,34 +44,40 @@
         <div class="container-nav">
             <div class="block1">
                 <div class="navbar">
-                    <button class="css-button css-button-gradient css-button-gradient--2">
+                    <a href="/"><button class="css-button css-button-gradient css-button-gradient--2" >
                         Accueil
-                    </button>
+                    </button></a>
                 </div>
                 <div class="navbar">
-                    <button class="css-button css-button-gradient css-button-gradient--2">Menu
-                    </button>
+
+                    <a href="/menu"><button class="css-button css-button-gradient css-button-gradient--2">Menu
+                    </button></a>
                 </div>
             </div>
             <div class="block2">
                 <div class="navbar">
-                    <button class="css-button css-button-gradient css-button-gradient--2">
+                    <a href="#"><button class="css-button css-button-gradient css-button-gradient--2">
                         Horaires
-                    </button>
+                    </button></a>
                 </div>
                 <div class="navbar">
-                    <button class="css-button css-button-gradient css-button-gradient--2">
+                    <a href="/contact"><button class="css-button css-button-gradient css-button-gradient--2">
                         Contact
-                    </button>
+                    </button></a>
                 </div>
                 <div class="navbar">
                     <a href="{{ path('app_login') }}">
-                        <button  class="css-button css-button-gradient css-button-gradient--2">Se connecter </button>
+                        <a href="/connexion"><button  class="css-button css-button-gradient css-button-gradient--2"> Connecter </button></a>
                     </a>
                 </div>
             </div>
         </div>
     </nav>
+
+                            <!--************** Fin Navbar **************-->
+
+                            <!--************* Début Vector Navbar *************-->
+
 <div class="footerVector1">
     <div class="vector-cercle">
         <div class="vector-cercle1">
@@ -105,12 +115,14 @@
     <img src="{{ asset('img/vector-cercle-4.png') }}" class="vector-cercle-4" alt="vector-cercle-4">
 </div>
 
+                          <!--************** Fin Vector Navbar ****************-->
 
     {% block body %}
 
 
         {% endblock %}
 
+                        <!--***************** Début Footer ****************-->
 
         <footer class="block-footer">
             <div class="sociaux">
@@ -132,6 +144,11 @@
                     </a>
                 </div>
             </div>
+
+                              <!--************* Fin Footer **************-->
+
+                             <!--************** Début Vector Footer *************-->
+
             <div class="footerVector">
                 <div class="vector-cercle-f1">
                     <div class="vector-cercle-f2">
@@ -163,6 +180,9 @@
                 </div>
             </div>
         </footer>
+
+                            <!--************* Fin Vector Footer ****************-->
+
     {% block javascripts %}
       {{ encore_entry_script_tags('app') }}
     {% endblock %}

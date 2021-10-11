@@ -1,7 +1,7 @@
 
 
 /* Début du bouton */
-/*
+
 
 .menu-btn {
   position: relative;
@@ -45,7 +45,7 @@
 }
 
 /* animation */
-/*
+
 
 .menu-btn.open .menu-btn_burger {
   transform: translateX(-50px);
@@ -60,7 +60,7 @@
 .menu-btn.open .menu-btn_burger::after {
   transform: rotate(-45deg) translate(35px, 35px);
 }
-*/
+
   /* Fin du bouton */
 
 
@@ -79,13 +79,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-}
-
-.footerVector1 {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
 
 }
 
@@ -314,7 +307,7 @@
   left: 6px;
 }
 
-/* vector cercle 4 */
+/* img vector cercle 4 */
 
 .vector-cercle-4 {
   position: absolute;
@@ -323,7 +316,7 @@
 }
 
 
-/* fin vector cercle*/
+/* fin img vector cercle*/
 
 /* Début du résponsive */
 
