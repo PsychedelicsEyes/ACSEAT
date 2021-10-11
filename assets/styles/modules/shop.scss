@@ -2,24 +2,7 @@
 
 
 
-/* slider */
 
-.slider {
-  overflow: hidden;
-}
-
-.slides {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  width: calc(500px * 4);
-  height: 720px;
-  animation: glisse 15s infinite ease;
-}
-
-.slide {
-  opacity: 0.5;
-}
 
 @keyframes glisse{
 
@@ -45,42 +28,8 @@
 
 }
 
-/* navigation menu */
 
-.section-menu {
-  justify-content: center;
-  transform: translateY(-130px);
-  display: flex;
-  flex-direction: row;
-}
 
-nav.menu {
-  width: calc(500px * 4);
-}
-
-nav.menu ul {
-  display: flex;
-  flex-direction: row;
-}
-
-nav.menu ul li {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s all;
-}
-
-nav.menu ul li:hover {
-  transform: scale(0.90);
-  transition: 0.3s all;
-}
-
-nav.menu ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 50px;
-}
 
 .nav-item {
   flex: 1;
@@ -88,26 +37,21 @@ nav.menu ul li a {
 }
 
 .pizza {
-  /*background: url(../images/pizza-banner.jpg) 100%;*/
-  background-repeat: no-repeat;
+  background: url("../../img/pizza-banner.jpg") no-repeat  100%;
   background-size: cover;
 }
 
 .salade {
-  /*background: url(../images/salad-banner.jpg) 100%;*/
-  background-repeat: no-repeat;
+  background: url("../../img/salad-banner.jpg") no-repeat 100%;
   background-size: cover;
 }
 
 .burger {
-  /*background: url(../images/burger-banner.jpg) 100%;*/
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  background: url("../../img/burger-banner.jpg") no-repeat 100%;
+  background-size: cover;}
 
 .boisson {
-  /*background: url(../images/boisson-banner.jpg) 100%;*/
-  background-repeat: no-repeat;
+  background: url("../../img/boisson-banner.jpg") no-repeat 100%;
   background-size: cover;
 }
 
@@ -183,12 +127,3 @@ section img {
   margin: 2px;
 }
 
-/* pied de page */
-
-footer p {
-  font-size: 22px;
-  text-align: center;
-  color: white;
-  padding: 20px;
-  font-family: 'Martel', serif;
-}
