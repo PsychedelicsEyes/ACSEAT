@@ -2,150 +2,85 @@
 
 {% block body %}
 <div class="relative">
-    <div class="title-box">
-        <!-- slogan pour ma page -->
-        <p>Des petits plats tout en douceur</p>
-    </div>
+
 
     <main id="main">
 
         <!-- section pizza -->
         <section id="pizza" class="pizza">
-
-            <div class="item">
-                <img src="{{ asset('img/menu/pizza1.jpg') }}">
-                <div class="item-infos">
-                    <h3>Caprapiquante</h3>
-                    <hr>
-                    <p>Chevre, Miel, Graines toastés, piment rouge</p>
-                    <p class="prix">12€00</p>
+            {% for produit in products.pizza %}
+                <div class="item">
+                    <img src="{{ asset('img/menu/pizza1.jpg') }}">
+                    <div class="item-infos">
+                        <h3>{{ produit.title }}</h3>
+                        <hr>
+                        <p>{{ produit.description}}</p>
+                        <p class="prix">{{produit.price}}€00</p>
+                        <a href="{{ path('add_cart', {id : produit.id}) }}"><img src="img/panier.png" class="nav_panier_article"    alt="icon panier"></a>
+                    </div>
                 </div>
-            </div>
+            {% endfor %}
 
-            <div class="item">
-                <img src="{{ asset('img/menu/pizza2.jpg') }}">
-                <div class="item-infos">
-                    <h3>Strategia</h3>
-                    <hr>
-                    <p>Tomates, Mozerlla, Basilique</p>
-                    <p class="prix">9€00</p>
-                </div>
-            </div>
 
-            <div class="item">
-                <img src="{{ asset('img/menu/pizza3.jpg') }}">
-                <div class="item-infos">
-                    <h3>Naturale</h3>
-                    <hr>
-                    <p>Chèvre, courgettes, basilique, carottes, huile vegetale</p>
-                    <p class="prix">10€00</p>
-                </div>
-            </div>
 
         </section>
 
         <!-- section Salade -->
         <section id="salade" class="salade">
 
-            <div class="item">
-                <img src="{{ asset('img/menu/salade1.jpg') }}">
-                <div class="item-infos">
-                    <h3>Salade Poulet betterave</h3>
-                    <hr>
-                    <p>Poulet, mache, betterave, avocat, croutons</p>
-                    <p class="prix">5€00</p>
+            {% for produit in products.salade %}
+                <div class="item">
+                    <img src="{{ asset('img/menu/salade1.jpg') }}">
+                    <div class="item-infos">
+                        <h3>{{ produit.title }}</h3>
+                        <hr>
+                        <p>{{ produit.description}}</p>
+                        <p class="prix">{{produit.price}}€00</p>
+                        <a href="{{ path('add_cart', {id : produit.id}) }}"><img src="img/panier.png" class="nav_panier_article"    alt="icon panier"></a>
+                    </div>
                 </div>
-            </div>
+            {% endfor %}
 
-            <div class="item">
-                <img src="{{ asset('img/menu/salade2.jpg') }}">
-                <div class="item-infos">
-                    <h3>Salade grec maison</h3>
-                    <hr>
-                    <p>Salade, tomates, olives, feta, oignons basilique</p>
-                    <p class="prix">4€00</p>
-                </div>
-            </div>
 
-            <div class="item">
-                <img src="{{ asset('img/menu/salade3.jpg') }}">
-                <div class="item-infos">
-                    <h3>Salade tomates mozarella</h3>
-                    <hr>
-                    <p>Tomates, mozarella, salade, maches, epinard</p>
-                    <p class="prix">6€00</p>
-                </div>
-            </div>
 
         </section>
 
         <!-- section burger -->
         <section id="burger" class="burger">
 
-            <div class="item">
-                <img src="{{ asset('img/menu/burger1.jpg') }}">
-                <div class="item-infos">
-                    <h3>Légendaire</h3>
-                    <hr>
-                    <p>1 steak + bacon + chedar</p>
-                    <p class="prix">4€00</p>
+            {% for produit in products.burger %}
+                <div class="item">
+                    <img src="{{ asset('img/menu/burger1.jpg') }}">
+                    <div class="item-infos">
+                        <h3>{{ produit.title }}</h3>
+                        <hr>
+                        <p>{{ produit.description}}</p>
+                        <p class="prix">{{produit.price}}€00</p>
+                        <a href="{{ path('add_cart', {id : produit.id}) }}"><img src="img/panier.png" class="nav_panier_article"    alt="icon panier"></a>
+                    </div>
                 </div>
-            </div>
+            {% endfor %}
 
-            <div class="item">
-                <img src="{{ asset('img/menu/burger2.jpg') }}">
-                <div class="item-infos">
-                    <h3>Villageois</h3>
-                    <hr>
-                    <p>1 steak + chedar + salade + oignons</p>
-                    <p class="prix">5€00</p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="{{ asset('img/menu/burger3.jpg') }}">
-                <div class="item-infos">
-                    <h3>Basique</h3>
-                    <hr>
-                    <p>2 steaks + chedar</p>
-                    <p class="prix">5€00</p>
-                </div>
-            </div>
 
         </section>
 
         <!-- section boisson -->
         <section id="boisson" class="boisson">
 
-            <div class="item">
-                <img src="{{ asset('img/menu/boisson1.jpg') }}">
-                <div class="item-infos">
-                    <h3>Jus multifruits</h3>
-                    <hr>
-                    <p>Banane, orange, fraise</p>
-                    <p class="prix">3€00</p>
+            {% for produit in products.boisson %}
+                <div class="item">
+                    <img src="{{ asset('img/menu/boisson1.jpg') }}">
+                    <div class="item-infos">
+                        <h3>{{ produit.title }}</h3>
+                        <hr>
+                        <p>{{ produit.description}}</p>
+                        <p class="prix">{{produit.price}}€00</p>
+                        <a href="{{ path('add_cart', {id : produit.id}) }}"><img src="img/panier.png" class="nav_panier_article"    alt="icon panier"></a>
+                    </div>
                 </div>
-            </div>
+            {% endfor %}
 
-            <div class="item">
-                <img src="{{ asset('img/menu/boisson2.jpg') }}">
-                <div class="item-infos">
-                    <h3>Jus de pastèque</h3>
-                    <hr>
-                    <p>La pastèque du jardin</p>
-                    <p class="prix">2€20</p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="{{ asset('img/menu/boisson3.jpg') }}">
-                <div class="item-infos">
-                    <h3>Café</h3>
-                    <hr>
-                    <p>Nexpresso, café, ..</p>
-                    <p class="prix">1€20</p>
-                </div>
-            </div>
+           
 
         </section>
 

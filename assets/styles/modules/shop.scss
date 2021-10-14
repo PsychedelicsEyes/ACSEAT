@@ -1,9 +1,4 @@
 
-
-
-
-
-
 @keyframes glisse{
 
   0% {
@@ -65,7 +60,7 @@
   cursor: pointer;
   transition: 0.3s all;
   width: 50%;
-}
+  }
 
 .item:hover {
   transform: scale(1.1);
@@ -103,27 +98,25 @@ p.prix {
 section img {
   width: 300px;
 }
+.nav_panier_article {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
 
-/* menu bloqué à droite */
 
-.sticky {
-  position: fixed;
-  width: 500px;
-  top: 30vh;
-  right: 50px;
-  transform: translateY(10px);
-  transition: 0.6s all;
+}
+@media only screen and ( max-width : 768px) {
+  .item {
+    flex-direction: column;
+  }
+  .item-infos {
+    width: 30%;
+  }
+  .section img {
+    width: 10%;
+  }
 }
 
-.sticky + #main {
-  padding-top: 200px;
-}
 
-.sticky nav.menu ul {
-  flex-direction: column;
-}
-
-.sticky, nav.menu ul li {
-  margin: 2px;
-}
 

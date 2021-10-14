@@ -64,7 +64,7 @@ class ProductController extends AbstractController
 
 
     /**
-     * @Route("/product/edit/{productId}", name="edit_product")
+     * @Route("/product/edit/{id}", name="edit_product")
      */
     public function edit(Request $request, Product $product): Response
     {
@@ -86,7 +86,7 @@ class ProductController extends AbstractController
     }
 
     /**
-     * @Route("/product/del/{productId}", name="del_product")
+     * @Route("/product/del/{id}", name="del_product")
      */
     public function del(Product $product): RedirectResponse
     {

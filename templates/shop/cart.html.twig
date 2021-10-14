@@ -3,7 +3,7 @@
 {% block title %}Menu{% endblock %}
 
 {% block body %}
-
+<div class="relative">
     <h1>Votre panier</h1>
 
 
@@ -27,9 +27,9 @@
                     <td>{{ element.quantite}}</td>
                     <td>{{ element.quantite * element.product.price}}€</td>
                     <td>
-                        <a href="{{path("add_cart", {productId: element.product.productId})}}">Ajouter</a>
-                        <a href="{{path("remove_cart", {productId: element.product.productId})}}">Retirer</a>
-                        <a href="{{path("del_cart", {productId: element.product.productId})}}">Supprimer</a>
+                        <a href="{{path("add_cart", {id: element.product.id})}}">Ajouter</a>
+                        <a href="{{path("remove_cart", {id: element.product.id})}}">Retirer</a>
+                        <a href="{{path("del_cart", {id: element.product.id})}}">Supprimer</a>
 
                 </tr>
             {% else %}
@@ -56,5 +56,5 @@
    
     
 
-
+</div>
 {% endblock %}

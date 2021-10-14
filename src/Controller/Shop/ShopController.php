@@ -15,9 +15,13 @@ class ShopController extends AbstractController
      */
     public function shop(ProductRepository $productRepository): Response
     {
-    
+        $products = $productRepository->findAll();
+        $tab = [];
+        foreach($products as $product) {
+            $tab[$product->getCategory()->getName()][] = $product;
+        }
         return $this->render('shop/shop.html.twig', [
-            'products' => $productRepository->findAll(),
+            'products' => $tab,
         ]);
 
     }
