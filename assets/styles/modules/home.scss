@@ -11,3 +11,42 @@
   justify-content: space-around;
 }
 
+.home_big_title {
+  font-size: 440%;
+  position: relative;
+  width: 100%;
+  left: 34%;
+  height: 50%;
+}
+
+.block_horaires {
+  display: flex;
+  width: 150%;
+  justify-content: flex-end;
+  margin-top: 60%;
+}
+
+.home_horaires {
+  background-color: white;
+  padding-left: 50px;
+  font-size: 140%;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+.title_horaires {
+  text-align: center;
+  font-size: 125%;
+  font-weight: bold;
+  padding-bottom: 20px;
+  line-height: 65px;
+}
+
+.home_text {
+  line-height: 35px;
+}
+
+.home_maps {
+  display: flex;
+  justify-content: left;
+}
