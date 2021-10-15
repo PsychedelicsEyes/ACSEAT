@@ -37,12 +37,13 @@ class CartController extends AbstractController
     }
 
     /**
-     * @Route("/panier/add/{id}", name="add_cart")
+     * @Route("/panier/add/{productId}", name="add_cart")
      */
     public function add(SessionInterface $session, Product $product)
     {
         $panier = $session->get("panier", []);
         $id = $product->getId();
+        
 
         if(!empty($panier[$id])){
             $panier[$id]++;
@@ -57,7 +58,7 @@ class CartController extends AbstractController
     }
 
     /**
-     * @Route("/panier/remove/{id}", name="remove_cart")
+     * @Route("/panier/remove/{productId}", name="remove_cart")
      */
     public function remove(SessionInterface $session, Product $product)
     {
@@ -78,7 +79,7 @@ class CartController extends AbstractController
     }
 
     /**
-     * @Route("/panier/delete/{id}", name="del_cart")
+     * @Route("/panier/delete/{productId}", name="del_cart")
      */
     public function delete(SessionInterface $session, Product $product)
     {

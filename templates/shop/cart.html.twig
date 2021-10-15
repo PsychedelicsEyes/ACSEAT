@@ -4,10 +4,9 @@
 
 {% block body %}
 <div class="relative">
-    <h1>Votre panier</h1>
-
 
     <table>
+        <caption>Votre panier<caption>
         <thead>
             <tr>
             <th>Produit</th>
@@ -27,9 +26,9 @@
                     <td>{{ element.quantite}}</td>
                     <td>{{ element.quantite * element.product.price}}€</td>
                     <td>
-                        <a href="{{path("add_cart", {id: element.product.id})}}">Ajouter</a>
-                        <a href="{{path("remove_cart", {id: element.product.id})}}">Retirer</a>
-                        <a href="{{path("del_cart", {id: element.product.id})}}">Supprimer</a>
+                        <a href="{{path("add_cart", {productId: element.product.productId})}}">Ajouter</a>
+                        <a href="{{path("remove_cart", {productId: element.product.productId})}}">Retirer</a>
+                        <a href="{{path("del_cart", {productId: element.product.productId})}}">Supprimer</a>
 
                 </tr>
             {% else %}
@@ -42,17 +41,28 @@
 
         <tfoot>
             <tr>
+                <td></td>
+                <td></td>
                 <td>Total</td>
                 <td>{{ total }}€
-                <a href="{{path("app_pay")}}">Passez commande</a>
-                <a href="{{path("del__all_cart")}}">Supprimer tout le panier</a>
                 </td>
+            </tr>
+            <tr>
+                <th colspan="3"><a href="{{path("app_pay")}}">Passez commande</a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <th colspan="3"><a href="{{path("del__all_cart")}}">Supprimer tout le panier</a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <th colspan="3"><a href="{{path("app_menu")}}">Continuez ses achats</a></td>
             </tr>
         </tfoot>
 
     </table>
- 
- <a href="{{path("app_menu")}}">Continuez ses achat</a>
+
    
     
 

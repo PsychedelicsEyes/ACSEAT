@@ -1,0 +1,31 @@
+.relative  {
+  display: flex;
+  justify-content: center;
+}
+
+table,
+td, th {
+  border: 1px solid #333;
+}
+
+thead,
+tfoot {
+  background-color: #333;
+  color: #fff;
+}
+.title {
+  text-align: center;
+}
+
+table {
+  width: 50%;
+  border-collapse: collapse;
+  border: 3px solid purple;
+  font-size: 150%;
+  margin: auto;
+  }
+
+caption {
+  padding: 20px;
+  letter-spacing: 1px;
+}
