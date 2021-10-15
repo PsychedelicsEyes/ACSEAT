@@ -3,11 +3,9 @@
 .post-container {
   @extend %post-form;
 }
-
-.imgConnexion{
+.relative-flex {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
 }
 
 .img-connexion {
@@ -44,10 +42,8 @@
   font-size: 120%;
 }
 .btn-compte {
-  display: flex;
+  @extend %flx;
   margin-top: 1em;
- justify-content: center;
-
 }
 .css-button-gradient--3 {
   min-width: 130px;

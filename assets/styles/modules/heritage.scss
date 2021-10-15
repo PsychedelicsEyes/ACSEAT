@@ -38,6 +38,14 @@
     font-family: Block Berthold, serif;
     font-size: 207%;
 }
+
+
+%flx {
+     display: flex;
+     justify-content: center;
+ }
+
+
 %reseau {
     width: 30px;
 }
@@ -45,5 +53,3 @@
 
 
 
-@media screen and (max-width: 768px) {
-}

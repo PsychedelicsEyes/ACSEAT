@@ -9,13 +9,11 @@
   align-items: end;
 }
 
-/* Fin du footer */
 
 /* Début des applications */
 
 .application {
-  display: flex;
-  justify-content: center;
+  @extend %flx;
   padding-left: 20%;
   padding-top: 4%;
 }
@@ -180,6 +178,7 @@
 
 
 /* Fin des vecteurs */
+/* Fin du footer */
 
 @media screen and (max-width: 768px)  {
 
