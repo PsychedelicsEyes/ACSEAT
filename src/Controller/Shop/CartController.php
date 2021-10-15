@@ -43,6 +43,7 @@ class CartController extends AbstractController
     {
         $panier = $session->get("panier", []);
         $id = $product->getId();
+        
 
         if(!empty($panier[$id])){
             $panier[$id]++;

@@ -1,9 +1,4 @@
 
-
-
-
-
-
 @keyframes glisse{
 
   0% {
@@ -64,8 +59,7 @@
   display: flex;
   cursor: pointer;
   transition: 0.3s all;
-  width: 50%;
-}
+  }
 
 .item:hover {
   transform: scale(1.1);
@@ -80,6 +74,8 @@
 .item-infos {
   padding: 20px;
   line-height: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 section {
@@ -102,28 +98,34 @@ p.prix {
 
 section img {
   width: 300px;
+  display: flex;
+}
+.nav_panier_article {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+
+
+}
+@media only screen and ( max-width : 768px) {
+  section{
+    padding: 10%;
+  }
+
+  .item {
+    flex-direction: column;
+    width: 100%;
+  }
+  .item-infos {
+    justify-content: center;
+  }
+  section img {
+    width:100%;
+  }
+
+
 }
 
-/* menu bloqué à droite */
 
-.sticky {
-  position: fixed;
-  width: 500px;
-  top: 30vh;
-  right: 50px;
-  transform: translateY(10px);
-  transition: 0.6s all;
-}
-
-.sticky + #main {
-  padding-top: 200px;
-}
-
-.sticky nav.menu ul {
-  flex-direction: column;
-}
-
-.sticky, nav.menu ul li {
-  margin: 2px;
-}
 
