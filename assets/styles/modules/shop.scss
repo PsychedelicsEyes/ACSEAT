@@ -1,3 +1,7 @@
+.relative{
+@extend %flx;
+
+}
 
 @keyframes glisse{
 
@@ -108,8 +112,9 @@ section img {
 
 
 }
+
 @media only screen and ( max-width : 768px) {
-  section{
+  section {
     padding: 10%;
   }
 
