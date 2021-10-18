@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menu{% endblock %}
+
+{% block body %}
+
+    <h1>Votre panier</h1>
+
+
+    <table>
+        <thead>
+            <tr>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Total</th>
+            <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for element in dataCart %}
+
+           
+                <tr>
+                    <td>{{ element.product.title}}</td>
+                    <td>{{ element.product.price}}€</td>
+                    <td>{{ element.quantite}}</td>
+                    <td>{{ element.quantite * element.product.price}}€</td>
+                    <td>
+                        <a href="{{path("cart_add_cart", {productId: element.product.productId})}}">Ajouter</a>
+                        <a href="{{path("cart_remove_cart", {productId: element.product.productId})}}">Retirer</a>
+                        <a href="{{path("cart_del_cart", {productId: element.product.productId})}}">Supprimer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td>Votre panier est vide</td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td>{{ total }}€
+                <a href="#">Passez commande</a>
+                <a href="{{path("cart_del__all_cart")}}">Supprimer tout le panier</a>
+                </td>
+            </tr>
+        </tfoot>
+
+    </table>
+ 
+ <a href="{{path("app_menu")}}">Continuez ses achat</a>
+   
+    
+
+
+{% endblock %}

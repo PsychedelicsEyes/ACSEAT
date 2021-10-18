@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Account{% endblock %}
+
+{% block body %}
+
+
+    {% if app.user %}
+        <div class="mb-3">
+        Tu es connecté sur {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+        </div>
+    {% endif %}
+
+
+    <h1>Liste des utilisateurs</h1>
+
+   {% for user in users %}
+
+       <p>Id: {{ user.id }} </p>
+       <p>Email: {{ user.email }}</p>
+       <p>Rôle: {{ user.roles | json_encode() }}  </p>
+       <p>Date de création du compte: {{ user.created | date("d/m/y") }}</p>
+       
+    {% endfor %}
+
+
+    <h1>Liste des produits</h1>
+
+    <a href="{{ path('create_product') }}">Ajouter un produit</a>
+
+    {% for product in products %}
+       <p>Id: {{ product.productId }} </p>
+       <p>Nom: {{ product.title }}</p>
+       <p>Description: {{  product.description  }} </p>
+       <p>Catégorie: {{  product.category.name  }}</p>
+       <p>Prix: {{  product.price  }}€ </p>
+       <p>Date de création: {{ product.createdAt | date("d/m/y") }}</p>
+        <a href="{{ path('edit_product', {productId: product.productId}) }}">Modifier le produit</a>
+        <a href="{{ path('del_product', {productId: product.productId}) }}">Suprimer le produit</a>
+    {% endfor %}
+
+
+    <h1>Liste des catégories</h1>
+
+    <a href="{{ path('create_category') }}">Ajouter une catégorie</a>
+
+    {% for category in categories %}
+        <p>Id: {{ category.id }} </p>
+        <p>Nom: {{ category.name }}</p>
+        <a href="{{ path('edit_category', {id: category.id}) }}">Modifier la categorie</a>
+         <a href="{{ path('del_category', {id: category.id}) }}">Suprimer la categorie</a>
+    {% endfor %}
+
+{% endblock %}

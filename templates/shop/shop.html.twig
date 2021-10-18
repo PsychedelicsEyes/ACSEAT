@@ -1,0 +1,60 @@
+{% block title %}{% endblock %}
+
+{% block body %}
+
+    <h1>Votre panier</h1>
+
+    <table>
+        <thead>
+            <tr>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Total</th>
+            <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+       {% for element in dataCart %}
+        <tr>
+            <td>{{ element.product.title}}</td>
+                <td>{{ element.product.price}}€</td>
+                <td>{{ element.quantite}}</td>
+                <td>{{ element.quantite * element.product.price}}€</td>
+                <td>
+                    <a href="{{path("add_cart", {productId: element.product.productId})}}">Ajouter</a>
+                    <a href="{{path("remove_cart", {productId: element.product.productId})}}">Retirer</a>
+                    <a href="{{path("del_cart", {productId: element.product.productId})}}">Supprimer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td>Votre panier est vide</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td>{{ total }}€
+                </td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+    <h1>Liste des produits</h1>
+
+    {% for product in products %}
+       <p>Nom: {{ product.title }}</p>
+       <p>Description: {{  product.description  }} </p>
+       <p>Prix: {{  product.price  }}€ </p>
+       <a href="{{ path('add_cart', {productId: product.productId}) }}">Ajouter au panier</a>
+
+    {% endfor %}
+
+    
+
+
+{% endblock %}
