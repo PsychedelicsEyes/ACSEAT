@@ -1,12 +1,16 @@
 /* Page css home */
 
 
-.relative{
+.relative {
   background-color: #C44749;
   z-index: 1;
   position: relative;
   padding-bottom: 10em;
   padding-top: 10em;
+}
+
+.relative_flex {
+  flex-direction: column;
 }
 
 /* title */
