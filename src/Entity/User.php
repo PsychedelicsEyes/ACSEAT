@@ -43,6 +43,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $created;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Order::class, inversedBy="userOrder")
+     */
+    private $orderUser;
 
     public function getId(): ?int
     {
@@ -143,5 +147,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getOrderUser(): ?Order
+    {
+        return $this->orderUser;
+    }
+
+    public function setOrderUser(?Order $orderUser): self
+    {
+        $this->orderUser = $orderUser;
+
+        return $this;
     }
 }

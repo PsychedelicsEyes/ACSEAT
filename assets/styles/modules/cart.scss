@@ -1,4 +1,6 @@
-
+.tableau{
+  width: 80%;
+}
 
 table,
 td, th, tr {
@@ -34,14 +36,19 @@ caption {
 
 @media only screen and ( max-width : 768px) {
   table {
-    width: 92%;
+    font-size: 100%;
+    width: 121%;
   }
   caption {
     text-align: center;
-    width: 64%;
+    width: 87%;
   }
   .tableau {
-    width: 20%;
+    width: 80%;
+  }
+  .quantity {
+    display: flex;
+    justify-content: center;
   }
 }
 

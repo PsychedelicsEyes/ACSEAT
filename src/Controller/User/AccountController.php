@@ -20,7 +20,6 @@ class AccountController extends AbstractController
 
     }
 
-
     /**
      *  @Route("/commande", name="app_order")
      */
@@ -29,5 +28,4 @@ class AccountController extends AbstractController
         // TODO: Faire l'historiquie de s commandes
         return $this->render('shop/order.html.twig');
     }
-
 }

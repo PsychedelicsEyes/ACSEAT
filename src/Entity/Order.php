@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=OrderRepository::class)
+ * @ORM\Table(name="`order`")
  */
 class Order
 {
@@ -25,26 +26,28 @@ class Order
     private $createdAt;
 
     /**
+     * @ORM\Column(type="float")
+     */
+    private $amountTotal;
+
+    /**
+     * @ORM\OneToMany(targetEntity=User::class, mappedBy="orderUser")
+     */
+    private $userOrder;
+
+    /**
      * @ORM\Column(type="integer")
      */
-    private $numberProduct;
+    private $quantiteProduct;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\ManyToOne(targetEntity=Product::class, inversedBy="orders")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $totalAmount;
-
-
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $productAmount;
-
-
+    private $product;
 
     public function __construct()
     {
-        $this->product = new ArrayCollection();
         $this->userOrder = new ArrayCollection();
     }
 
@@ -65,40 +68,68 @@ class Order
         return $this;
     }
 
-    public function getNumberProduct(): ?int
+    public function getAmountTotal(): ?float
     {
-        return $this->numberProduct;
+        return $this->amountTotal;
     }
 
-    public function setNumberProduct(int $numberProduct): self
+    public function setAmountTotal(float $amountTotal): self
     {
-        $this->numberProduct = $numberProduct;
+        $this->amountTotal = $amountTotal;
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUserOrder(): Collection
+    {
+        return $this->userOrder;
+    }
+
+    public function addUserOrder(User $userOrder): self
+    {
+        if (!$this->userOrder->contains($userOrder)) {
+            $this->userOrder[] = $userOrder;
+            $userOrder->setOrderUser($this);
+        }
 
         return $this;
     }
 
-    public function getTotalAmount(): ?float
+    public function removeUserOrder(User $userOrder): self
     {
-        return $this->totalAmount;
+        if ($this->userOrder->removeElement($userOrder)) {
+            // set the owning side to null (unless already changed)
+            if ($userOrder->getOrderUser() === $this) {
+                $userOrder->setOrderUser(null);
+            }
+        }
+        return $this;
     }
 
-    public function setTotalAmount(float $totalAmount): self
+    public function getQuantiteProduct(): ?bool
     {
-        $this->totalAmount = $totalAmount;
+        return $this->quantiteProduct;
+    }
+
+    public function setQuantiteProduct(bool $quantiteProduct): self
+    {
+        $this->quantiteProduct = $quantiteProduct;
+
 
         return $this;
     }
 
-    public function getProductAmount(): ?float
+    public function getProduct(): ?Product
     {
-        return $this->productAmount;
+        return $this->product;
     }
 
-    public function setProductAmount(float $productAmount): self
+    public function setProduct(?Product $product): self
     {
-        $this->productAmount = $productAmount;
+        $this->product = $product;
 
         return $this;
     }
-
 }
