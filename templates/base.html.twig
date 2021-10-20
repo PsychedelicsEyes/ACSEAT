@@ -16,24 +16,30 @@
 
                             <!-- ****************** Début Navbar Responsive *********************-->
         <div class="bus">
-
+                <div class="panier_responsive">
+                     <a href="/panier" class="nav_panier" alt="icon panier">Commande</a>
+                </div>
             <div class="menu-btn">
                 <div class="menu-btn_burger">
                     <nav role="navigation" id="burger_menu_responsive">
                         <div class="menu_btn_burger_block">
                            <div class="menu_btn_burger_text">
-                                <a class="burger_line" href="#">Accueil</a>
-                                <a class="burger_line" href="#">Menu</a>
-                                <a  class="burger_line" href="#">Horaires</a>
-                                <a class="burger_line" href="#">Contact</a>
-                                <a class="burger_line" href="#">Connecter</a>
+                                <a class="burger_line" href="/">Accueil</a>
+                                <a class="burger_line" href="/menu">Menu</a>
+                                <a  class="burger_line" href="{{ path('app_home') }}#home_horaires">Horaires</a>
+                                <a class="burger_line" href="/contact">Contact</a>
+                                <a class="burger_line"  href="/connexion" class="css-button css-button-gradient css-button-gradient--2"> Connecter</a>
                            </div>
                         </div>
                     </nav>
                 </div>
+                <div>
+
+                </div>
             </div>
 
-                            <!--*************** Fin Navbar Responsive *********************-->
+
+            <!--*************** Fin Navbar Responsive *********************-->
 
                                 <!--******************** Début Navbar ********************-->
 

@@ -5,18 +5,38 @@
   @extend %flx;
 }
 .contact_container {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
   background-color: white;
   border-radius: 2%;
   border: 3px solid darkslateblue;
 }
 
 .contact_container_form {
-  display: flex;
-  flex-direction: column;
   width: 60em;
 
+}
+
+.contact_email, .contact_message {
+  width:50%;
+  margin: 30px auto 22px;
+
+}
+
+.form-control {
+  background-color: #cabed5;
+  display: block;
+  box-sizing: border-box;
+  padding: 4% 4%;
+  width: 100%;
+  margin: 10px auto auto;
+}
+
+.form-control-input {
+  box-sizing: border-box;
+  padding: 2% 4%;
+  width: 100%;
+  margin: 8px auto auto;
 }
 
 .btn-compte {
@@ -26,7 +46,25 @@
   margin-bottom: 2em;
 }
 
-.form-control {
-  display: flex;
-  justify-content: center;
-}
+@media screen and (max-width: 768px) {
+
+  .relative {
+    width: 100%;
+    height: 100%;
+  }
+
+  .contact_container {
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+
+  .contact_container_form {
+    display: contents;
+
+  }
+
+  .contact_email, .contact_message {
+    width: 90%;
+
+  }
+  }

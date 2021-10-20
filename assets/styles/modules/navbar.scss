@@ -1,7 +1,7 @@
+/* N A V B A R */
 
 
 /* Début du bouton */
-
 
 .menu-btn {
   position: relative;
@@ -342,7 +342,7 @@
   }
 
   .bus {
-    justify-content: right;
+    justify-content: space-evenly;
     padding: 1em;
   }
 
@@ -439,6 +439,33 @@
 
   /* Fin du bouton */
 
+  /* Début bouton panier */
+
+  .panier_responsive {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+
+
+
+  .nav_panier {
+    display: flex;
+    justify-content: center;
+    width: 8em;
+    height: 20px;
+    background-color: red;
+    border: 3px solid darkslateblue;
+    margin-bottom: -17px;
+  }
+
+
+
+  /* Fin bouton panier */
+
+  .menu-btn_burger::before, .menu-btn_burger::after {
+    position: relative;
+  }
 
 }
 

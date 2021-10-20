@@ -9,20 +9,19 @@
         <div class="contact_container_form">
 
             <h1 class="h1">Contact</h1>
-
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-
-
-            <div class="btn-compte">
-                <button class="css-button css-button-gradient css-button-gradient--3">Envoyer</button>
-            </div>
+            <form method="post" action="0.0.0.0:1025">
+                <div class="contact_email">
+                    <label for="exampleFormControlInput1" >Email</label>
+                    <input type="Email" class="form-control-input" id="exampleFormControlInput1" placeholder="">
+                </div>
+                <div class="contact_message">
+                    <label for="exampleFormControlTextarea1">Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="btn-compte">
+                    <button class="css-button css-button-gradient css-button-gradient--3">Envoyer</button>
+                </div>
+            </form>
         </div>
 
     </div>
