@@ -1,0 +1,108 @@
+input {
+  background-color: #cabed5;
+  display: block;
+  margin: 2%;
+  padding: 2% 4%;
+  width: 83%;
+  border: none;
+
+}
+::placeholder {
+  background-color: black;
+}
+.corps {
+
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  border-radius: 30%;
+
+
+}
+.imag_inscription{
+  border: 5px solid #F87F28;
+  border-radius: 20px;
+  margin-left: -15%;
+
+}
+
+.container1 {
+  width: 30em;
+  height: 28em;
+  margin-top: 5em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  display: block;
+  border: 5px solid #F87F28;
+}
+.reg_form {
+  text-align: center;
+  font-size: 1em;
+  padding-top: 2em;
+  margin-top: 1em;
+  padding-bottom: 1em;
+}
+.reg-email {
+  margin-left: 4%;
+
+}
+
+
+.btn {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  background-size: 120% auto;
+  background-image: linear-gradient(315deg, #bdc3c7 0%, #FB020E 75%);
+  border: 2px solid #F87F28;
+  margin-left: 33%;
+  margin-top: 23px;
+}
+label.required {
+
+  margin : 1%;
+}
+
+.reg_text {
+  text-align: center;
+  margin-top: 15px;
+}
+
+
+
+@media only screen and ( max-width : 768px) {
+  .corps{
+    flex-direction: column;
+  }
+  .container1{
+    display: block;
+    font-size: 77%;
+    width: 90%;
+    margin: 0;
+    padding: 4%;
+  }
+  .content_img{
+    margin-top: 7%;
+  }
+  .imag_inscription{
+    width: 63%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .relative {
+    flex-direction: column;
+  }
+}
+

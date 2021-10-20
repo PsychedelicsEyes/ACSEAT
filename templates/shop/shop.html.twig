@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="relative">
+
+
+    <main id="main">
+
+        <!-- section pizza -->
+        <section id="pizza" class="pizza">
+            {% for produit in products.pizza %}
+                <div class="item">
+                    <img src="{{ asset('img/menu/pizza1.jpg') }}" alt="photo pizza">
+                    <div class="item-infos">
+                        <h3>{{ produit.title }}</h3>
+                        <hr>
+                        <p>{{ produit.description}}</p>
+                        <p class="prix">{{produit.price}}€00</p>
+                        <a href="{{ path('add_cart', {productId : produit.productId}) }}"><img src="img/panier.png" class="nav_panier_article"    alt="icon panier"></a>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+
+        </section>
+
+        <!-- section Salade -->
+        <section id="salade" class="salade">
+
+            {% for produit in products.salade %}
+                <div class="item">
+                    <img src="{{ asset('img/menu/salade1.jpg') }}">
+                    <div class="item-infos">
+                        <h3>{{ produit.title }}</h3>
+                        <hr>
+                        <p>{{ produit.description}}</p>
+                        <p class="prix">{{produit.price}}€00</p>
+                        <a href="{{ path('add_cart', {productId : produit.productId}) }}"><img src="img/panier.png" class="nav_panier_article"    alt="icon panier"></a>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+
+        </section>
+
+        <!-- section burger -->
+        <section id="burger" class="burger">
+
+            {% for produit in products.burger %}
+                <div class="item">
+                    <img src="{{ asset('img/menu/burger1.jpg') }}">
+                    <div class="item-infos">
+                        <h3>{{ produit.title }}</h3>
+                        <hr>
+                        <p>{{ produit.description}}</p>
+                        <p class="prix">{{produit.price}}€00</p>
+                        <a href="{{ path('add_cart', {productId : produit.productId}) }}"><img src="img/panier.png" class="nav_panier_article"    alt="icon panier"></a>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+        </section>
+
+        <!-- section boisson -->
+        <section id="boisson" class="boisson">
+
+            {% for produit in products.boisson %}
+                <div class="item">
+                    <img src="{{ asset('img/menu/boisson1.jpg') }}">
+                    <div class="item-infos">
+                        <h3>{{ produit.title }}</h3>
+                        <hr>
+                        <p>{{ produit.description}}</p>
+                        <p class="prix">{{produit.price}}€00</p>
+                        <a href="{{ path('add_cart', {productId : produit.productId}) }}"><img src="img/panier.png" class="nav_panier_article"    alt="icon panier"></a>
+                    </div>
+                </div>
+            {% endfor %}
+
+           
+
+        </section>
+
+
+    </main>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}

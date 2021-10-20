@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block title %}Eat D@Q FooD (Connexion){% endblock %}
+{% block body %}
+    <div class="relative relative-flex">
+        <div class="imgConnexion">
+            <img src="{{ asset('img/connexion.jpg') }}" class="img-connexion" alt="image hamburger">
+        </div>
+        <div class="post-container">
+            <form method="post">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+
+
+                <h1 class="h1">Connexion</h1>
+
+                <div class="email">
+                    <label for="inputEmail">Email</label>
+                         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required>
+                </div>
+                <div class="mot-de-passe">
+                     <label for="inputPassword">Mot de passe</label>
+                          <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                </div>
+                         <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}">
+
+                <div class="texte-compte">
+                         <p>Vous n'avez pas de compte ?<a href="{{ path('app_register') }}"> Créez un compte içi</a></p>
+                </div>
+                <div class="btn-compte">
+                        <button class="css-button css-button-gradient css-button-gradient--3">Envoyer
+                        </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

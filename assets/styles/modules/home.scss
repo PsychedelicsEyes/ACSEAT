@@ -1,0 +1,91 @@
+/* Page css home */
+
+
+.relative {
+  background-color: #C44749;
+  z-index: 1;
+  position: relative;
+  padding-bottom: 10em;
+  padding-top: 10em;
+}
+
+.relative_flex {
+  flex-direction: column;
+}
+
+/* title */
+
+.home_big_title {
+  font-size: 440%;
+  text-align: center;
+}
+
+/* Debut home container */
+
+.home_container {
+  @extend %flx;
+  width: 100%;
+  margin-top: 5%;
+}
+
+.img-menu-home {
+  width: 90%;
+}
+
+/* fin home container */
+
+/* Address */
+
+.block_home_address {
+  width: 25%;
+  background-color: white;
+  font-size: 50%;
+}
+
+.home_title_address {
+  font-size: 360%;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 37%;
+  padding-bottom: 8%;
+}
+
+.home_address {
+  font-size: 200%;
+  line-height: 2em;
+  padding-left: 12%;
+
+}
+
+
+/* horaires */
+
+.home_horaires {
+  background-color: white;
+  padding-left: 50px;
+  font-size: 140%;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  width: 23%;
+}
+
+.title_horaires {
+  text-align: center;
+  font-size: 125%;
+  font-weight: bold;
+  padding-bottom: 20px;
+  line-height: 65px;
+}
+
+.home_text {
+  line-height: 35px;
+}
+
+/* maps */
+
+.home_maps {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  margin-top: 2%;
+}

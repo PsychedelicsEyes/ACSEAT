@@ -1,0 +1,63 @@
+%card {
+
+    display: flex;
+    align-items: center;
+    width: 30%;
+    position: relative;
+    left: 50%;
+  }
+/* vector cercle */
+
+%cercle {
+    position: absolute;
+    color: white;
+    opacity: 10%;
+    border-radius: 50%;
+    border: 6px solid;
+}
+
+%cercle2 {
+    position: absolute;
+    color: white;
+    opacity: 100%;
+    border-radius: 50%;
+    border: 6px solid;
+}
+%post-form {
+    background-color: $secondaryColor;
+    width: 35%;
+    position: relative;
+    border-radius: 3%;
+    border: 5px solid darkslateblue;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+%titre-h1 {
+    text-align: center;
+    padding-bottom: 0.5em;
+    font-family: Block Berthold, serif;
+    font-size: 207%;
+    padding-top: 60px;
+}
+
+
+%flx {
+     display: flex;
+     justify-content: center;
+ }
+
+
+%reseau {
+    width: 30px;
+}
+
+%form-contact {
+    width: 85%;
+    background-color: yellow;
+    border: 3px solid darkslateblue;
+    margin-bottom: 20px;
+    margin-left: 67px;
+    font-size: 120%;
+    padding-top: 11px;
+}
+

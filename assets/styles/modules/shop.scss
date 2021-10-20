@@ -1,0 +1,160 @@
+.relative{
+@extend %flx;
+
+}
+
+@keyframes glisse{
+
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(0);
+  }
+
+  33% {
+    transform: translateX(-500px);
+  }
+
+  66% {
+    transform: translateX(-500px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+
+}
+
+
+
+
+.nav-item {
+  flex: 1;
+  height: 300px;
+}
+
+.pizza {
+  background: url("../../img/pizza-banner.jpg") no-repeat  100%;
+  background-size: cover;
+  margin-block: 1%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.salade {
+  background: url("../../img/salad-banner.jpg") no-repeat 100%;
+  background-size: cover;
+  margin-block: 1%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.burger {
+  background: url("../../img/burger-banner.jpg") no-repeat 100%;
+  background-size: cover;
+  margin-block: 1%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+.boisson {
+  background: url("../../img/boisson-banner.jpg") no-repeat 100%;
+  background-size: cover;
+  margin-block: 1%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* sections plats */
+
+.item {
+  background-color: white;
+  display: flex;
+  cursor: pointer;
+  transition: 0.3s all;
+  margin: .5%;
+  }
+
+.item:hover {
+  transform: scale(1.1);
+  transition: 0.3s all;
+}
+
+.item:hover {
+  transition: 0.3s all;
+  box-shadow: -8px 8px 2px 1px rgba(0, 0, 0, .1);
+}
+
+.item-infos {
+  padding: 20px;
+  line-height: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  padding: 100px;
+  font-family: 'Martel', serif;
+}
+
+.item-infos h3 {
+  font-size: 25px;
+}
+.item-infos hr {
+  margin: 10px 0 10px 0;
+  opacity: 0.5;
+}
+
+p.prix {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+section img {
+  width: 300px;
+  display: flex;
+}
+.nav_panier_article {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+
+
+}
+
+@media only screen and ( max-width : 768px) {
+  section {
+    padding: 10%;
+  }
+
+  .item {
+    flex-direction: column;
+    width: 100%;
+  }
+  .item-infos {
+    justify-content: center;
+  }
+  section img {
+    width:100%;
+  }
+  .boisson, .pizza, .salade, .burger {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .relative {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  main {
+    margin: 2%;
+  }
+
+
+}
+
+
+

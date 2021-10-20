@@ -1,19 +1,194 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{% block title %}Eat D@q FooD{% endblock %}</title>
+
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+            {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+
+                            <!-- ****************** Début Navbar Responsive *********************-->
+        <div class="bus">
+
+            <div class="menu-btn">
+                <div class="menu-btn_burger">
+                    <nav role="navigation" id="burger_menu_responsive">
+                        <div class="menu_btn_burger_block">
+                           <div class="menu_btn_burger_text">
+                                <a class="burger_line" href="#">Accueil</a>
+                                <a class="burger_line" href="#">Menu</a>
+                                <a  class="burger_line" href="#">Horaires</a>
+                                <a class="burger_line" href="#">Contact</a>
+                                <a class="burger_line" href="#">Connecter</a>
+                           </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+                            <!--*************** Fin Navbar Responsive *********************-->
+
+                                <!--******************** Début Navbar ********************-->
+
+            <figure class="logo_bus"><a href="#"><img src="img/logo.png"  alt="logo d'un bus de Londres"></a></figure>
+
+    </div>
+    <nav class="nav-navbar">
+        <div class="container-nav">
+            <div class="block1">
+                <div class="navbar">
+                    <a href="/"><button class="css-button css-button-gradient css-button-gradient--2" >
+                        Accueil
+                    </button></a>
+                </div>
+                <div class="navbar">
+
+                    <a href="/menu"><button class="css-button css-button-gradient css-button-gradient--2">Menu
+                    </button></a>
+                </div>
+                
+                <a href=""><img src="img/panier.png" class="nav_panier"    alt="icon panier"></a>
+                
+            </div>
+            <div class="block2">
+                <div class="navbar">
+                    <a href="{{ path('app_home') }}#home_horaires"><button class="css-button css-button-gradient css-button-gradient--2">
+                        Horaires
+                    </button></a>
+                </div>
+                <div class="navbar">
+                    <a href="/contact"><button class="css-button css-button-gradient css-button-gradient--2">
+                        Contact
+                    </button></a>
+                </div>
+                <div class="navbar">
+                    <a href="{{ path('app_login') }}">
+                        <a href="/connexion"><button  class="css-button css-button-gradient css-button-gradient--2"> Connecter </button></a>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+                            <!--************** Fin Navbar **************-->
+
+                            <!--************* Début Vector Navbar *************-->
+
+<div class="footerVector1">
+    <div class="vector-cercle">
+        <div class="vector-cercle1">
+            <div class="vector-cercle2">
+                <div class="vector-cercle3">
+                    <div class="vector-cercle4">
+                        <div class="vector-cercle5"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vector-cercle6">
+        <div class="vector-cercle7">
+            <div class="vector-cercle8">
+                <div class="vector-cercle9">
+                    <div class="vector-cercle10">
+                        <div class="vector-cercle11"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vector-cercle12">
+        <div class="vector-cercle13">
+            <div class="vector-cercle14">
+                <div class="vector-cercle15">
+                    <div class="vector-cercle16">
+                        <div class="vector-cercle17"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="{{ asset('img/vector-cercle-4.png') }}" class="vector-cercle-4" alt="vector-cercle-4">
+</div>
+
+                          <!--************** Fin Vector Navbar ****************-->
+
+    {% block body %}
+
+
+        {% endblock %}
+
+                        <!--***************** Début Footer ****************-->
+
+        <footer class="block-footer">
+            <div class="sociaux">
+                <a href="" target="_blank"><img src="{{ asset('img/facebook_logo_icon.png') }}"  class="facebook"  alt="facebook"></a>
+                <a href="" target="_blank"><img src="{{ asset('img/twitter-icon.png') }}" class="twitter" alt="twitter"></a>
+                <a href="" target="_blank"><img src="{{ asset('img/instagram-icon.png') }}" class="instagram" alt="instagram"></a>
+                <link href="https://fontsgeek.com/fonts/Block-Berthold-Condensed-Regular" rel="stylesheet">
+            </div>
+
+            <div class="application">
+                <div class="appli-apple">
+                    <a href="https://itunes.apple.com/fr" target="_blank">
+                        <img class="store" src="{{ asset('img/apple.png') }}" alt="play store">
+                    </a>
+                </div>
+                <div class="appli-google">
+                    <a href="https://play.google.com/store" target="_blank">
+                    <img class="play" src="{{ asset('img/play_store.png') }}" alt="google play">
+                    </a>
+                </div>
+            </div>
+
+                              <!--************* Fin Footer **************-->
+
+                             <!--************** Début Vector Footer *************-->
+
+            <div class="footerVector">
+                <div class="vector-cercle-f1">
+                    <div class="vector-cercle-f2">
+                        <div class="vector-cercle-f3">
+                            <div class="vector-cercle-f4">
+                                <div class="vector-cercle-f5">
+                                    <div class="vector-cercle-f6"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="img-vector2">
+                    <img src="{{ asset('img/cercle2footer.png') }}" alt="image cercle">
+                </div>
+                <div class="vector-cercle-f7">
+                    <div class="vector-cercle-f8">
+                        <div class="vector-cercle-f9">
+                            <div class="vector-cercle-f10">
+                                <div class="vector-cercle-f11">
+                                    <div class="vector-cercle-f12"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                   <img src="{{ asset('img/cercle-footer-4.png') }}" class="cercle-footer-4" alt="">
+                </div>
+            </div>
+        </footer>
+
+                            <!--************* Fin Vector Footer ****************-->
+
+    {% block javascripts %}
+      {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
     </body>
 </html>
