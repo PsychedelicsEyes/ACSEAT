@@ -50,5 +50,18 @@ caption {
     display: flex;
     justify-content: center;
   }
+
+  .tableau table thead {
+    display: none;
+  }
+  .tableau table td {
+    display: block;
+    text-align: right;
+  }
+  .tableau table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
 }
 

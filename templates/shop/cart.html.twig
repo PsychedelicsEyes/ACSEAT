@@ -21,11 +21,11 @@
 
 
                     <tr>
-                        <td>{{ element.product.title}}</td>
-                        <td>{{ element.product.price}}€</td>
-                        <td>{{ element.quantite}}</td>
-                        <td>{{ element.quantite * element.product.price}}€</td>
-                        <td>
+                        <td data-label="Produit">{{ element.product.title}}</td>
+                        <td data-label="Prix">{{ element.product.price}}€</td>
+                        <td data-label="Quantité">{{ element.quantite}}</td>
+                        <td data-label="Total">{{ element.quantite * element.product.price}}€</td>
+                        <td data-label="Actions">
                             <div class="block_actions">
                             <a href="{{path("add_cart", {productId: element.product.productId})}}">Ajouter/</a>
                             <a href="{{path("remove_cart", {productId: element.product.productId})}}">Retirer/</a>

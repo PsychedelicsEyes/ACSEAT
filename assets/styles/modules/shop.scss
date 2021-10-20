@@ -38,31 +38,44 @@
 .pizza {
   background: url("../../img/pizza-banner.jpg") no-repeat  100%;
   background-size: cover;
+  margin-block: 1%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .salade {
   background: url("../../img/salad-banner.jpg") no-repeat 100%;
   background-size: cover;
+  margin-block: 1%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .burger {
   background: url("../../img/burger-banner.jpg") no-repeat 100%;
-  background-size: cover;}
+  background-size: cover;
+  margin-block: 1%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 
 .boisson {
   background: url("../../img/boisson-banner.jpg") no-repeat 100%;
   background-size: cover;
+  margin-block: 1%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 /* sections plats */
 
 .item {
   background-color: white;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   cursor: pointer;
   transition: 0.3s all;
+  margin: .5%;
   }
 
 .item:hover {
@@ -127,6 +140,17 @@ section img {
   }
   section img {
     width:100%;
+  }
+  .boisson, .pizza, .salade, .burger {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .relative {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  main {
+    margin: 2%;
   }
 
 
