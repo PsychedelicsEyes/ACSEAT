@@ -164,6 +164,10 @@
   margin-top: 10px;
 }
 
+.nav_panierResponsive {
+  display: none;
+}
+
 /******************* Fin Panier *******************/
 
 
@@ -450,13 +454,14 @@
 
   /********** Début bouton panier ****************/
 
-  .nav_panier {
+  .nav_panierResponsive {
     background-color: red;
     border: 3px solid darkslateblue;
     width: 45px;
     height: 45px;
     margin-top: 12px;
     margin-right: 15px;
+    display: flex;
   }
 }
   /*************** Fin bouton panier *******************/
