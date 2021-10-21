@@ -47,7 +47,7 @@
         <p>Id: {{ category.id }} </p>
         <p>Nom: {{ category.name }}</p>
         <a href="{{ path('edit_category', {id: category.id}) }}">Modifier la categorie</a>
-         <a href="{{ path('del_category', {id: category.id}) }}">Suprimer la categorie</a>
+        <a href="{{ path('del_category', {id: category.id}) }}">Suprimer la categorie</a>
     {% endfor %}
 
 {% endblock %}
