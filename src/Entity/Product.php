@@ -58,6 +58,12 @@ class Product
      */
     private $orders;
 
+    /**
+     * @ORM\OneToOne(targetEntity="Image", cascade={"persist", "remove"})
+     */
+    private $image;
+
+
     public function __construct()
     {
         $this->orders = new ArrayCollection();
@@ -170,4 +176,21 @@ class Product
         return $this;
     }
 
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set the value of image
+     *
+     * @return  self
+     */ 
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
 }
