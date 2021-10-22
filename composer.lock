@@ -726,10 +726,12 @@
                 "migrations",
                 "schema"
             ],
+
             "support": {
                 "issues": "https://github.com/doctrine/DoctrineMigrationsBundle/issues",
                 "source": "https://github.com/doctrine/DoctrineMigrationsBundle/tree/3.2.0"
             },
+
             "funding": [
                 {
                     "url": "https://www.doctrine-project.org/sponsorship.html",
@@ -1901,10 +1903,12 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
+
             "support": {
                 "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
                 "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.3.0"
             },
+
             "time": "2021-10-19T17:43:47+00:00"
         },
         {
@@ -10136,4 +10140,5 @@
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
+
 }
