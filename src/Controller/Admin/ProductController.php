@@ -46,6 +46,7 @@ class ProductController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            
             $product
                 ->setCreatedAt(new \DateTimeImmutable())
                 ->setProductId($this->tokenGenerator->generate());
@@ -54,7 +55,7 @@ class ProductController extends AbstractController
             $this->entityManager->flush();
             $this->addFlash('success', 'produit ajouté');
 
-            return $this->redirectToRoute('create_product');
+            return $this->redirectToRoute('app_admin');
         }
 
         return $this->render('admin/product/new.html.twig', [
@@ -75,9 +76,7 @@ class ProductController extends AbstractController
             $this->entityManager->flush();
             $this->addFlash('success', 'produit modifié');
 
-            return $this->redirectToRoute('edit_product', [
-                'productId' => $product->getProductId()
-            ]);
+            return $this->redirectToRoute('app_admin');
         }
 
         return $this->render('admin/product/edit.html.twig', [

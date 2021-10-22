@@ -49,6 +49,7 @@
                 <a href="{{ path('create_category') }}">Ajouter une catégorie</a>
             </div>
 
+<<<<<<< HEAD
             {% for category in categories %}
                 <div class="admin_cat">
                 <p>Id: {{ category.id }} </p>
@@ -60,6 +61,15 @@
             </div>
             {% endfor %}
         </div>
+=======
+    {% for category in categories %}
+        <p>Id: {{ category.id }} </p>
+        <p>Nom: {{ category.name }}</p>
+        <a href="{{ path('edit_category', {id: category.id}) }}">Modifier la categorie</a>
+        <a href="{{ path('del_category', {id: category.id}) }}">Suprimer la categorie</a>
+    {% endfor %}
+</div>
+>>>>>>> 4e5c0f73fcef061812ecd3ed635b18fef834d519
     </div>
 </div>
 {% endblock %}
