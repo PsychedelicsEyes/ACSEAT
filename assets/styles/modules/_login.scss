@@ -9,8 +9,7 @@
 }
 
 .img-connexion {
-
- height: 516px;
+ height: 568px;
   border-radius: 2%;
 }
 
@@ -23,25 +22,25 @@
   margin-left: 0.5em;
 
 }
-.email {
+.login_email {
   margin-left: 3em;
   margin-bottom: 2em;
   margin-top: 1em;
   font-weight: 600;
   font-size: 120%;
 }
-.mot-de-passe {
+.login_mot-de-passe {
   margin-left: 3em;
   font-weight: 600;
   font-size: 120%;
 }
-.texte-compte {
+.login_texte-compte {
   margin-top: 1.5em;
   margin-left: 4em;
   font-weight: 600;
   font-size: 120%;
 }
-.btn-compte {
+.login_btn-compte {
   @extend %flx;
   margin-top: 1em;
 }
@@ -89,6 +88,7 @@
 
   .img-connexion {
   height: 300px;
+    margin-left: 44px;
   }
 
   .post-container {
@@ -98,17 +98,17 @@
     margin-right: auto;
   }
 
-  .email {
+  .login_email {
     position: relative;
     right: 17px;
   }
 
-  .mot-de-passe {
+  .login_mot-de-passe {
     position: relative;
     right: 17px;
   }
 
-  .texte-compte {
+  .login_texte-compte {
     position: relative;
     right: 17px;
   }

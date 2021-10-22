@@ -3,14 +3,17 @@
 {% block title %}Account{% endblock %}
 
 {% block body %}
+<div class="relative">
 
 
     {% if app.user %}
-        <div class="mb-3">
-        Tu es connecté sur {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+        <div class="admin_titre">
+            Tu es connecté sur {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
         </div>
-    {% endif %}
 
+    {% endif %}
+    <div class="container_block">
+<div class="admin_utilisateurs">
     <h1>Liste des utilisateurs</h1>
 
    {% for user in users %}
@@ -21,8 +24,8 @@
        <p>Date de création du compte: {{ user.created | date("d/m/y") }}</p>
        
     {% endfor %}
-
-
+</div>
+<div class="admin_produits">
     <h1>Liste des produits</h1>
 
     <a href="{{ path('create_product') }}">Ajouter un produit</a>
@@ -37,7 +40,8 @@
         <a href="{{ path('edit_product', {productId: product.productId}) }}">Modifier le produit</a>
         <a href="{{ path('del_product', {productId: product.productId}) }}">Suprimer le produit</a>
     {% endfor %}
-
+</div>
+<div class="admin_categories">
 
     <h1>Liste des catégories</h1>
 
@@ -49,5 +53,8 @@
         <a href="{{ path('edit_category', {id: category.id}) }}">Modifier la categorie</a>
         <a href="{{ path('del_category', {id: category.id}) }}">Suprimer la categorie</a>
     {% endfor %}
-
+</div>
+    </div>
+</div>
 {% endblock %}
+

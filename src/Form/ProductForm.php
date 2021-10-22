@@ -34,7 +34,7 @@ class ProductForm extends AbstractType
                 'class' => Category::class,
                 'choice_label' => 'name'
             ])
-            ->add('image', FileType::class)
+            ->add('imageFile', FileType::class)
         ;
     }
 }

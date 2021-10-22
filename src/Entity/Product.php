@@ -6,10 +6,15 @@ use App\Repository\ProductRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Vich\UploaderBundle\Mapping\Annotation\Uploadable;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
+ * @Vich\Uploadable()
  */
 class Product
 {
@@ -19,6 +24,18 @@ class Product
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @var string|null
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $fileName;
+
+    /**
+     * @var File
+     * @Vich\UploadableField(mapping="product_image", fileNameProperty="filename")
+     */
+    private $imageFile;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -59,9 +76,11 @@ class Product
     private $orders;
 
     /**
-     * @ORM\OneToOne(targetEntity="Image", cascade={"persist", "remove"})
+     * @ORM\Column(type="datetime_immutable")
      */
-    private $image;
+    private $updated_At;
+
+
 
 
     public function __construct()
@@ -176,21 +195,59 @@ class Product
         return $this;
     }
 
-
-    public function getImage()
+    /**
+     * @return string|null
+     */
+    public function getFileName(): ?string
     {
-        return $this->image;
+        return $this->fileName;
     }
 
     /**
-     * Set the value of image
-     *
-     * @return  self
-     */ 
-    public function setImage($image)
+     * @param string|null $fileName
+     * @return Product
+     */
+    public function setFileName(?string $fileName): Product
     {
-        $this->image = $image;
+        $this->fileName = $fileName;
+        return $this;
+    }
+
+
+    /**
+     * @return File|null
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * @param File|null $imageFile
+     * @return Product
+     */
+    public function setImageFile(?File $imageFile): Product
+    {
+        $this->imageFile = $imageFile;
+        if ($this -> imageFile instanceof UploadedFile) {
+            $this->updated_At = new \DateTimeImmutable('now');
+        }
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updated_At;
+    }
+
+    public function setUpdatedAt(\DateTimeImmutable $updated_At): self
+    {
+        $this->updated_At = $updated_At;
 
         return $this;
     }
+
+
+
+
 }
