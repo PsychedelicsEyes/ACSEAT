@@ -3,13 +3,15 @@
 {% block title %}Account{% endblock %}
 
 {% block body %}
-
+<div class="relative" xmlns="http://www.w3.org/1999/html">
+    <div class="compte_container">
     <h1>Ici les infortmations du compte</h1>
 
     {% if app.user %}
-        <div class="mb-3">
-            Tu es connecté sur {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+        <div class="compte-connexion">
+            Tu es connecté sur {{ app.user.username }}, <a href="{{ path('app_logout') }}"><button class="boutton_deconnecter">Se déconnecter</button></a>
         </div>
     {% endif %}
-
+    </div>
+</div>
 {% endblock %}

@@ -26,13 +26,16 @@
                          <input type="hidden" name="_csrf_token"
                        value="{{ csrf_token('authenticate') }}">
 
-                <div class="login_texte-compte">
-                         <p>Vous n'avez pas de compte ?<a href="{{ path('app_register') }}"> Créez un compte içi</a></p>
-                </div>
                 <div class="login_btn-compte">
                         <button class="css-button css-button-gradient css-button-gradient--3">Envoyer
                         </button>
                 </div>
+
+                    <div class="login_texte-compte">
+                        <p>Vous n'avez pas de compte ? Créer un compte<a class="links" href="{{ path('app_register') }}"> içi</a></p>
+                    </div>
+
+
             </form>
         </div>
     </div>

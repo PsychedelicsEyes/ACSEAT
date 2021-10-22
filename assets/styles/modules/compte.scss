@@ -1,0 +1,33 @@
+
+/************ C O M P T E -- D E -- C O N N E X I O N *************/
+
+
+.compte_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 40%;
+  background-color: white;
+  line-height: 5em;
+  text-align: center;
+  padding-top: 6%;
+  padding-bottom: 6%;
+  border: 3px solid darkslateblue;
+  border-radius: 10%;
+}
+
+/********* Bouton se Déconnecter ***********/
+
+.compte-connexion {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.boutton_deconnecter {
+  background-color: #FB020E;
+  width: 8em;
+  height: 3em;
+  border: 3px solid darkslateblue;
+  border-radius: 30%;
+  color: white;
+}

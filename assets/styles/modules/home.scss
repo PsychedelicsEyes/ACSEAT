@@ -13,14 +13,16 @@
   flex-direction: column;
 }
 
-/* title */
+/************* D E B U T   T I T L E ****************/
 
 .home_big_title {
   font-size: 440%;
   text-align: center;
 }
 
-/* Debut home container */
+/*************** F I N   T I T L E ******************/
+
+/************ D E B U T   H O M E   C O N T A I N E R ****************/
 
 .home_container {
   @extend %flx;
@@ -32,9 +34,9 @@
   width: 90%;
 }
 
-/* fin home container */
+/*********** F I N   H O M E   C O N T A I N E R *****************/
 
-/* Address */
+/********** D E B U T   A D D R E S S */
 
 .block_home_address {
   width: 25%;
@@ -57,8 +59,9 @@
 
 }
 
+/*********** F I N    A D D R E S S **************/
 
-/* horaires */
+/************ D E B U T   H O R A I R E S  **************/
 
 .home_horaires {
   background-color: white;
@@ -81,7 +84,7 @@
   line-height: 35px;
 }
 
-/* maps */
+/********* D E B U T   M A P S */
 
 .home_maps {
   display: flex;
@@ -90,12 +93,21 @@
   margin-top: 2%;
 }
 @media only screen and ( max-width : 768px) {
+
+  .home_big_title {
+    font-size: 279%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+
   .home_maps, .block_home_address, .home_horaires  {
     display: grid;
     grid-template-columns: 1fr;
     margin-left: auto;
     margin-right: auto;
  }
+
   .home_maps {
     width: 90%;
   }
