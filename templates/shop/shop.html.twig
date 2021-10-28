@@ -2,26 +2,22 @@
 
 {% block body %}
 
-
-
-
     <h1>Liste des produits</h1>
     
 
     {% for product in products %}
 
     {% for categorie in product.category %}
-
     <p>{{ categorie.name }}</p>
     <p>{{ product.title }}</p>
     <p>{{ product.price }} €</p>
+    {% if product.imageName %}
+    <img src="/images/products/{{ product.imageName }}">
+    {% endif %}
     <a href="{{ path('add_cart', {id: product.id}) }}">Ajouter au panier</a>
-
-
-
-    {% endfor %}
-    {% endfor %}
     
+    {% endfor %}
+    {% endfor %}
 
 
 {% endblock %}
