@@ -13,7 +13,7 @@
 
     </head>
     <body>
-                            <!-- ****************** Début Navbar Responsive *********************-->
+                            <!-- ****************** DEBUT NAVABAR RESPONSIVE *********************-->
         <div class="bus">
             <div class="menu-btn">
                 <div class="menu-btn_burger">
@@ -22,8 +22,7 @@
                            <div class="menu_btn_burger_text">
                                 <a class="burger_line" href="/">Accueil</a>
                                 <a class="burger_line" href="/menu">Menu</a>
-                                <a  class="burger_line" href="{{ path('app_home') }}#home_horaires">Horaires</a>
-                                <a class="burger_line" href="/contact">Contact</a>
+                                <a  class="burger_line" href="{{ path('app_home') }}#home_horaires">Horaires & Contact</a>
                                 <a class="burger_line"  href="/connexion" class="css-button css-button-gradient css-button-gradient--2"> Connecter</a>
                            </div>
                         </div>
@@ -32,54 +31,49 @@
                 <div>
                 </div>
             </div>
-
-            <!--*************** Fin Navbar Responsive *********************-->
-
-                                <!--******************** Début Navbar ********************-->
-
-            <figure class="logo_bus"><a href="#"><img src="{{ asset('img/logo.png') }}"  alt="logo d'un bus de Londres"></a></figure>
-
             <a class="nav_panierResponsive" href="/panier"><img src="{{ asset('img/panier.png') }}"  alt="icon panier"></a>
-
-    </div>
-    <nav class="nav-navbar">
-        <div class="container-nav">
-            <div class="block1">
-                <div class="navbar">
-                    <a href="/"><button class="css-button css-button-gradient css-button-gradient--2" >
-                        Accueil
-                    </button></a>
-                </div>
-                <div class="navbar">
-
-                    <a href="/menu"><button class="css-button css-button-gradient css-button-gradient--2">Menu
-                    </button></a>
-                </div>
-                
-                <a href="/panier"><img src="{{ asset('img/panier.png') }}" class="nav_panier"    alt="icon panier"></a>
-                
-            </div>
-            <div class="block2">
-                <div class="navbar">
-                    <a href="{{ path('app_home') }}#home_horaires"><button class="css-button css-button-gradient css-button-gradient--2">
-                        Horaires
-                    </button></a>
-                </div>
-                <div class="navbar">
-                    <a href="/contact"><button class="css-button css-button-gradient css-button-gradient--2">
-                        Contact
-                    </button></a>
-                </div>
-                <div class="navbar">
-                    <a href="{{ path('app_login') }}">
-                        <a href="/connexion"><button  class="css-button css-button-gradient css-button-gradient--2"> Connecter </button></a>
-                    </a>
-                </div>
-            </div>
         </div>
-    </nav>
+                            <!--*************** FIN NAVBAR RESPONSIVE *********************-->
 
-                            <!--************** Fin Navbar **************-->
+
+                     <!--******************** DEBUT NAVBAR DESKTOP ********************-->
+
+
+            <nav class="nav-navbar">
+                <div class="container-nav">
+                    <div class="container_title">
+                        <p> EaT D@Q FooD</p>
+                    </div>
+
+                    <div class="block2">
+                        <div class="navbar">
+                            <a href="/" class="button-accueil" > Accueil</a>
+                        </div>
+                        <div class="navbar">
+                            <a href="/menu" class="button-menu">Menu</a>
+                        </div>
+
+
+                        <div class="navbar">
+                            <a href="{{ path('app_home') }}#home_horaires" class="button-horaires">Horaires & Contact</a>
+                        </div>
+                        <div class="navbar">
+                            <a href="{{ path('app_login') }}">
+                                <a href="/connexion" class="button-connexion"> Connecter</a>
+                            </a>
+                        </div>
+
+                        <div class="navbar">
+                            <a href="{{ path('app_cart') }}">
+                                <a href="/panier" class="button-panier">Panier</a>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+                            <!--************** FIN NAVBAR DESKTOP **************-->
+
 
 
     {% block body %}
@@ -87,9 +81,10 @@
 
         {% endblock %}
 
-                        <!--***************** Début Footer ****************-->
+                        <!--***************** DEBUT FOOTER ****************-->
 
         <footer class="block-footer">
+            <img src="{{ asset('img/logo_bus.png') }}" class="logo_bus"  alt="logo d'un bus de Londres">
             <div class="sociaux">
                 <a href="" target="_blank"><img src="{{ asset('img/facebook_logo_icon.png') }}"  class="facebook"  alt="facebook"></a>
                 <a href="" target="_blank"><img src="{{ asset('img/twitter-icon.png') }}" class="twitter" alt="twitter"></a>
@@ -110,8 +105,8 @@
                 </div>
             </div>
         </footer>
+                              <!--************* FIN FOOTER **************-->
 
-                            <!--************* Fin Vector Footer ****************-->
 
     {% block javascripts %}
       {{ encore_entry_script_tags('app') }}

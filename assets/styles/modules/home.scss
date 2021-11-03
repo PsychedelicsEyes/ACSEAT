@@ -2,10 +2,10 @@
 
 
 .relative {
-  background-color: #C44749;
+  background-color: #f8f4f4;
   z-index: 1;
   position: relative;
-  padding-bottom: 10em;
+  bottom: 0;
   padding-top: 10em;
 }
 
@@ -13,14 +13,11 @@
   flex-direction: column;
 }
 
-/************* D E B U T   T I T L E ****************/
-
-.home_big_title {
-  font-size: 440%;
-  text-align: center;
+/************* I M G  B U R G E R ****************/
+.navbar_burger {
+  width: 100%;
 }
 
-/*************** F I N   T I T L E ******************/
 
 /************ D E B U T   H O M E   C O N T A I N E R ****************/
 
@@ -78,6 +75,7 @@
   font-weight: bold;
   padding-bottom: 20px;
   line-height: 65px;
+  margin-right: 10%;
 }
 
 .home_text {
@@ -92,13 +90,22 @@
   position: relative;
   margin-top: 2%;
 }
+
+/******************* R E S P O N S I V E ***************************/
+
 @media only screen and ( max-width : 768px) {
 
+  /************************ T I T L E  *********************/
   .home_big_title {
     font-size: 279%;
     margin-bottom: 20px;
     text-align: center;
   }
+
+  .navbar_burger {
+    width: 100%;
+  }
+
 
 
   .home_maps, .block_home_address, .home_horaires  {

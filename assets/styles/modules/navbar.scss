@@ -1,7 +1,92 @@
 /*************** N A V B A R ***************/
 
+.container_title {
+  --couleur:0, 0, 0;
+  margin: 1rem;
+  display: flex;
+  justify-content: left;
+  font-family: 'Exo', serif;
+  color: white;
+  text-shadow:
+          0 1px 0 #ccc,
+          0 2px 0 #acacac,
+          0 3px 0 #a0a0a0,
+          0 4px 0 #9b9a9a,
+          0 5px 0 #888787,
+          0 6px 1px rgba(var(--couleur),.1),
+          0 0 5px rgba(var(--couleur),.1),
+          0 1px 3px rgba(var(--couleur),.3),
+          0 3px 5px rgba(var(--couleur),.3),
+          0 5px 10px rgba(var(--couleur),.25),
+          0 10px 10px rgba(var(--couleur),.2),
+          0 20px 20px rgba(var(--couleur),.15);
+  font-size: calc(3em)
+
+}
+
 
 /********** Début du Bouton *************/
+
+.button-accueil {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  font-family: 'Exo', serif;
+  color: white;
+  font-size: calc(1.5em)
+
+}
+
+.button-menu {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  font-family: 'Exo', serif;
+  color: white;
+  font-size: calc(1.5em)
+
+}
+
+.button-horaires {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  font-family: 'Exo', serif;
+  color: white;
+  font-size: calc(1.5em)
+
+}
+
+.button-contact {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  font-family: 'Exo', serif;
+  color: white;
+  font-size: calc(1.5em)
+
+}
+
+.button-connexion {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  font-family: 'Exo', serif;
+  color: white;
+  font-size: calc(1.5em)
+
+}
+
+.button-panier {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  font-family: 'Exo', serif;
+  color: white;
+  font-size: calc(1.5em)
+}
+
+
 
 .menu-btn {
   position: relative;
@@ -64,15 +149,11 @@
   /*********** Fin du Bouton ************/
 
 
-
 .nav-navbar {
-  background-color: $mainColor;
-  color: $secondaryColor;
-  position: sticky;
+  background: rgba(0, 0, 0, 0) linear-gradient(-180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.35) 51%, rgba(0, 0, 0, 0) 100%) repeat scroll 0% 0%;
+  position: fixed;
   padding: 0 0 1em 0;
   width: 100%;
-  display: block;
-  top: 0 ;
   z-index: 2;
 }
 .container-nav {
@@ -82,76 +163,26 @@
 
 }
 
-.block1 {
-  width: 30%;
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 2rem;
-
-}
 
 .block2{
-  width: 30%;
+  width: 42%;
   display: flex;
   justify-content: space-evenly;
-  font-size: 2rem;
-}
-.css-button-gradient--2 {
-  min-width: 130px;
-  height: 40px;
-  color: #fff;
-  padding: 5px 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  border-radius: 5px;
-  border: none;
-  background-size: 160% auto;
-  background-image: linear-gradient(315deg, #bdc3c7 15%, #FB020E 75%);
-
-}
-.css-button-gradient--2:hover {
-  background-position: right center;
+  font-size: 110%;
 }
 
-
-
-/************ Début de l'Animation Bus ***********/
+/************ Début logo Bus ***********/
 .logo_bus {
-  position: relative;
-  overflow: hidden;
-  max-width: 315px;
-  height: 161px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  width: 8%;
+  margin-top: 1%;
 }
 
-.logo_bus img {
-  height: 70%;
-  position: relative;
-  right: 0;
-  -webkit-transition: all 2s ease-out;
-  transition: all 1s ease-out;
-}
-
-.logo_bus:hover img,
-.logo_bus.hover img {
-
-  -webkit-transform: translateX(1000px);
-  transform: translateX(-1000px);
-}
-
-/************** fin de l'animation bus ****************/
+/************** fin logo bus ****************/
 
 
 /******** Début Div Bus *********/
 .bus {
-  display: flex;
-  justify-content: space-evenly;
-  background: $mainColor;
-  padding-top: 1em;
+  display: none;
 }
 /*********** Fin Div Bus ************/
 
@@ -171,178 +202,10 @@
 /******************* Fin Panier *******************/
 
 
-/******************* Début Vecteur *********************/
-
-/********** Début Vector Cercle 1 ************/
-.vector-cercle {
-  @extend %cercle;
-  width: 304px;
-  height: 302px;
-  top: 0;
-  left: -12em;
-}
-
-.vector-cercle1 {
-  @extend %cercle2;
-  width: 277px;
-  height: 280px;
-  top: 4px;
-  left: 8px;
-}
-
-.vector-cercle2 {
-  @extend %cercle2;
-  width: 254px;
-  height: 258px;
-  top: 4px;
-  left: 6px;
-}
-
-.vector-cercle3 {
-  @extend %cercle2;
-  width: 230px;
-  height: 234px;
-  top: 6px;
-  left: 7px;
-}
-
-.vector-cercle4 {
-  @extend %cercle2;
-  width: 207px;
-  height: 211px;
-  top: 4px;
-  left: 5px;
-}
-
-.vector-cercle5 {
-  @extend %cercle2;
-  width: 184px;
-  height: 183px;
-  top: 8px;
-  left: 6px;
-}
-
-/************ Fin Vector 1 **************/
-/************ Début Vector Cercle 2 *************/
-
-.vector-cercle6 {
-  @extend %cercle;
-  width: 304px;
-  height: 302px;
-  top: -11em;
-  left: 28em;
-}
-
-.vector-cercle7 {
-  @extend %cercle2;
-  width: 277px;
-  height: 280px;
-  top: 4px;
-  left: 8px;
-}
-
-.vector-cercle8 {
-  @extend %cercle2;
-  width: 254px;
-  height: 258px;
-  top: 4px;
-  left: 6px;
-}
-
-.vector-cercle9 {
-  @extend %cercle2;
-  width: 230px;
-  height: 234px;
-  top: 6px;
-  left: 7px;
-}
-
-.vector-cercle10 {
-  @extend %cercle2;
-  width: 207px;
-  height: 211px;
-  top: 4px;
-  left: 5px;
-}
-
-.vector-cercle11 {
-  @extend %cercle2;
-  width: 184px;
-  height: 183px;
-  top: 8px;
-  left: 6px;
-}
-
-/************ Fin Vector 2 ***************/
-/******** Début Vector Cercle 3 ************/
-
-.vector-cercle12 {
-  @extend %cercle;
-  width: 304px;
-  height: 302px;
-  top: 4em;
-  left: 65em;
-}
-
-.vector-cercle13 {
-  @extend %cercle2;
-  width: 277px;
-  height: 280px;
-  top: 4px;
-  left: 8px;
-}
-
-.vector-cercle14 {
-  @extend %cercle2;
-  width: 254px;
-  height: 258px;
-  top: 4px;
-  left: 6px;
-}
-
-.vector-cercle15 {
-  @extend %cercle2;
-  width: 230px;
-  height: 234px;
-  top: 6px;
-  left: 7px;
-}
-
-.vector-cercle16 {
-  @extend %cercle2;
-  width: 207px;
-  height: 211px;
-  top: 4px;
-  left: 5px;
-}
-
-.vector-cercle17 {
-  @extend %cercle2;
-  width: 184px;
-  height: 183px;
-  top: 8px;
-  left: 6px;
-}
-
-/******* Fin Vector 3 ***********/
-/***** Img Vector Cercle 4 *******/
-
-.vector-cercle-4 {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-
-/****************** Fin Img Vector Cercle *******************/
-
 /****************** Début du Résponsive ********************/
 
 @media screen and (max-width: 768px)  {
 
-  .footerVector1{
-    display: none;
-  }
 
   .nav-navbar {
     display: none;
@@ -354,7 +217,9 @@
 
   .bus {
     justify-content: space-between;
-    padding: 1em;
+    display: flex;
+    background: $mainColor;
+    padding-top: 1em;
   }
 
 
