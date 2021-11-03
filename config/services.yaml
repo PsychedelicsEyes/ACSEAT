@@ -3,7 +3,12 @@
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+<<<<<<< HEAD
 parameters:
+=======
+parameters: 
+    app.path.product_images: /public/images/products
+>>>>>>> 11a5f63e7d036981aa8ce8742bbc07e9d3e73f37
 
 services:
     # default configuration for services in *this* file

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Account{% endblock %}
+
+{% block body %}
+
+    <h1>Ici les infortmations du compte</h1>
+
+    {% if app.user %}
+        <div class="mb-3">
+            Tu es connecté sur {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+        </div>
+    {% endif %}
+
+    {% for order in app.user.orders %}
+    <p>Reference de la commande: {{ order.reference }}</p>
+  {% for product in order.orderProducts %}
+    <p>Produit: {{ product.product.title}}
+    <p>Quantité de produit: {{ product.quantity }}
+    <p>Prix de la commande: {{ order.price }}€</p>
+    <p>Date de la commande: {{ order.createdAt | date("d/m/y") }}
+    {% endfor %}
+    <p>-------------------------------------------------------------</p>
+    {% endfor %}
+
+{% endblock %}
