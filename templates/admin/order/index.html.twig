@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commandes{% endblock %}
+
+{% block body %}
+
+    <a href="{{ path('app_admin') }}">Retourner au panel admin</a>
+
+    <h1>Liste des commandes</h1>
+
+    {% for order in orders %}
+    {% for command in order.orderProducts %}
+    {% if order.user is null %}
+        <p>Reference: {{ order.Reference }}</p>
+        <p>Produit: {{ command.product.title}}
+        <p>Prix total: {{order.price}} €</p>
+        <p>Quantité: {{ command.quantity }}
+        <p>------------------------------------</p>
+        
+    {%  else %}
+    
+        <p>Reference: {{ order.Reference }}</p>
+        <p>Produit: {{ command.product.title}}
+        <p>Prix total: {{order.price}} €</p>
+        <p>Quantité: {{ command.quantity }}
+        <p>Utilisateur: {{ order.user.email }}</p>
+        <p>------------------------------------</p>
+
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+
+{% endblock %}

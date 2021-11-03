@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Controller\Admin;
+namespace App\Controller\Admin\Product;
 
 use App\Entity\Product;
 use App\Form\EditProductForm;
 use App\Form\ProductForm;
-use App\Security\TokenGenerator;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\ProductRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -29,6 +29,19 @@ class ProductController extends AbstractController
     )
     {
         $this->entityManager = $entityManager;
+    }
+
+
+    /**
+     * @Route("/product/index", name="display_product")
+     */
+    public function index(ProductRepository $productRepository): Response
+    {
+
+
+        return $this->render('admin/product/index.html.twig', [
+            'products' => $productRepository->findAll()
+        ]);
     }
 
 

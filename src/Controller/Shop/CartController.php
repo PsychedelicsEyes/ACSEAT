@@ -29,7 +29,12 @@ class CartController extends AbstractController
                 "product" => $product,
                 "quantite" => $quantite
             ];
+
+
             $total += $product->getPrice() * $quantite;
+
+            $session->set('total', $total);
+            
         }
 
 
@@ -47,9 +52,13 @@ class CartController extends AbstractController
         $id = $product->getId();
 
         if(!empty($cart[$id])){
+
             $cart[$id]++;
+
         }else{
+
             $cart[$id] = 1;
+            
         }
 
 

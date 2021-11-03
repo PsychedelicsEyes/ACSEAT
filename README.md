@@ -11,5 +11,5 @@ Cart: ✅
 
 Home: ✅
 
-Order: ❌
+Order: ✅
 ```

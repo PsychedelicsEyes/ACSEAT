@@ -8,9 +8,9 @@
     {% for product in products %}
 
     {% for categorie in product.category %}
-    <p>{{ categorie.name }}</p>
-    <p>{{ product.title }}</p>
-    <p>{{ product.price }} €</p>
+    <p>La catégorie: {{ categorie.name }}</p>
+    <p>Le nom du produit: {{ product.title }}</p>
+    <p>Le prix du produit:{{ product.price }} €</p>
     {% if product.imageName %}
     <img src="/images/products/{{ product.imageName }}">
     {% endif %}
