@@ -25,16 +25,18 @@ class Product
     private $id;
 
     /**
-     * @var string|null
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $fileName;
+    * @Vich\UploadableField(mapping="product_images", fileNameProperty="imageName")
+    * 
+    * @var File|null
+    */
+    private $imageFile;
 
     /**
-     * @var File
-     * @Vich\UploadableField(mapping="product_image", fileNameProperty="filename")
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string|null
      */
-    private $imageFile;
+    private $imageName;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -61,17 +63,6 @@ class Product
      * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="products")
      */
     private $category;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Order::class, mappedBy="product")
-     */
-    private $orders;
-
-    /**
-     * @ORM\Column(type="datetime_immutable")
-     */
-    private $updated_At;
-
 
     public function __construct()
     {
