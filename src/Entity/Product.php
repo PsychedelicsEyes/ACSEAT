@@ -6,6 +6,7 @@ use App\Repository\ProductRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -24,25 +25,16 @@ class Product
     private $id;
 
     /**
-    * @Vich\UploadableField(mapping="product_images", fileNameProperty="imageName")
-    * 
-    * @var File|null
-    */
-    private $imageFile;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     *
      * @var string|null
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $imageName;
+    private $fileName;
 
     /**
-     * @ORM\Column(type="datetime")
-     *
-     * @var \DateTimeInterface|null
+     * @var File
+     * @Vich\UploadableField(mapping="product_image", fileNameProperty="filename")
      */
-    private $updatedAt;
+    private $imageFile;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -70,11 +62,21 @@ class Product
      */
     private $category;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Order::class, mappedBy="product")
+     */
+    private $orders;
+
+    /**
+     * @ORM\Column(type="datetime_immutable")
+     */
+    private $updated_At;
+
+
     public function __construct()
     {
         $this->category = new ArrayCollection();
     }
-
 
     public function getId(): ?int
     {

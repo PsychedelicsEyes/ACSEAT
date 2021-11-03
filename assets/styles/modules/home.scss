@@ -1,0 +1,145 @@
+/* Page css home */
+
+
+.relative {
+  background-color: #f8f4f4;
+  z-index: 1;
+  position: relative;
+  bottom: 0;
+  padding-top: 10em;
+}
+
+.relative_flex {
+  flex-direction: column;
+}
+
+/************* I M G  B U R G E R ****************/
+.navbar_burger {
+  width: 100%;
+}
+
+
+/************ D E B U T   H O M E   C O N T A I N E R ****************/
+
+.home_container {
+  @extend %flx;
+  width: 100%;
+  margin-top: 5%;
+}
+
+.img-menu-home {
+  width: 90%;
+}
+
+/*********** F I N   H O M E   C O N T A I N E R *****************/
+
+/********** D E B U T   A D D R E S S */
+
+.block_home_address {
+  width: 25%;
+  background-color: white;
+  font-size: 50%;
+}
+
+.home_title_address {
+  font-size: 360%;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 37%;
+  padding-bottom: 8%;
+}
+
+.home_address {
+  font-size: 200%;
+  line-height: 2em;
+  padding-left: 12%;
+
+}
+
+/*********** F I N    A D D R E S S **************/
+
+/************ D E B U T   H O R A I R E S  **************/
+
+.home_horaires {
+  background-color: white;
+  padding-left: 50px;
+  font-size: 140%;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  width: 23%;
+}
+
+.title_horaires {
+  text-align: center;
+  font-size: 125%;
+  font-weight: bold;
+  padding-bottom: 20px;
+  line-height: 65px;
+  margin-right: 10%;
+}
+
+.home_text {
+  line-height: 35px;
+}
+
+/********* D E B U T   M A P S */
+
+.home_maps {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  margin-top: 2%;
+}
+
+/******************* R E S P O N S I V E ***************************/
+
+@media only screen and ( max-width : 768px) {
+
+  /************************ T I T L E  *********************/
+  .home_big_title {
+    font-size: 279%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .navbar_burger {
+    width: 100%;
+  }
+
+
+
+  .home_maps, .block_home_address, .home_horaires  {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+  .home_maps {
+    width: 90%;
+  }
+
+  .home_maps iframe{
+    width: 100%;
+  }
+
+  .home_horaires {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .block_home_address {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 2%;
+  }
+  .home_title_address, .home_horaires {
+    padding-top: 5%;
+    margin-top: 2%;
+  }
+
+  .relative {
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
+
+}

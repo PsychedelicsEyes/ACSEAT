@@ -7,7 +7,7 @@
         <h1>Panel admin</h1>
 
     {% if app.user %}
-        <div class="mb-3">
+    <div class="admin_titre">
         Tu es connecté sur {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
         </div>
     {% endif %}
@@ -19,3 +19,4 @@
       <a href="{{ path('admin_display_order') }}">Liste des commandes</a>
 
 {% endblock %}
+

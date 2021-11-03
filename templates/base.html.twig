@@ -1,19 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{% block title %}Eat D@q FooD{% endblock %}</title>
+
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+            {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+                            <!-- ****************** DEBUT NAVABAR RESPONSIVE *********************-->
+        <div class="bus">
+            <div class="menu-btn">
+                <div class="menu-btn_burger">
+                    <nav role="navigation" id="burger_menu_responsive">
+                        <div class="menu_btn_burger_block">
+                           <div class="menu_btn_burger_text">
+                                <a class="burger_line" href="/">Accueil</a>
+                                <a class="burger_line" href="/menu">Menu</a>
+                                <a  class="burger_line" href="{{ path('app_home') }}#home_horaires">Horaires & Contact</a>
+                                <a class="burger_line"  href="/connexion" class="css-button css-button-gradient css-button-gradient--2"> Connecter</a>
+                           </div>
+                        </div>
+                    </nav>
+                    </div>
+                <div>
+                </div>
+            </div>
+            <a class="nav_panierResponsive" href="/panier"><img src="{{ asset('img/panier.png') }}"  alt="icon panier"></a>
+        </div>
+                            <!--*************** FIN NAVBAR RESPONSIVE *********************-->
+
+
+                     <!--******************** DEBUT NAVBAR DESKTOP ********************-->
+
+
+            <nav class="nav-navbar">
+                <div class="container-nav">
+                    <div class="container_title">
+                        <p> EaT D@Q FooD</p>
+                    </div>
+
+                    <div class="block2">
+                        <div class="navbar">
+                            <a href="/" class="button-accueil" > Accueil</a>
+                        </div>
+                        <div class="navbar">
+                            <a href="/menu" class="button-menu">Menu</a>
+                        </div>
+
+                        <div class="navbar">
+                            <a href="{{ path('app_home') }}#home_horaires" class="button-horaires">Horaires & Contact</a>
+                        </div>
+                        <div class="navbar">
+                            <a href="{{ path('app_login') }}">
+                                <a href="/connexion" class="button-connexion"> Connecter</a>
+                            </a>
+                        </div>
+
+                        <div class="navbar">
+                            <a href="{{ path('app_cart') }}">
+                                <a href="/panier" class="button-panier">Panier</a>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+                            <!--************** FIN NAVBAR DESKTOP **************-->
+
+
+    {% block body %}
+
+
+        {% endblock %}
+
+                        <!--***************** DEBUT FOOTER ****************-->
+
+        <footer class="block-footer">
+            <img src="{{ asset('img/logo_bus.png') }}" class="logo_bus"  alt="logo d'un bus de Londres">
+            <div class="sociaux">
+                <a href="" target="_blank"><img src="{{ asset('img/facebook_logo_icon.png') }}"  class="facebook"  alt="facebook"></a>
+                <a href="" target="_blank"><img src="{{ asset('img/twitter-icon.png') }}" class="twitter" alt="twitter"></a>
+                <a href="" target="_blank"><img src="{{ asset('img/instagram-icon.png') }}" class="instagram" alt="instagram"></a>
+                <link href="https://fontsgeek.com/fonts/Block-Berthold-Condensed-Regular" rel="stylesheet">
+            </div>
+
+            <div class="application">
+                <div class="appli-apple">
+                    <a href="https://itunes.apple.com/fr" target="_blank">
+                        <img class="store" src="{{ asset('img/apple.png') }}" alt="play store">
+                    </a>
+                </div>
+                <div class="appli-google">
+                    <a href="https://play.google.com/store" target="_blank">
+                    <img class="play" src="{{ asset('img/play_store.png') }}" alt="google play">
+                    </a>
+                </div>
+            </div>
+        </footer>
+                              <!--************* FIN FOOTER **************-->
+
+
+    {% block javascripts %}
+      {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
     </body>
 </html>

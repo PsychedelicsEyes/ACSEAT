@@ -1,0 +1,66 @@
+
+/* contact */
+
+.relative {
+  @extend %flx;
+}
+.contact_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: white;
+  border-radius: 2%;
+  border: 3px solid darkslateblue;
+  margin: 1em 1em 8em -2em;
+}
+
+.contact_container_form {
+  width: 60em;
+
+}
+
+.contact_email, .contact_message {
+  width:50%;
+  margin: 30px auto 22px;
+
+}
+
+.form-control_contact {
+  background-color: #cabed5;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 10%;
+  margin: 10px auto auto;
+}
+
+.form-control-input {
+  box-sizing: border-box;
+  padding: 2% 4%;
+  width: 100%;
+  margin: 8px auto auto;
+}
+
+.btn-compte {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+@media screen and (max-width: 768px) {
+
+  .contact_container {
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+
+  .contact_container_form {
+    display: contents;
+
+  }
+
+  .contact_email, .contact_message {
+    width: 90%;
+
+  }
+  }

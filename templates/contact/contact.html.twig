@@ -1,0 +1,31 @@
+{% extends 'base.html.twig'%}
+{% block title %}Eat D@Q FooD (Contact){% endblock %}
+{% block body %}
+
+
+<div class="relative">
+
+    <div class="contact_container">
+        <div class="contact_container_form">
+
+            <h1 class="h1">Contact</h1>
+            <form method="post" action="">
+                <div class="contact_email">
+                    <label for="exampleFormControlInput1" >Email</label>
+                    <input type="Email" class="form-control-input" id="exampleFormControlInput1" placeholder="">
+                </div>
+                <div class="contact_message">
+                    <label for="exampleFormControlTextarea1">Message</label>
+                    <textarea class="form-control_contact" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="btn-compte">
+                    <button class="css-button css-button-gradient css-button-gradient--3">Envoyer</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock body %}

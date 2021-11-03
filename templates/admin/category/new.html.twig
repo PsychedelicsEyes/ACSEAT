@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-
-
-    {{ form_start(form) }}
-    {{ form_row(form.name) }}
-    <button type="submit">Ajouter la catégorie</button>
-    {{ form_end(form) }}
-
-
+<div class="relative">
+    <div class="category_container">
+        {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        <button type="submit">Ajouter la catégorie</button>
+        {{ form_end(form) }}
+    </div>
+</div>
 {% endblock %}

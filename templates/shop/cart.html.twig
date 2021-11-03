@@ -3,58 +3,70 @@
 {% block title %}Menu{% endblock %}
 
 {% block body %}
-
-    <h1>Votre panier</h1>
-
-
-    <table>
-        <thead>
-            <tr>
-            <th>Produit</th>
-            <th>Prix</th>
-            <th>Quantité</th>
-            <th>Total</th>
-            <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for element in dataCart %}
-
-           
+<div class="relative">
+    <div class="tableau">
+        <table>
+            <caption>Votre panier<caption>
+            <thead>
                 <tr>
-                    <td>{{ element.product.title}}</td>
-                    <td>{{ element.product.price}}€</td>
-                    <td>{{ element.quantite}}</td>
-                    <td>{{ element.quantite * element.product.price}}€</td>
-                    <td>
-                        <a href="{{path("add_cart", {id: element.product.id})}}">Ajouter</a>
-                        <a href="{{path("remove_cart", {id: element.product.id})}}">Retirer</a>
-                        <a href="{{path("del_cart", {id: element.product.id})}}">Supprimer</a>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Total</th>
+                <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for element in dataPanier %}
+
+
+                    <tr>
+                        <td data-label="Produit">{{ element.product.title}}</td>
+                        <td data-label="Prix">{{ element.product.price}}€</td>
+                        <td data-label="Quantité">{{ element.quantite}}</td>
+                        <td data-label="Total">{{ element.quantite * element.product.price}}€</td>
+                        <td data-label="Actions">
+                            <div class="block_actions">
+                            <a href="{{path("add_cart", {productId: element.product.productId})}}">Ajouter/</a>
+                            <a href="{{path("remove_cart", {productId: element.product.productId})}}">Retirer/</a>
+                            <a href="{{path("del_cart", {productId: element.product.productId})}}">Supprimer</a>
+                            </div>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td>Votre panier est vide</td>
+                    </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Total</td>
+                    <td>{{ total }}€
                     </td>
                 </tr>
-            {% else %}
+        </table>
+        <table>
                 <tr>
-                    <td>Votre panier est vide</td>
+                    <td><a href="{{path("app_pay")}}">Passez commande</a></td>
                 </tr>
+                <tr>
+                    <td><a href="{{path("del__all_cart")}}">Supprimer tout le panier</a></td>
+                </tr>
+                <tr>
+                    <td><a href="{{path("app_menu")}}">Continuez ses achats</a></td>
+                </tr>
+            </tfoot>
 
-            {% endfor %}
-        </tbody>
-
-        <tfoot>
-            <tr>
-                <td>Total</td>
-                <td>{{ total }}€
-                <a href="{{path("app_pay")}}">Passez commande</a>
-                <a href="{{path("del__all_cart")}}">Supprimer tout le panier</a>
-                </td>
-            </tr>
-        </tfoot>
-
-    </table>
- 
- <a href="{{path("app_menu")}}">Continuez ses achat</a>
-   
-    
+        </table>
+        </div>
 
 
+    </div>
+</div>
 {% endblock %}

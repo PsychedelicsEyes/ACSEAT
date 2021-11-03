@@ -120,6 +120,7 @@ class Order
             $orderProduct->setCommande($this);
         }
 
+
         return $this;
     }
 

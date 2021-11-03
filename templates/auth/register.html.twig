@@ -1,21 +1,35 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Register{% endblock %}
+{% block title %}Eat D@Q FooD (Inscription){% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+            <div class="relative">
+                <div class="corps">
+                     <div class="container1">
+                        <div class="reg_form">
+                            <h1>Inscription</h1>
+                        </div>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+                          <div class="reg-email">
+                                {{ form_start(registrationForm) }}
 
-        <button type="submit" class="btn">Register</button>
-
-        <p>You have a account?<a href="{{ path('app_login') }}">Connect to your account here</a></p>
-    {{ form_end(registrationForm) }}
+                                 {{ form_row(registrationForm.email) }}
+                                 {{ form_row(registrationForm.plainPassword, {
+                                            label: 'Password'
+                                 }) }}
+                          </div>
 
 
+                                <button type="submit" class="btn">Envoyer</button>
+
+                                <div class="reg_text"><p>Vous avez un compte ? Connectez vous à votre <a class="links" href="{{ path('app_login') }}"> compte</a></p>
+                                      {{ form_end(registrationForm) }}
+                                </div>
+                           </div>
+
+                            <div class="content_img">
+                                   <img class="imag_inscription"  src="img/food.png" alt="food">
+                            </div>
+
+                 </div>
+            </div>
 {% endblock %}

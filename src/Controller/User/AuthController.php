@@ -20,9 +20,8 @@ class AuthController extends AbstractController
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
-
         if ($this->getUser()) {
-            return $this->redirectToRoute('account');
+            return $this->redirectToRoute('app_account');
         }
 
         $user = new User();
@@ -57,7 +56,7 @@ class AuthController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         if ($this->getUser()) {
-            return $this->redirectToRoute('account');
+            return $this->redirectToRoute('app_account');
         }
 
         return $this->render('auth/login.html.twig', [
@@ -65,9 +64,6 @@ class AuthController extends AbstractController
             'error' => $authenticationUtils->getLastAuthenticationError()
         ]);
     }
-
-
-
 
     /**
      * @Route("/logout", name="app_logout")

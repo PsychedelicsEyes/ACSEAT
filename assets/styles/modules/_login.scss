@@ -1,0 +1,141 @@
+/* Début du formulaire login */
+
+.post-container {
+  @extend %post-form;
+}
+.relative-flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.img-connexion {
+ height: 568px;
+  border-radius: 2%;
+}
+
+.h1 {
+ @extend %titre-h1;
+}
+
+.form-control {
+  font-size: 115%;
+  margin-left: 0.5em;
+
+}
+.login_email {
+  margin-left: 3em;
+  margin-bottom: 2em;
+  margin-top: 1em;
+  font-weight: 600;
+  font-size: 120%;
+}
+.login_mot-de-passe {
+  margin-left: 3em;
+  font-weight: 600;
+  font-size: 120%;
+}
+.login_texte-compte {
+  margin-top: 1.5em;
+  margin-left: 4em;
+  font-weight: 600;
+  font-size: 120%;
+}
+.login_btn-compte {
+  display: flex;
+  margin-top: 2em;
+  padding-right: 18em;
+  padding-left: 18em;
+  justify-content: center;
+}
+.css-button-gradient--3 {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  background-size: 160% auto;
+  background-image: linear-gradient(315deg, #bdc3c7 15%, #FB020E 75%);
+  border: 3px solid darkslateblue;
+}
+
+.links {
+  text-decoration: underline;
+}
+/* fin formulaire login */
+
+
+/* Début du Responsive */
+
+@keyframes fun {
+   0% {
+     transform: scale(1.1) rotate(10deg);
+   }
+   100% {
+     transform: scale(1.1) rotate(10deg)
+   }
+}
+
+
+@media screen and (max-width: 768px) {
+
+
+  .container-nav {
+    margin: 0 0;
+  }
+  .relative {
+    flex-direction: column;
+    padding: 2em 0;
+  }
+  .imgConnexion {
+    margin-bottom: 2em;
+  }
+
+  .img-connexion {
+  height: 300px;
+    margin-left: 44px;
+  }
+
+  .post-container {
+    font-size: 75%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .login_email {
+    position: relative;
+    right: 17px;
+  }
+
+  .login_mot-de-passe {
+    position: relative;
+    right: 17px;
+  }
+
+  .login_btn-compte {
+    display: flex;
+    margin-top: 2em;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+  .login_texte-compte {
+    position: relative;
+    right: 17px;
+  }
+
+
+  }
+
+
+
+
+

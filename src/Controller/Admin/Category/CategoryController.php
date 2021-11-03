@@ -63,7 +63,7 @@ class CategoryController extends AbstractController
             $this->entityManager->flush();
             $this->addFlash('success', 'category ajouté');
 
-            return $this->redirectToRoute('app_admin');
+            return $this->redirectToRoute('create_category');
         }
 
         return $this->render('admin/category/new.html.twig', [
@@ -86,7 +86,9 @@ class CategoryController extends AbstractController
             $this->entityManager->flush();
             $this->addFlash('success', 'catégorie modifié');
 
-            return $this->redirectToRoute('app_admin');
+            return $this->redirectToRoute('edit_product', [
+                'id' => $category->getId()
+            ]);
         }
 
         return $this->render('admin/category/edit.html.twig', [

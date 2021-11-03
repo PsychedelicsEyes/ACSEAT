@@ -1,27 +1,42 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Log in{% endblock %}
-
+{% block title %}Eat D@Q FooD (Connexion){% endblock %}
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+    <div class="relative relative-flex">
+        <div class="imgConnexion">
+            <img src="{{ asset('img/connexion.jpg') }}" class="img-connexion" alt="image hamburger">
+        </div>
+        <div class="post-container">
+            <form method="post">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
 
-    <p>You don't have a account?<a href="{{ path('app_register') }}">Create a account here</a></p>
+                <h1 class="h1">Connexion</h1>
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
+                <div class="login_email">
+                    <label for="inputEmail">Email</label>
+                         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required>
+                </div>
+                <div class="login_mot-de-passe">
+                     <label for="inputPassword">Mot de passe</label>
+                          <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                </div>
+                         <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}">
+
+                <div class="login_btn-compte">
+                        <button class="css-button css-button-gradient css-button-gradient--3">Envoyer
+                        </button>
+                </div>
+
+                    <div class="login_texte-compte">
+                        <p>Vous n'avez pas de compte ? Créer un compte<a class="links" href="{{ path('app_register') }}"> içi</a></p>
+                    </div>
+
+
+            </form>
+        </div>
+    </div>
 {% endblock %}

@@ -56,6 +56,7 @@ class ProductController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            
             $product
                 ->setCreatedAt(new \DateTimeImmutable());
 

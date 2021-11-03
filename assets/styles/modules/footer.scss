@@ -1,0 +1,116 @@
+/* Début du footer */
+
+.block-footer {
+  width: 100%;
+  background-color: #121212;
+  color: white;
+  padding:10px 0px 15px 0px;
+  display: flex;
+  align-items: end;
+}
+
+
+/* Début des applications */
+
+.application {
+  @extend %flx;
+  padding-left: 20%;
+  padding-top: 2%;
+}
+.appli-apple {
+  width: 8em;
+}
+.store {
+  font-size: 100%;
+  width: 7em;
+  height: 3em;
+}
+.play {
+  font-size:100%;
+  width: 7em;
+  height: 3em;
+}
+
+/* Fin des applications */
+
+/* Début réseaux sociaux */
+
+.sociaux {
+  display: flex;
+  width: 13%;
+  justify-content: space-evenly;
+  margin-left: 34%;
+}
+
+.facebook {
+  @extend %reseau
+}
+.twitter {
+  @extend %reseau
+}
+.instagram {
+  @extend %reseau
+}
+
+/* Fin réseaux sociaux */
+
+/* Fin du footer */
+
+@media screen and (max-width: 768px)  {
+
+  /* Début du footer */
+
+
+  .block-footer {
+    display: inherit;
+    position: relative;
+    padding: 11px 0 15px 0;
+  }
+
+  /* Fin du footer */
+
+  /* Début des applications */
+
+
+
+  .appli-apple {
+    position: relative;
+    left: -10%;
+  }
+  .store {
+    font-size: 50%;
+    width: 4em;
+    height: 2em;
+  }
+  .appli-google {
+    position: relative;
+    right: 13%;
+  }
+  .play {
+    font-size:50%;
+    width: 4em;
+    height: 2em;
+  }
+
+  /* Fin des applications */
+
+  /* Début des réseaux sociaux */
+
+  .sociaux {
+    width: 100%;
+    margin-left: 0em;
+    margin-top: 1em;
+
+  }
+
+  .facebook {
+    @extend %reseau;
+  }
+  .twitter {
+    @extend %reseau;
+  }
+  .instagram {
+    @extend %reseau;
+  }
+/* Fin des réseaux sociaux */
+}
