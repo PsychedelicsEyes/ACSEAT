@@ -21,39 +21,76 @@ class Order
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $reference;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $price;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="orders")
+     */
+    private $user;
+
+    /**
      * @ORM\Column(type="datetime_immutable")
      */
     private $createdAt;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\OneToMany(targetEntity=OrderProduct::class, mappedBy="commande", orphanRemoval=true)
      */
-    private $amountTotal;
+    private $orderProducts;
 
-    /**
-     * @ORM\OneToMany(targetEntity=User::class, mappedBy="orderUser")
-     */
-    private $userOrder;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $quantiteProduct;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Product::class, inversedBy="orders")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $product;
+ 
 
     public function __construct()
     {
-        $this->userOrder = new ArrayCollection();
+        $this->orderProducts = new ArrayCollection();
     }
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getReference(): ?string
+    {
+        return $this->reference;
+    }
+
+    public function setReference(string $reference): self
+    {
+        $this->reference = $reference;
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(float $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
     }
 
     public function getCreatedAt(): ?\DateTimeImmutable
@@ -68,68 +105,35 @@ class Order
         return $this;
     }
 
-    public function getAmountTotal(): ?float
-    {
-        return $this->amountTotal;
-    }
-
-    public function setAmountTotal(float $amountTotal): self
-    {
-        $this->amountTotal = $amountTotal;
-        return $this;
-    }
-
     /**
-     * @return Collection|User[]
+     * @return Collection|OrderProduct[]
      */
-    public function getUserOrder(): Collection
+    public function getOrderProducts(): Collection
     {
-        return $this->userOrder;
+        return $this->orderProducts;
     }
 
-    public function addUserOrder(User $userOrder): self
+    public function addOrderProduct(OrderProduct $orderProduct): self
     {
-        if (!$this->userOrder->contains($userOrder)) {
-            $this->userOrder[] = $userOrder;
-            $userOrder->setOrderUser($this);
+        if (!$this->orderProducts->contains($orderProduct)) {
+            $this->orderProducts[] = $orderProduct;
+            $orderProduct->setCommande($this);
         }
 
+
         return $this;
     }
 
-    public function removeUserOrder(User $userOrder): self
+    public function removeOrderProduct(OrderProduct $orderProduct): self
     {
-        if ($this->userOrder->removeElement($userOrder)) {
+        if ($this->orderProducts->removeElement($orderProduct)) {
             // set the owning side to null (unless already changed)
-            if ($userOrder->getOrderUser() === $this) {
-                $userOrder->setOrderUser(null);
+            if ($orderProduct->getCommande() === $this) {
+                $orderProduct->setCommande(null);
             }
         }
-        return $this;
-    }
-
-    public function getQuantiteProduct(): ?bool
-    {
-        return $this->quantiteProduct;
-    }
-
-    public function setQuantiteProduct(bool $quantiteProduct): self
-    {
-        $this->quantiteProduct = $quantiteProduct;
-
 
         return $this;
     }
 
-    public function getProduct(): ?Product
-    {
-        return $this->product;
-    }
-
-    public function setProduct(?Product $product): self
-    {
-        $this->product = $product;
-
-        return $this;
-    }
 }

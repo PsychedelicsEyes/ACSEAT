@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Controller\Admin;
+namespace App\Controller\Admin\Product;
 
 use App\Entity\Product;
 use App\Form\EditProductForm;
 use App\Form\ProductForm;
-use App\Security\TokenGenerator;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\ProductRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -23,15 +23,25 @@ class ProductController extends AbstractController
 {
 
     private EntityManagerInterface $entityManager;
-    private TokenGenerator  $tokenGenerator;
 
     public function __construct(
-        EntityManagerInterface $entityManager,
-        TokenGenerator  $tokenGenerator
+        EntityManagerInterface $entityManager
     )
     {
         $this->entityManager = $entityManager;
-        $this->tokenGenerator = $tokenGenerator;
+    }
+
+
+    /**
+     * @Route("/product/index", name="display_product")
+     */
+    public function index(ProductRepository $productRepository): Response
+    {
+
+
+        return $this->render('admin/product/index.html.twig', [
+            'products' => $productRepository->findAll()
+        ]);
     }
 
 
@@ -48,8 +58,7 @@ class ProductController extends AbstractController
 
             
             $product
-                ->setCreatedAt(new \DateTimeImmutable())
-                ->setProductId($this->tokenGenerator->generate());
+                ->setCreatedAt(new \DateTimeImmutable());
 
             $this->entityManager->persist($product);
             $this->entityManager->flush();
@@ -58,14 +67,13 @@ class ProductController extends AbstractController
             return $this->redirectToRoute('app_admin');
         }
 
-        return $this->render('admin/product/new.html.twig', [
-            'form' => $form->createView()
-        ]);
+        return $this->render('admin/product/new.html.twig', 
+        array('form' => $form->createView()));
     }
 
 
     /**
-     * @Route("/product/edit/{productId}", name="edit_product")
+     * @Route("/product/edit/{id}", name="edit_product")
      */
     public function edit(Request $request, Product $product): Response
     {
@@ -85,7 +93,7 @@ class ProductController extends AbstractController
     }
 
     /**
-     * @Route("/product/del/{productId}", name="del_product")
+     * @Route("/product/del/{id}", name="del_product")
      */
     public function del(Product $product): RedirectResponse
     {

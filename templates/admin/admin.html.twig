@@ -3,68 +3,20 @@
 {% block title %}Account{% endblock %}
 
 {% block body %}
-<div class="relative">
+
+        <h1>Panel admin</h1>
 
     {% if app.user %}
     <div class="admin_titre">
         Tu es connecté sur {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
-    </div>
-
+        </div>
     {% endif %}
-    <div class="container_block">
-        <div class="admin_utilisateurs">
-            <h1>Liste des utilisateurs</h1>
-            <div class="admin_ut">
-    {% for user in users %}
-
-               <p>Id: {{ user.id }} </p>
-               <p>Email: {{ user.email }}</p>
-               <p>Rôle: {{ user.roles | json_encode() }}  </p>
-
-    {% endfor %}
-            </div>
-        </div>
-            <div class="container_produits">
-                <h1>Liste des produits</h1>
-                <div class="ajt_prod">
-                    <a href="{{ path('create_product') }}">Ajouter un produit</a>
-                </div>
-                <div class="admin_produits">
-                    {% for product in products %}
-                    <div class="admin_produit">
-                        <p>Nom: {{ product.title }}</p>
-                        <p>Catégorie: {{  product.category.name  }}</p>
-                        <p>Prix: {{  product.price  }}€ </p>
-                            <div class="mdf_prod">
-                                <a href="{{ path('edit_product', {productId: product.productId}) }}">Modifier le produit</a>
-                                <a href="{{ path('del_product', {productId: product.productId}) }}">/Supprimer le produit</a>
-                            </div>
-                    </div>
-            {% endfor %}
-                </div>
-            </div>
-        <div class="admin_categories">
-            <h1>Liste des catégories</h1>
-            <div class="ajt_cat">
-                <a href="{{ path('create_category') }}">Ajouter une catégorie</a>
-            </div>
 
 
-            {% for category in categories %}
-                <div class="admin_cat">
-                <p>Id: {{ category.id }} </p>
-                <p>Nom: {{ category.name }}</p>
-                <div class="mod_cat">
-                <a href="{{ path('edit_category', {id: category.id}) }}">Modifier la categorie</a>
-                 <a href="{{ path('del_category', {id: category.id}) }}">/Supprimer la categorie</a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-
-</div>
-
-    </div>
+      <a href="{{ path('display_product') }}">Liste des produits</a><br>
+      <a href="{{ path('display_category') }}">Liste des catégories</a><br>
+      <a href="{{ path('display_user') }}">Liste des utilisateurs</a><br>
+      <a href="{{ path('admin_display_order') }}">Liste des commandes</a>
 
 {% endblock %}
 

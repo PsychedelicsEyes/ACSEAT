@@ -13,7 +13,7 @@ Cart: ✅
 
 Home: ✅
 
-Order: ❌
+Order: ✅
 ```
 
 Front-end du site

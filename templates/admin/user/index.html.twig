@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Account{% endblock %}
+
+{% block body %}
+    <a href="{{ path('app_admin') }}">Retourner au panel admin</a>
+
+    <h1>Liste des utilisateurs</h1>
+
+   {% for user in users %}
+
+       <p>Id: {{ user.id }} </p>
+       <p>Email: {{ user.email }}</p>
+       <p>Rôle: {{ user.roles | json_encode() }}</p>
+       <p>Date de création du compte: {{ user.created | date("d/m/y") }}</p>
+       
+    {% endfor %}
+
+
+{% endblock %}

@@ -18,79 +18,89 @@ class CartController extends AbstractController
      */
     public function cart(SessionInterface $session, ProductRepository $productRepository): Response
     {
-        $panier = $session->get("panier", []);
+        $cart = $session->get("cart", []);
 
-        $dataPanier = [];
+        $dataCart = [];
         $total = 0;
 
-        foreach($panier as $id => $quantite){
+        foreach($cart as $id => $quantite){
             $product = $productRepository->find($id);
-            $dataPanier[] = [
+            $dataCart[] = [
                 "product" => $product,
                 "quantite" => $quantite
             ];
+
+
             $total += $product->getPrice() * $quantite;
+
+            $session->set('total', $total);
+            
         }
 
 
-        return $this->render('shop/cart.html.twig', compact("dataPanier", "total"));
+
+
+        return $this->render('shop/cart.html.twig', compact("dataCart", "total"));
     }
 
     /**
-     * @Route("/panier/add/{productId}", name="add_cart")
+     * @Route("/panier/add/{id}", name="add_cart")
      */
     public function add(SessionInterface $session, Product $product)
     {
-        $panier = $session->get("panier", []);
+        $cart = $session->get("cart", []);
         $id = $product->getId();
-        
 
-        if(!empty($panier[$id])){
-            $panier[$id]++;
+        if(!empty($cart[$id])){
+
+            $cart[$id]++;
+
         }else{
-            $panier[$id] = 1;
+
+            $cart[$id] = 1;
+            
         }
 
 
-        $session->set("panier", $panier);
+        $session->set("cart", $cart);
 
        return $this->redirectToRoute("app_cart");
     }
 
     /**
-     * @Route("/panier/remove/{productId}", name="remove_cart")
+     * @Route("/panier/remove/{id}", name="remove_cart")
      */
     public function remove(SessionInterface $session, Product $product)
     {
-        $panier = $session->get("panier", []);
+        $cart = $session->get("cart", []);
         $id = $product->getId();
 
-        if(!empty($panier[$id])){
-            if($panier[$id] > 1){
-            $panier[$id]--;
+        if(!empty($cart[$id])){
+            if($cart[$id] > 1){
+            $cart[$id]--;
             }else{
-                unset($panier[$id]);
+                unset($cart[$id]);
             }
         }
 
-        $session->set("panier", $panier);
+        $session->set("cart", $cart);
 
        return $this->redirectToRoute("app_cart");
     }
 
     /**
-     * @Route("/panier/delete/{productId}", name="del_cart")
+     * @Route("/panier/delete/{id}", name="del_cart")
      */
     public function delete(SessionInterface $session, Product $product)
     {
-        $panier = $session->get("panier", []);
+        $cart = $session->get("cart", []);
         $id = $product->getId();
 
-        if(!empty($panier[$id])){
-            unset($panier[$id]);
+        if(!empty($cart[$id])){
+            unset($cart[$id]);
         
         }
-        $session->set("panier", $panier);
+        $session->set("cart", $cart);
 
        return $this->redirectToRoute("app_cart");
     }
@@ -101,8 +111,10 @@ class CartController extends AbstractController
      */
     public function deleteAll(SessionInterface $session)
     {
-       $session->remove("panier");
+       $session->remove("cart");
 
        return $this->redirectToRoute("app_cart");
     }
+    
+
 }
