@@ -150,12 +150,20 @@
 
 
 .nav-navbar {
-  background: rgba(0, 0, 0, 0) linear-gradient(-180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.35) 51%, rgba(0, 0, 0, 0) 100%) repeat scroll 0% 0%;
+  background-color: transparent;
+  transition: 1s;
   position: fixed;
   padding: 0 0 1em 0;
   width: 100%;
   z-index: 2;
 }
+
+.nav-navbar-active {
+  opacity: 0.9;
+  background-color: rgb(58, 58, 58);
+  transition: 0.5s;
+}
+
 .container-nav {
   display: flex;
   justify-content: space-between;
