@@ -2,64 +2,74 @@
 
 namespace App\Controller\Shop;
 
-use App\Security\TokenGenerator;
 use App\Entity\Order;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Entity\OrderProduct;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use App\Repository\ProductRepository;
-use App\Repository\OrderRepository;
-use Symfony\Component\HttpFoundation\Session\Session;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class OrderController extends AbstractController
 {
-
     private EntityManagerInterface $entityManager;
 
     public function __construct(
-        EntityManagerInterface $entityManager,
-        TokenGenerator  $tokenGenerator
+        EntityManagerInterface $entityManager
     )
     {
-        $this->entityManager = $entityManager;
-        $this->tokenGenerator = $tokenGenerator;
+        $this->entityManager = $entityManager;                          
     }
-
+ 
     /**
      * @Route("/payement", name="app_pay")
      */
-    public function cart(SessionInterface $session,ProductRepository $productRepository,OrderRepository $orderRepository): Response
+    public function cart(Request $request,SessionInterface $session, ProductRepository $productRepository): Response
     {
-        $cart = $session->get("panier", []);
 
-        $dataCart = [];
-        $total = 0;
-        $totalQuantite = 0;
-
-        foreach($cart as $id => $quantite){
-            $product = $productRepository->find($id);
-            $dataCart[] = [
-                "product" => $product,
-                "quantite" => $quantite
-            ];
-            $total += $product->getPrice() * $quantite;
-            $totalQuantite += $quantite;
-        }
+        $cart = $session->get("cart", []);
+        $total = $session->get("total", []);
+ 
+        $products = Array();
+        $user = $this->getUser();
 
 
         $order = new Order();
-
         $order
-        ->setCreatedAt(new \DateTimeImmutable())
-        ->setQuantiteProduct($totalQuantite) 
-        ->setAmountTotal($total);
+        ->setUser($user)
+        ->setPrice($total)
+        ->setReference(uniqid(" ", false))
+        ->setCreatedAt(new \DateTimeImmutable());
 
-        $this->entityManager->persist($order);
+        
+
+        foreach($cart as $id=>$quantite){
+
+            $product = $productRepository->findOneBy(['id' => $id]);
+
+            $orderProduct = new orderProduct();
+            $orderProduct->setQuantity($quantite);
+            $orderProduct->setProduct($product);
+            $this->entityManager->persist($orderProduct);
+            $order->addOrderProduct($orderProduct);
+            $this->entityManager->persist($order);
+            
+           $products[] =  [ 
+             
+               $quantite
+            ];
+        
+            
+        }
         $this->entityManager->flush();
-        $this->addFlash('success', 'produit ajouté');
+
+
+
+        
         return $this->redirectToRoute('app_menu');
-        return $this->render("shop/pay.html.twig");
+
+        return $this->render('shop/pay.html.twig');
     }
 }

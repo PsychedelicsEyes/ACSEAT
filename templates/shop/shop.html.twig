@@ -3,108 +3,22 @@
 {% block body %}
 <div class="relative">
 
+    <h1>Liste des produits</h1>
+    
 
-    <main id="main">
+    {% for product in products %}
 
-        <!-- section pizza -->
-        <section id="pizza" class="pizza">
-            {% for produit in products.pizza %}
-                <div class="item">
-                {% if produit.filename %}
-                    <img src="/images/products/{{ produit.filename }}">
-                {% endif %}
-                    <div class="item-infos">
-                        <h3>{{ produit.title }}</h3>
-                        <hr>
-                        <p>{{ produit.description}}</p>
-                        <p class="prix">{{produit.price}}€</p>
-                        <a href="{{ path('add_cart', {productId : produit.productId}) }}"><img src="img/panier.png" class="nav_panier_article"    alt="icon panier"></a>
-                    </div>
-                </div>
-            {% endfor %}
+    {% for categorie in product.category %}
+    <p>La catégorie: {{ categorie.name }}</p>
+    <p>Le nom du produit: {{ product.title }}</p>
+    <p>Le prix du produit:{{ product.price }} €</p>
+    {% if product.imageName %}
+    <img src="/images/products/{{ product.imageName }}">
+    {% endif %}
+    <a href="{{ path('add_cart', {id: product.id}) }}">Ajouter au panier</a>
+    
+    {% endfor %}
+    {% endfor %}
 
-
-
-        </section>
-
-        <!-- section Salade -->
-        <section id="salade" class="salade">
-        {% for produit in products.salade %}
-
-                <div class="item">
-                   {% if produit.filename %}
-                    <img src="/images/products/{{ produit.filename }}">
-                   {% endif %}
-                    <div class="item-infos">
-                        <h3>{{ produit.title }}</h3>
-                        <hr>
-                        <p>{{ produit.description}}</p>
-                        <p class="prix">{{produit.price}}€00</p>
-                        <a href="{{ path('add_cart', {productId : produit.productId}) }}"><img src="img/panier.png" class="nav_panier_article"    alt="icon panier"></a>
-                    </div>
-                </div>
-            {% endfor %}
-
-
-
-        </section>
-
-        <!-- section burger -->
-        <section id="burger" class="burger">
-
-            {% for produit in products.burger %}
-                <div class="item">
-                   {% if produit.filename %}
-                    <img src="/images/products/{{ produit.filename }}">
-                   {% endif %}
-                    <div class="item-infos">
-                        <h3>{{ produit.title }}</h3>
-                        <hr>
-                        <p>{{ produit.description}}</p>
-                        <p class="prix">{{produit.price}}€00</p>
-                        <a href="{{ path('add_cart', {productId : produit.productId}) }}"><img src="img/panier.png" class="nav_panier_article"    alt="icon panier"></a>
-                    </div>
-                </div>
-            {% endfor %}
-
-
-        </section>
-
-        <!-- section boisson -->
-        <section id="boisson" class="boisson">
-
-            {% for produit in products.boisson %}
-                <div class="item">
-                {% if produit.filename %}
-                    <img src="/images/products/{{ produit.filename }}">
-                {% endif %}
-                    <div class="item-infos">
-                        <h3>{{ produit.title }}</h3>
-                        <hr>
-                        <p>{{ produit.description}}</p>
-                        <p class="prix">{{produit.price}}€00</p>
-                        <a href="{{ path('add_cart', {productId : produit.productId}) }}"><img src="img/panier.png" class="nav_panier_article"    alt="icon panier"></a>
-                    </div>
-                </div>
-            {% endfor %}
-
-           
-
-        </section>
-
-
-    </main>
-</div>
-
-
-
-
-
-
-
-
-{% endblock %}
-
-{% block title %}
 
 {% endblock %}

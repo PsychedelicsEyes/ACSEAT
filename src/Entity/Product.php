@@ -6,15 +6,14 @@ use App\Repository\ProductRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use Vich\UploaderBundle\Mapping\Annotation\Uploadable;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
- * @Vich\Uploadable()
+ * @Vich\Uploadable
  */
 class Product
 {
@@ -26,16 +25,18 @@ class Product
     private $id;
 
     /**
-     * @var string|null
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $fileName;
+    * @Vich\UploadableField(mapping="product_images", fileNameProperty="imageName")
+    * 
+    * @var File|null
+    */
+    private $imageFile;
 
     /**
-     * @var File
-     * @Vich\UploadableField(mapping="product_image", fileNameProperty="filename")
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string|null
      */
-    private $imageFile;
+    private $imageName;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -59,33 +60,13 @@ class Product
     private $createdAt;
 
     /**
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private $productId;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="products")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="products")
      */
     private $category;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Order::class, mappedBy="product")
-     */
-    private $orders;
-
-    /**
-     * @ORM\Column(type="datetime_immutable")
-     */
-    private $updated_At;
-
-
-
-
     public function __construct()
     {
-        $this->orders = new ArrayCollection();
+        $this->category = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -93,6 +74,34 @@ class Product
         return $this->id;
     }
 
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     */
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+
+        if (null !== $imageFile) {
+
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageName(?string $imageName): void
+    {
+        $this->imageName = $imageName;
+    }
+
+    public function getImageName(): ?string
+    {
+        return $this->imageName;
+    }
+    
     public function getTitle(): ?string
     {
         return $this->title;
@@ -141,113 +150,28 @@ class Product
         return $this;
     }
 
-    public function getProductId(): ?int
-    {
-        return $this->productId;
-    }
-
-    public function setProductId(string $productId): self
-    {
-        $this->productId = $productId;
-
-        return $this;
-    }
-
-    public function getCategory(): ?Category
+    /**
+     * @return Collection|Category[]
+     */
+    public function getCategory(): Collection
     {
         return $this->category;
     }
 
-    public function setCategory(?Category $category): self
+    public function addCategory(Category $category): self
     {
-        $this->category = $category;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Order[]
-     */
-    public function getOrders(): Collection
-    {
-        return $this->orders;
-    }
-
-    public function addOrder(Order $order): self
-    {
-        if (!$this->orders->contains($order)) {
-            $this->orders[] = $order;
-            $order->setProduct($this);
+        if (!$this->category->contains($category)) {
+            $this->category[] = $category;
         }
 
         return $this;
     }
 
-    public function removeOrder(Order $order): self
+    public function removeCategory(Category $category): self
     {
-        if ($this->orders->removeElement($order)) {
-            // set the owning side to null (unless already changed)
-            if ($order->getProduct() === $this) {
-                $order->setProduct(null);
-            }
-        }
+        $this->category->removeElement($category);
 
         return $this;
     }
-
-    /**
-     * @return string|null
-     */
-    public function getFileName(): ?string
-    {
-        return $this->fileName;
-    }
-
-    /**
-     * @param string|null $fileName
-     * @return Product
-     */
-    public function setFileName(?string $fileName): Product
-    {
-        $this->fileName = $fileName;
-        return $this;
-    }
-
-
-    /**
-     * @return File|null
-     */
-    public function getImageFile(): ?File
-    {
-        return $this->imageFile;
-    }
-
-    /**
-     * @param File|null $imageFile
-     * @return Product
-     */
-    public function setImageFile(?File $imageFile): Product
-    {
-        $this->imageFile = $imageFile;
-        if ($this -> imageFile instanceof UploadedFile) {
-            $this->updated_At = new \DateTimeImmutable('now');
-        }
-        return $this;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeImmutable
-    {
-        return $this->updated_At;
-    }
-
-    public function setUpdatedAt(\DateTimeImmutable $updated_At): self
-    {
-        $this->updated_At = $updated_At;
-
-        return $this;
-    }
-
-
-
 
 }

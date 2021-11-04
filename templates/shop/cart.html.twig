@@ -17,7 +17,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for element in dataPanier %}
+                {% for element in dataCart %}
 
 
                     <tr>
@@ -27,9 +27,9 @@
                         <td data-label="Total">{{ element.quantite * element.product.price}}€</td>
                         <td data-label="Actions">
                             <div class="block_actions">
-                            <a href="{{path("add_cart", {productId: element.product.productId})}}">Ajouter/</a>
-                            <a href="{{path("remove_cart", {productId: element.product.productId})}}">Retirer/</a>
-                            <a href="{{path("del_cart", {productId: element.product.productId})}}">Supprimer</a>
+                            <a href="{{path("add_cart", {id: element.product.id})}}">Ajouter</a>
+                            <a href="{{path("remove_cart", {id: element.product.id})}}">Retirer</a>
+                            <a href="{{path("del_cart", {id: element.product.id})}}">Supprimer</a>
                             </div>
                         </td>
                     </tr>

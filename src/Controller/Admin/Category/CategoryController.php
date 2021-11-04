@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Controller\Admin;
+namespace App\Controller\Admin\Category;
 
 use App\Entity\Category;
+use App\Repository\CategoryRepository;
 use App\Form\EditCategoryForm;
 use App\Form\CategoryForm;
 use App\Security\TokenGenerator;
@@ -34,6 +35,17 @@ class CategoryController extends AbstractController
         $this->tokenGenerator = $tokenGenerator;
     }
 
+
+    /**
+     * @Route("/category/index", name="display_category")
+     */
+    public function index(CategoryRepository $categoryRepository): Response
+    {
+
+        return $this->render('admin/category/index.html.twig', [
+            'categorys' => $categoryRepository->findAll()
+        ]);
+    }
 
     /**
      * @Route("/category/new", name="create_category")
@@ -79,7 +91,7 @@ class CategoryController extends AbstractController
             ]);
         }
 
-        return $this->render('admin/product/edit.html.twig', [
+        return $this->render('admin/category/edit.html.twig', [
             'form' => $form->createView()
         ]);
     }

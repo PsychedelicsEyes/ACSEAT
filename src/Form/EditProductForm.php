@@ -32,7 +32,11 @@ class EditProductForm extends AbstractType
                 'required' => true,
                 'label' => 'Category',
                 'class' => Category::class,
-                'choice_label' => 'name'
+                'choice_label' => 'name',
+                'multiple' => 'yes'
+            ])
+            ->add('imageFile', FileType::class, [
+                'required' => false,
             ])
             ->add('imageFile', FileType::class)
         ;
