@@ -18,4 +18,3 @@ import './styles/app.scss';
 import './bootstrap';
 import * as btn from './styles/modules/btn.js'
 import * as nav_bus from './styles/modules/nav_bus.js'
-import * as title from './styles/modules/title.js'
