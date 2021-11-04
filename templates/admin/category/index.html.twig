@@ -3,18 +3,22 @@
 {% block title %}Categorie{% endblock %}
 
 {% block body %}
+    <div class="container_block">
+        <div class="list_categ">
+            <div class="ret_panel">
+                <a href="{{ path('app_admin') }}">Retourner au panel admin</a>
+            </div>
 
-    <a href="{{ path('app_admin') }}">Retourner au panel admin</a>
+            <h1>Liste des catégories</h1>
 
-    <h1>Liste des catégories</h1>
+            <a href="{{ path('create_category') }}">Ajouter une catégorie</a>
 
-    <a href="{{ path('create_category') }}">Ajouter une catégorie</a>
-
-    {% for category in categorys %}
-        <p>Id: {{ category.id }} </p>
-        <p>Nom: {{ category.name }}</p>
-        <a href="{{ path('edit_category', {id: category.id}) }}">Modifier la categorie</a>
-         <a href="{{ path('del_category', {id: category.id}) }}">Suprimer la categorie</a>
-    {% endfor %}
-
+            {% for category in categorys %}
+                <p>Id: {{ category.id }} </p>
+                <p>Nom: {{ category.name }}</p>
+                <a href="{{ path('edit_category', {id: category.id}) }}">Modifier la categorie</a>
+                 <a href="{{ path('del_category', {id: category.id}) }}">Suprimer la categorie</a>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

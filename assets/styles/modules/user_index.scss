@@ -1,0 +1,24 @@
+.relative{
+  @extend %flx;
+
+}
+
+
+.container_block {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 10%;
+}
+
+.list_categ {
+  text-align: center;
+  width: 20%;
+  border: 3px solid darkslateblue;
+  border-radius: 16px;
+  padding: 1em;
+}
+
+.ret_panel {
+  margin-top: 2%;
+}
