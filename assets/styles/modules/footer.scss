@@ -3,11 +3,12 @@
 .block-footer {
   width: 100%;
   background-color: #121212;
-  color: white;
   padding:10px 0px 15px 0px;
   display: flex;
   align-items: end;
   margin-top: 5%;
+  position: relative;
+  bottom: 0;
 }
 
 

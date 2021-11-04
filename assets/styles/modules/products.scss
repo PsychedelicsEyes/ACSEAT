@@ -1,0 +1,21 @@
+.container_products {
+display: flex;
+  justify-content: center;
+  padding-top: 15em;
+}
+
+.block_products {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 3px solid darkslateblue;
+  border-radius: 16px;
+  text-align: center;
+  padding-bottom: 5em;
+  padding-top: 1em;
+  margin-bottom: 12em;
+  width: 28em;
+}
+
+.return_products {
+  line-height: 7em;
+}

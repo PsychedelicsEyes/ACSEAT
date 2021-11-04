@@ -25,9 +25,6 @@ import './styles/app.scss';
  * (and its CSS file) in your base layout (base.html.twig).
  */
 
-import jquery from 'jquery'
-
-
 
 
 

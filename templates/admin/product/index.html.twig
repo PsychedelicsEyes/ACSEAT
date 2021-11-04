@@ -3,28 +3,30 @@
 {% block title %}Produit{% endblock %}
 
 {% block body %}
+<div class="container_products">
+    <div class="block_products">
+        <a class="return_products href="{{ path('app_admin') }}">Retourner au panel admin</a>
 
-    <a href="{{ path('app_admin') }}">Retourner au panel admin</a>
+        <h1>Liste des produits</h1>
 
-    <h1>Liste des produits</h1>
+        <a href="{{ path('create_product') }}">Ajouter un produit</a>
 
-    <a href="{{ path('create_product') }}">Ajouter un produit</a>
+        {% for product in products %}
 
-    {% for product in products %}
+           <p>Id: {{ product.id }} </p>
+           <p>Nom: {{ product.title }}</p>
+           <p>Description: {{  product.description  }} </p>
+           <p>Catégorie:
+           {% for  category in   product.category %}
+           {{  category.name }}
+           {% endfor %}
+           </p>
+           <p>Prix: {{  product.price  }}€ </p>
+           <p>Date de création: {{ product.createdAt | date("d/m/y") }}</p>
+            <a href="{{ path('edit_product', {id: product.id}) }}">Modifier le produit</a>
+            <a href="{{ path('del_product', {id: product.id}) }}">Suprimer le produit</a>
 
-       <p>Id: {{ product.id }} </p>
-       <p>Nom: {{ product.title }}</p>
-       <p>Description: {{  product.description  }} </p>
-       <p>Catégorie:
-       {% for  category in   product.category %}
-       {{  category.name }}
-       {% endfor %}
-       </p>
-       <p>Prix: {{  product.price  }}€ </p>
-       <p>Date de création: {{ product.createdAt | date("d/m/y") }}</p>
-        <a href="{{ path('edit_product', {id: product.id}) }}">Modifier le produit</a>
-        <a href="{{ path('del_product', {id: product.id}) }}">Suprimer le produit</a>
-        
     {% endfor %}
-
+    </div>
+</div>
 {% endblock %}
