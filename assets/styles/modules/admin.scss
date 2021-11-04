@@ -3,12 +3,36 @@
 
 }
 
+/******** new ****/
+
 .container_block {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: center;
   width: 100%;
-  margin-top: 57px;
+  padding-top: 10%;
 }
+
+.panel_admin {
+  text-align: center;
+  width: 28%;
+  border: 3px solid darkslateblue;
+  border-radius: 16px;
+}
+
+.admin_title {
+  margin-top: 2%;
+}
+
+.admin_text {
+  line-height: 3em;
+}
+
+
+
+
+
+
+/******** end *******/
 .admin_titre {
   text-align: center;
   position: absolute;
