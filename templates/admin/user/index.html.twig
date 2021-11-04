@@ -3,8 +3,11 @@
 {% block title %}Account{% endblock %}
 
 {% block body %}
+<div class="container_block">
+    <div class="list_categ">
+        <div class="ret_panel">
     <a href="{{ path('app_admin') }}">Retourner au panel admin</a>
-
+        </div>
     <h1>Liste des utilisateurs</h1>
 
    {% for user in users %}
@@ -15,6 +18,7 @@
        <p>Date de création du compte: {{ user.created | date("d/m/y") }}</p>
        
     {% endfor %}
-
+    </div>
+</div>
 
 {% endblock %}
