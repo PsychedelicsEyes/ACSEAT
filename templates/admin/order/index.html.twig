@@ -3,31 +3,34 @@
 {% block title %}Commandes{% endblock %}
 
 {% block body %}
+    <div class="container_block">
+        <div class="list_categ">
+                <div class="ret_panel">
+                <a href="{{ path('app_admin') }}">Retourner au panel admin</a>
+                </div>
+        <h1>Liste des commandes</h1>
 
-    <a href="{{ path('app_admin') }}">Retourner au panel admin</a>
+        {% for order in orders %}
+        {% for command in order.orderProducts %}
+        {% if order.user is null %}
+            <p>Reference: {{ order.Reference }}</p>
+            <p>Produit: {{ command.product.title}}
+            <p>Prix total: {{order.price}} €</p>
+            <p>Quantité: {{ command.quantity }}
+            <p>------------------------------------</p>
 
-    <h1>Liste des commandes</h1>
+        {%  else %}
 
-    {% for order in orders %}
-    {% for command in order.orderProducts %}
-    {% if order.user is null %}
-        <p>Reference: {{ order.Reference }}</p>
-        <p>Produit: {{ command.product.title}}
-        <p>Prix total: {{order.price}} €</p>
-        <p>Quantité: {{ command.quantity }}
-        <p>------------------------------------</p>
-        
-    {%  else %}
-    
-        <p>Reference: {{ order.Reference }}</p>
-        <p>Produit: {{ command.product.title}}
-        <p>Prix total: {{order.price}} €</p>
-        <p>Quantité: {{ command.quantity }}
-        <p>Utilisateur: {{ order.user.email }}</p>
-        <p>------------------------------------</p>
+            <p>Reference: {{ order.Reference }}</p>
+            <p>Produit: {{ command.product.title}}
+            <p>Prix total: {{order.price}} €</p>
+            <p>Quantité: {{ command.quantity }}
+            <p>Utilisateur: {{ order.user.email }}</p>
+            <p>------------------------------------</p>
 
-    {% endif %}
-    {% endfor %}
-    {% endfor %}
-
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        </div>
+    </div>
 {% endblock %}
