@@ -64,10 +64,10 @@ class OrderController extends AbstractController
             
         }
         $this->entityManager->flush();
+        $this->get('session')->remove('cart');
+        $this->get('session')->remove('price');
 
 
-
-        
         return $this->redirectToRoute('app_menu');
 
         return $this->render('shop/pay.html.twig');

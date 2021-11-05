@@ -2,11 +2,11 @@
 
 
 .relative {
-  background-color: #f8f4f4;
+  font-family: 'Secular One', sans-serif;
+  background-color: #381B19;
   z-index: 1;
+  color: #D7EFFD;
   position: relative;
-  bottom: 0;
-  padding-top: 10em;
 }
 
 .relative_flex {
@@ -24,7 +24,7 @@
 .home_container {
   @extend %flx;
   width: 100%;
-  margin-top: 5%;
+
 }
 
 .img-menu-home {
@@ -32,52 +32,6 @@
 }
 
 /*********** F I N   H O M E   C O N T A I N E R *****************/
-
-/********** D E B U T   A D D R E S S */
-
-.block_home_address {
-  width: 38%;
-  background-color: white;
-  font-size: 60%;
-  margin-left: 3%;
-  margin-right: 3%;
-}
-
-.home_title_address {
-  font-size: 360%;
-  font-weight: bold;
-  text-align: center;
-  padding-top: 37%;
-  padding-bottom: 8%;
-}
-
-.home_address {
-  font-size: 200%;
-  line-height: 2em;
-  padding-left: 7%;
-
-}
-
-/*********** F I N    A D D R E S S **************/
-
-/************ D E B U T   H O R A I R E S  **************/
-
-.home_horaires {
-  background-color: white;
-  padding-left: 50px;
-  font-size: 140%;
-  padding-top: 22px;
-  width: 36%;
-}
-
-.title_horaires {
-  text-align: center;
-  font-size: 125%;
-  font-weight: bold;
-  padding-bottom: 20px;
-  line-height: 65px;
-  margin-right: 10%;
-}
 
 .home_text {
   line-height: 35px;
@@ -89,7 +43,8 @@
   display: flex;
   justify-content: space-evenly;
   position: relative;
-  margin-top: 2%;
+  padding-top: 10%;
+
 }
 
 /******************* R E S P O N S I V E ***************************/

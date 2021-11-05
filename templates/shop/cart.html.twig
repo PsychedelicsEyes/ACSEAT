@@ -27,9 +27,9 @@
                         <td data-label="Total">{{ element.quantite * element.product.price}}€</td>
                         <td data-label="Actions">
                             <div class="block_actions">
-                            <a href="{{path("add_cart", {id: element.product.id})}}">Ajouter</a>
-                            <a href="{{path("remove_cart", {id: element.product.id})}}">Retirer</a>
-                            <a href="{{path("del_cart", {id: element.product.id})}}">Supprimer</a>
+                            <a href="{{path("add_cart", {id: element.product.id})}}"><i class="fas fa-plus-square"></i></a>
+                            <a href="{{path("remove_cart", {id: element.product.id})}}"><i class="fas fa-minus"></i></a>
+                            <a href="{{path("del_cart", {id: element.product.id})}}"><i class="fas fa-trash-alt"></i></a>
                             </div>
                         </td>
                     </tr>

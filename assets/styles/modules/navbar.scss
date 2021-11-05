@@ -1,11 +1,16 @@
 /*************** N A V B A R ***************/
 
+@font-face {
+  font-family: 'Holla';
+  src: url('/assets/fonts/Holla.otf') format("otf");
+}
+
 .container_title {
   --couleur:0, 0, 0;
   margin: 1rem;
   display: flex;
   justify-content: left;
-  font-family: 'Exo', serif;
+  font-family: 'Holla';
   color: white;
   text-shadow:
           0 1px 0 #ccc,
@@ -37,17 +42,39 @@
 
 }
 
-.button-menu {
+.fa, .fas {
+
+  font-weight: 900;
   margin: 2rem auto;
   display: flex;
   justify-content: center;
-  font-family: 'Exo', serif;
   color: white;
-  font-size: calc(1.5em)
+  font-size: 1.5em;
+}
+
+.fas fa-user {
+
+  font-weight: 900;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 1.5em;
 
 }
 
-.button-horaires {
+.fas fa-clock {
+
+  font-weight: 900;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 1.5em;
+
+}
+
+.button-menu {
   margin: 2rem auto;
   display: flex;
   justify-content: center;
@@ -66,27 +93,6 @@
   font-size: calc(1.5em)
 
 }
-
-.button-connexion {
-  margin: 2rem auto;
-  display: flex;
-  justify-content: center;
-  font-family: 'Exo', serif;
-  color: white;
-  font-size: calc(1.5em)
-
-}
-
-.button-panier {
-  margin: 2rem auto;
-  display: flex;
-  justify-content: center;
-  font-family: 'Exo', serif;
-  color: white;
-  font-size: calc(1.5em)
-}
-
-
 
 .menu-btn {
   position: relative;
@@ -150,6 +156,7 @@
 
 
 .nav-navbar {
+  font-family: 'Secular One', sans-serif;
   background-color: transparent;
   transition: 1s;
   position: fixed;
@@ -160,6 +167,7 @@
 
 .nav-navbar-active {
   opacity: 0.9;
+  font-family: 'Secular One', sans-serif;
   background-color: rgb(58, 58, 58);
   transition: 0.5s;
 }
@@ -173,7 +181,7 @@
 
 
 .block2{
-  width: 42%;
+  width: 49%;
   display: flex;
   justify-content: space-evenly;
   font-size: 110%;
@@ -190,6 +198,7 @@
 
 /******** Début Div Bus *********/
 .bus {
+  font-family: 'Secular One', sans-serif;
   display: none;
 }
 /*********** Fin Div Bus ************/

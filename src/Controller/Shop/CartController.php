@@ -61,7 +61,6 @@ class CartController extends AbstractController
             
         }
 
-
         $session->set("cart", $cart);
 
        return $this->redirectToRoute("app_cart");
@@ -76,16 +75,21 @@ class CartController extends AbstractController
         $id = $product->getId();
 
         if(!empty($cart[$id])){
+
             if($cart[$id] > 1){
+
             $cart[$id]--;
+
             }else{
+
                 unset($cart[$id]);
+
             }
         }
 
         $session->set("cart", $cart);
 
-       return $this->redirectToRoute("app_cart");
+       return $this->redirectToRoute("app_cart"); 
     }
 
     /**
@@ -97,6 +101,7 @@ class CartController extends AbstractController
         $id = $product->getId();
 
         if(!empty($cart[$id])){
+
             unset($cart[$id]);
         
         }

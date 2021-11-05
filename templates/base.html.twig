@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/c4ff7a56af.js" crossorigin="anonymous"></script>
 
         <title>{% block title %}Eat D@q FooD{% endblock %}</title>
 
@@ -47,25 +48,31 @@
 
                     <div class="block2">
                         <div class="navbar">
-                            <a href="/" class="button-accueil" > Accueil</a>
+                            <a href="/">
+                            <i class="fas fa-home"></i>
+                            </a>
                         </div>
                         <div class="navbar">
-                            <a href="/menu" class="button-menu">Menu</a>
+                            <a href="/menu">
+                            <i class="fas fa-utensils"></i>
+                            </a>    
                         </div>
 
 
                         <div class="navbar">
-                            <a href="{{ path('app_home') }}#home_horaires" class="button-horaires">Horaires & Contact</a>
+                            <a href="{{ path('app_home') }}">
+                            <i class="fas fa-clock"></i>
+                            </a>
                         </div>
                         <div class="navbar">
                             <a href="{{ path('app_login') }}">
-                                <a href="/connexion" class="button-connexion"> Connecter</a>
+                               <i class="fas fa-user"></i>
                             </a>
                         </div>
 
                         <div class="navbar">
                             <a href="{{ path('app_cart') }}">
-                                <a href="/panier" class="button-panier">Panier</a>
+                              <i class="fas fa-cart-arrow-down"></i> 
                             </a>
                         </div>
                     </div>
