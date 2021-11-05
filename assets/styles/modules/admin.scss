@@ -38,77 +38,14 @@
   position: absolute;
 }
 
-.admin_produits {
-  display: grid;
-  grid-template-columns: 1fr 1fr
-}
 
-.ajt_prod, .mdf_prod, .sup_prod {
-  color: red;
-}
-.ajt_cat, .mod_cat, .sup_cat {
-  color: red;
-}
-.admin_produit, .admin_ut  {
-  border: .3px solid black;
-  background-color: white;
-  margin-right: 5%;
-  margin-left: .5%;
-  margin-block: .5%;
-  padding: 4%;
-}
 
-.ajt_prod {
-  color: white;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 3%;
-}
 
-.admin_ut {
-  border: .3px solid black;
-  background-color: white;
-  margin-right: 5%;
-  margin-left: .5%;
-  margin-block: .5%;
-  padding: 4%;
-  margin-top: 7%;
-}
-
-.admin_cat {
-  border: .3px solid black;
-  background-color: white;
-  margin-right: 5%;
-  margin-left: .5%;
-  margin-block: .5%;
-  padding: 4%;
-}
-
-.ajt_cat {
-  color: white;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 3%;
-}
 @media only screen and ( max-width : 768px) {
-  .container_block {
-    display: grid;
-    grid-template-columns: 1fr;
+  .panel_admin {
+
     width: 95%;
   }
-  .admin_titre {
-    position: relative;
-  }
-  .admin_produit, .admin_ut, .admin_cat {
-    width: 90%;
-    }
-  .admin_produit {
-    margin-right: .1%;
-    margin-left: .1%;
-    }
-  .admin_produits {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+
 
 }

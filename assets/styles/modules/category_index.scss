@@ -1,24 +1,24 @@
-.relative{
-  @extend %flx;
-
-}
 
 
 .container_block {
   display: flex;
   justify-content: center;
-  width: 100%;
-  padding-top: 10%;
+  padding-top: 15em;
 }
 
 .list_categ {
+  display: grid;
+  grid-template-columns: 1fr;
   text-align: center;
-  width: 20%;
   border: 3px solid darkslateblue;
   border-radius: 16px;
-  padding: 1em;
+  padding-bottom: 5em;
+  padding-top: 1em;
+  margin-bottom: 12em;
+  width: 28em;
 }
 
 .ret_panel {
   margin-top: 2%;
 }
+@media only screen and ( max-width : 768px) {}
