@@ -37,9 +37,6 @@ class CartController extends AbstractController
             
         }
 
-
-
-
         return $this->render('shop/cart.html.twig', compact("dataCart", "total"));
     }
 
@@ -64,6 +61,8 @@ class CartController extends AbstractController
         $session->set("cart", $cart);
 
        return $this->redirectToRoute("app_cart");
+       
+       
     }
 
     /**
@@ -81,9 +80,8 @@ class CartController extends AbstractController
             $cart[$id]--;
 
             }else{
-
+                
                 unset($cart[$id]);
-
             }
         }
 

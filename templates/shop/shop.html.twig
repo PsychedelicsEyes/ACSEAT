@@ -3,26 +3,27 @@
 {% block body %}
 <div class="relative">
    
-<div class="container">
+    <div class="container">
+     <h1 class="title-product">Liste des produits</h1>
 
-    <h1>Liste des produits</h1>
-    
-    <div class="products">
-    {% for product in products %}
+        <div class="con">
+            <div class="products">
+                {% for product in products %}
 
-    {% for categorie in product.category %}
-    <p>La catégorie: {{ categorie.name }}</p>
-    <p>Le nom du produit: {{ product.title }}</p>
-    <p>Le prix du produit:{{ product.price }} €</p>
-    {% if product.imageName %}
-    <img src="/images/products/{{ product.imageName }}" width="450" height="300">
-    {% endif %}
-    <a href="{{ path('add_cart', {id: product.id}) }}">Ajouter au panier</a>
-    
-    {% endfor %}
-    {% endfor %}
-    </div>
-</div>
+                {% for categorie in product.category %}
+                <p>La catégorie: {{ categorie.name }}</p>
+                <p>Le nom du produit: {{ product.title }}</p>
+                <p>Le prix du produit:{{ product.price }} €</p>
+                {% if product.imageName %}
+                <img src="/images/products/{{ product.imageName }}" class="image">
+                {% endif %}
+                <a href="{{ path('add_cart', {id: product.id}) }}">Ajouter au panier</a>
+                
+                {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+     </div>
 </div>
 
 {% endblock %}
