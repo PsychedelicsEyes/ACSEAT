@@ -12,14 +12,12 @@
 @import "modules/admin";
 @import "modules/newCategorie";
 @import "modules/compte";
-<<<<<<< HEAD
 @import "modules/products";
-=======
 @import "modules/category_index";
 @import "modules/user_index";
 @import "modules/order_index";
 
->>>>>>> 85153474cee7464e3448f217b00186cd7d1cc537
+
 
 
 
@@ -29,7 +27,7 @@
 }
 
 body {
-   background-color: #faf7f7;
+   background-color:#d7d1d1;
   max-width: 100%;
   overflow-x: hidden;
 }

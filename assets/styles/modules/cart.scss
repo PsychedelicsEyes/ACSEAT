@@ -22,12 +22,17 @@ table {
   font-size: 150%;
   margin: 2%;
   width: 90%;
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  box-shadow:  41px 41px 73px #a4a4a4,
+  -41px -41px 73px #ffffff;
 
   }
 
 caption {
   padding: 20px;
   letter-spacing: 1px;
+  width: 11%;
+  margin: auto;
 }
 .block_actions {
   display: flex;

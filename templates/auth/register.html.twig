@@ -9,14 +9,14 @@
                             <h1>Inscription</h1>
                         </div>
 
-                          <div class="reg-email">
-                                {{ form_start(registrationForm) }}
+                                  <div class="reg-email">
+                                        {{ form_start(registrationForm) }}
 
-                                 {{ form_row(registrationForm.email) }}
-                                 {{ form_row(registrationForm.plainPassword, {
-                                            label: 'Password'
-                                 }) }}
-                          </div>
+                                         {{ form_row(registrationForm.email) }}
+                                         {{ form_row(registrationForm.plainPassword, {
+                                                    label: 'Password'
+                                         }) }}
+                                  </div>
 
 
                                 <button type="submit" class="btn">Envoyer</button>
@@ -24,11 +24,11 @@
                                 <div class="reg_text"><p>Vous avez un compte ? Connectez vous à votre <a class="links" href="{{ path('app_login') }}"> compte</a></p>
                                       {{ form_end(registrationForm) }}
                                 </div>
-                           </div>
+                     </div>
 
-                            <div class="content_img">
-                                   <img class="imag_inscription"  src="img/food.png" alt="food">
-                            </div>
+                        <div class="content_img">
+                               <img class="imag_inscription"  src="img/food.png" alt="food">
+                        </div>
 
                  </div>
             </div>
