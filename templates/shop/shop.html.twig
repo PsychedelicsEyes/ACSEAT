@@ -8,19 +8,26 @@
 
         <div class="con">
             <div class="products">
-                {% for product in products %}
+                <div class="propro">
+                    {% for product in products %}
 
-                {% for categorie in product.category %}
-                <p>La catégorie: {{ categorie.name }}</p>
-                <p>Le nom du produit: {{ product.title }}</p>
-                <p>Le prix du produit:{{ product.price }} €</p>
-                {% if product.imageName %}
-                <img src="/images/products/{{ product.imageName }}" class="image">
-                {% endif %}
-                <a href="{{ path('add_cart', {id: product.id}) }}">Ajouter au panier</a>
-                
-                {% endfor %}
-                {% endfor %}
+                    {% for categorie in product.category %}
+                    <p class="text-con">{{ product.title }}</p>
+                    <p class="text-con">{{ categorie.name }}</p>
+                    <p class="text-con">{{ product.price }}€</p>
+                </div>
+                <div class = "loi">
+                    {% if product.imageName %}
+                    <img src="/images/products/{{ product.imageName }}" class="image">
+                    {% endif %}
+                    
+                    
+                    {% endfor %}
+                    
+                </div>
+            </div>
+            <div class="cadi"><a href="{{ path('add_cart', {id: product.id}) }}"><i class="fas fa-cart-plus"></i></a>
+            {% endfor %}
             </div>
         </div>
      </div>

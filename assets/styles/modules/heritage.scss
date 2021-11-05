@@ -8,15 +8,15 @@
   }
 
 %post-form {
-    background-color: $secondaryColor;
-    width: 35%;
-    position: relative;
-    border-radius: 3%;
-    border: 5px solid darkslateblue;
-    padding-bottom: 2em;
-    padding-top: 2em;
-    margin-bottom: 5em;
-  }
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 40%;
+  border-radius: 57px;
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  box-shadow:  41px 41px 73px #a4a4a4,
+  -41px -41px 73px #ffffff;
+
+}
 %titre-h1 {
     text-align: center;
     padding-bottom: 0.5em;

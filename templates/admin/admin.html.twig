@@ -5,13 +5,6 @@
 {% block body %}
 
     <div class="container_block">
-    {% if app.user %}
-        <div class="admin_titre">
-            Tu es connecté sur {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
-        </div>
-    {% endif %}
-
-
 
     <div class="panel_admin">
         <h1 class="admin_title">Panel admin</h1>
@@ -23,8 +16,15 @@
               <a href="{{ path('display_user') }}">Liste des utilisateurs</a><br>
               <a href="{{ path('admin_display_order') }}">Liste des commandes</a>
         </div>
+        {% if app.user %}
+            <div class="admin_titre">
+                Tu es connecté sur {{ app.user.username }} <a href="{{ path('app_logout') }}"><button class="boutton_deconnecter">Se déconnecter</button></a>
+            </div>
+        {% endif %}
+
     </div>
-</div>
+
+    </div>
 
 {% endblock %}
 

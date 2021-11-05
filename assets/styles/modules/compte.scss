@@ -6,16 +6,17 @@
   display: grid;
   grid-template-columns: 1fr;
   width: 40%;
-  background-color: white;
   line-height: 5em;
   text-align: center;
   padding-top: 6%;
   padding-bottom: 6%;
-  border: 3px solid darkslateblue;
-  border-radius: 10%;
+  border-radius: 57px;
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  box-shadow:  41px 41px 73px #a4a4a4,
+  -41px -41px 73px #ffffff;
 }
 
-/********* Bouton se Déconnecter ***********/
+/********* Début Bouton Déconnecter ***********/
 
 .compte-connexion {
   display: flex;
@@ -24,10 +25,10 @@
 
 
 .boutton_deconnecter {
-  background-color: #FB020E;
-  width: 8em;
+  width: 9em;
   height: 3em;
-  border: 3px solid darkslateblue;
-  border-radius: 30%;
   color: white;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #d2b82b, #f7bb0a);
+  box-shadow:  41px 41px 73px #a4a4a4, -41px -41px 73px #dbdbdb;
 }

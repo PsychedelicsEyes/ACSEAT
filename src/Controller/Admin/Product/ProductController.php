@@ -64,7 +64,7 @@ class ProductController extends AbstractController
             $this->entityManager->flush();
             $this->addFlash('success', 'produit ajouté');
 
-            return $this->redirectToRoute('app_admin');
+            return $this->redirectToRoute('display_product');
         }
 
         return $this->render('admin/product/new.html.twig', 
@@ -84,7 +84,7 @@ class ProductController extends AbstractController
             $this->entityManager->flush();
             $this->addFlash('success', 'produit modifié');
 
-            return $this->redirectToRoute('app_admin');
+            return $this->redirectToRoute('display_product');
         }
 
         return $this->render('admin/product/edit.html.twig', [
